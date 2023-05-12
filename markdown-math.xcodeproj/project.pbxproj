@@ -24,6 +24,7 @@
 		921B9E702A0E61FC009FB45B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E6F2A0E61FC009FB45B /* SystemConfiguration.framework */; };
 		921B9E772A0E645E009FB45B /* MyCertificate in Resources */ = {isa = PBXBuildFile; fileRef = 921B9E762A0E645E009FB45B /* MyCertificate */; };
 		921B9E7A2A0E64B2009FB45B /* MyCertificate.c in Sources */ = {isa = PBXBuildFile; fileRef = 921B9E792A0E64B2009FB45B /* MyCertificate.c */; };
+		921B9E7C2A0E67C1009FB45B /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921B9E7B2A0E67C1009FB45B /* Functions.swift */; };
 		9283E6432A0E44F600EB66EC /* markdown_mathApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283E6422A0E44F600EB66EC /* markdown_mathApp.swift */; };
 		9283E6452A0E44F600EB66EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283E6442A0E44F600EB66EC /* ContentView.swift */; };
 		9283E6472A0E44F700EB66EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9283E6462A0E44F700EB66EC /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		921B9E6F2A0E61FC009FB45B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		921B9E762A0E645E009FB45B /* MyCertificate */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MyCertificate; sourceTree = "<group>"; };
 		921B9E792A0E64B2009FB45B /* MyCertificate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = MyCertificate.c; path = MyCertificate/MyCertificate.c; sourceTree = "<group>"; };
+		921B9E7B2A0E67C1009FB45B /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		9283E63F2A0E44F500EB66EC /* markdown-math.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "markdown-math.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9283E6422A0E44F600EB66EC /* markdown_mathApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = markdown_mathApp.swift; sourceTree = "<group>"; };
 		9283E6442A0E44F600EB66EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				9283E6422A0E44F600EB66EC /* markdown_mathApp.swift */,
 				9283E6442A0E44F600EB66EC /* ContentView.swift */,
 				921B9E4C2A0E5658009FB45B /* EngineProvider.swift */,
+				921B9E7B2A0E67C1009FB45B /* Functions.swift */,
 				9283E6462A0E44F700EB66EC /* Assets.xcassets */,
 				9283E6482A0E44F700EB66EC /* markdown_math.entitlements */,
 				9283E6492A0E44F700EB66EC /* Preview Content */,
@@ -345,6 +348,7 @@
 				921B9E7A2A0E64B2009FB45B /* MyCertificate.c in Sources */,
 				921B9E4D2A0E5658009FB45B /* EngineProvider.swift in Sources */,
 				9283E6452A0E44F600EB66EC /* ContentView.swift in Sources */,
+				921B9E7C2A0E67C1009FB45B /* Functions.swift in Sources */,
 				9283E6432A0E44F600EB66EC /* markdown_mathApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
