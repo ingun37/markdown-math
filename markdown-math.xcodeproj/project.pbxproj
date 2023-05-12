@@ -9,7 +9,21 @@
 /* Begin PBXBuildFile section */
 		921B9E452A0E5016009FB45B /* MyScriptInteractiveInk-Runtime-iOS-1 in Resources */ = {isa = PBXBuildFile; fileRef = 921B9E442A0E5016009FB45B /* MyScriptInteractiveInk-Runtime-iOS-1 */; };
 		921B9E4D2A0E5658009FB45B /* EngineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921B9E4C2A0E5658009FB45B /* EngineProvider.swift */; };
-		921B9E502A0E568B009FB45B /* MyCertificate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 921B9E4E2A0E568B009FB45B /* MyCertificate.cpp */; };
+		921B9E572A0E6030009FB45B /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 921B9E562A0E6030009FB45B /* MarkdownUI */; };
+		921B9E642A0E6155009FB45B /* libMyScriptGesture.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E592A0E6155009FB45B /* libMyScriptGesture.a */; };
+		921B9E652A0E6155009FB45B /* libMyScriptText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E5A2A0E6155009FB45B /* libMyScriptText.a */; };
+		921B9E662A0E6155009FB45B /* libMyScriptAnalyzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E5B2A0E6155009FB45B /* libMyScriptAnalyzer.a */; };
+		921B9E672A0E6155009FB45B /* libMyScript2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E5C2A0E6155009FB45B /* libMyScript2D.a */; };
+		921B9E682A0E6155009FB45B /* libiink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E5D2A0E6155009FB45B /* libiink.a */; };
+		921B9E692A0E6155009FB45B /* libMyScriptInk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E5E2A0E6155009FB45B /* libMyScriptInk.a */; };
+		921B9E6A2A0E6155009FB45B /* libMyScriptPrediction.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E5F2A0E6155009FB45B /* libMyScriptPrediction.a */; };
+		921B9E6B2A0E6155009FB45B /* libMyScriptDocument.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E602A0E6155009FB45B /* libMyScriptDocument.a */; };
+		921B9E6C2A0E6155009FB45B /* libMyScriptEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E612A0E6155009FB45B /* libMyScriptEngine.a */; };
+		921B9E6D2A0E6155009FB45B /* libMyScriptMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E622A0E6155009FB45B /* libMyScriptMath.a */; };
+		921B9E6E2A0E6156009FB45B /* libMyScriptShape.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E632A0E6155009FB45B /* libMyScriptShape.a */; };
+		921B9E702A0E61FC009FB45B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E6F2A0E61FC009FB45B /* SystemConfiguration.framework */; };
+		921B9E772A0E645E009FB45B /* MyCertificate in Resources */ = {isa = PBXBuildFile; fileRef = 921B9E762A0E645E009FB45B /* MyCertificate */; };
+		921B9E7A2A0E64B2009FB45B /* MyCertificate.c in Sources */ = {isa = PBXBuildFile; fileRef = 921B9E792A0E64B2009FB45B /* MyCertificate.c */; };
 		9283E6432A0E44F600EB66EC /* markdown_mathApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283E6422A0E44F600EB66EC /* markdown_mathApp.swift */; };
 		9283E6452A0E44F600EB66EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283E6442A0E44F600EB66EC /* ContentView.swift */; };
 		9283E6472A0E44F700EB66EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9283E6462A0E44F700EB66EC /* Assets.xcassets */; };
@@ -41,8 +55,20 @@
 		921B9E442A0E5016009FB45B /* MyScriptInteractiveInk-Runtime-iOS-1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "MyScriptInteractiveInk-Runtime-iOS-1"; sourceTree = "<group>"; };
 		921B9E462A0E52C1009FB45B /* markdown-math-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "markdown-math-Bridging-Header.h"; sourceTree = "<group>"; };
 		921B9E4C2A0E5658009FB45B /* EngineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineProvider.swift; sourceTree = "<group>"; };
-		921B9E4E2A0E568B009FB45B /* MyCertificate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MyCertificate.cpp; sourceTree = "<group>"; };
-		921B9E4F2A0E568B009FB45B /* MyCertificate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MyCertificate.hpp; sourceTree = "<group>"; };
+		921B9E592A0E6155009FB45B /* libMyScriptGesture.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScriptGesture.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScriptGesture.a"; sourceTree = "<group>"; };
+		921B9E5A2A0E6155009FB45B /* libMyScriptText.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScriptText.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScriptText.a"; sourceTree = "<group>"; };
+		921B9E5B2A0E6155009FB45B /* libMyScriptAnalyzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScriptAnalyzer.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScriptAnalyzer.a"; sourceTree = "<group>"; };
+		921B9E5C2A0E6155009FB45B /* libMyScript2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScript2D.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScript2D.a"; sourceTree = "<group>"; };
+		921B9E5D2A0E6155009FB45B /* libiink.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libiink.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libiink.a"; sourceTree = "<group>"; };
+		921B9E5E2A0E6155009FB45B /* libMyScriptInk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScriptInk.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScriptInk.a"; sourceTree = "<group>"; };
+		921B9E5F2A0E6155009FB45B /* libMyScriptPrediction.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScriptPrediction.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScriptPrediction.a"; sourceTree = "<group>"; };
+		921B9E602A0E6155009FB45B /* libMyScriptDocument.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScriptDocument.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScriptDocument.a"; sourceTree = "<group>"; };
+		921B9E612A0E6155009FB45B /* libMyScriptEngine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScriptEngine.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScriptEngine.a"; sourceTree = "<group>"; };
+		921B9E622A0E6155009FB45B /* libMyScriptMath.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScriptMath.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScriptMath.a"; sourceTree = "<group>"; };
+		921B9E632A0E6155009FB45B /* libMyScriptShape.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScriptShape.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScriptShape.a"; sourceTree = "<group>"; };
+		921B9E6F2A0E61FC009FB45B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		921B9E762A0E645E009FB45B /* MyCertificate */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MyCertificate; sourceTree = "<group>"; };
+		921B9E792A0E64B2009FB45B /* MyCertificate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = MyCertificate.c; path = MyCertificate/MyCertificate.c; sourceTree = "<group>"; };
 		9283E63F2A0E44F500EB66EC /* markdown-math.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "markdown-math.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9283E6422A0E44F600EB66EC /* markdown_mathApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = markdown_mathApp.swift; sourceTree = "<group>"; };
 		9283E6442A0E44F600EB66EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +87,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921B9E702A0E61FC009FB45B /* SystemConfiguration.framework in Frameworks */,
+				921B9E642A0E6155009FB45B /* libMyScriptGesture.a in Frameworks */,
+				921B9E652A0E6155009FB45B /* libMyScriptText.a in Frameworks */,
+				921B9E662A0E6155009FB45B /* libMyScriptAnalyzer.a in Frameworks */,
+				921B9E672A0E6155009FB45B /* libMyScript2D.a in Frameworks */,
+				921B9E682A0E6155009FB45B /* libiink.a in Frameworks */,
+				921B9E692A0E6155009FB45B /* libMyScriptInk.a in Frameworks */,
+				921B9E6A2A0E6155009FB45B /* libMyScriptPrediction.a in Frameworks */,
+				921B9E6B2A0E6155009FB45B /* libMyScriptDocument.a in Frameworks */,
+				921B9E6C2A0E6155009FB45B /* libMyScriptEngine.a in Frameworks */,
+				921B9E6D2A0E6155009FB45B /* libMyScriptMath.a in Frameworks */,
+				921B9E6E2A0E6156009FB45B /* libMyScriptShape.a in Frameworks */,
+				921B9E572A0E6030009FB45B /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,25 +120,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		921B9E512A0E5709009FB45B /* MyCertificate */ = {
+		921B9E582A0E6155009FB45B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				921B9E4E2A0E568B009FB45B /* MyCertificate.cpp */,
-				921B9E4F2A0E568B009FB45B /* MyCertificate.hpp */,
+				921B9E6F2A0E61FC009FB45B /* SystemConfiguration.framework */,
+				921B9E5D2A0E6155009FB45B /* libiink.a */,
+				921B9E5C2A0E6155009FB45B /* libMyScript2D.a */,
+				921B9E5B2A0E6155009FB45B /* libMyScriptAnalyzer.a */,
+				921B9E602A0E6155009FB45B /* libMyScriptDocument.a */,
+				921B9E612A0E6155009FB45B /* libMyScriptEngine.a */,
+				921B9E592A0E6155009FB45B /* libMyScriptGesture.a */,
+				921B9E5E2A0E6155009FB45B /* libMyScriptInk.a */,
+				921B9E622A0E6155009FB45B /* libMyScriptMath.a */,
+				921B9E5F2A0E6155009FB45B /* libMyScriptPrediction.a */,
+				921B9E632A0E6155009FB45B /* libMyScriptShape.a */,
+				921B9E5A2A0E6155009FB45B /* libMyScriptText.a */,
 			);
-			path = MyCertificate;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		9283E6362A0E44F500EB66EC = {
 			isa = PBXGroup;
 			children = (
-				921B9E512A0E5709009FB45B /* MyCertificate */,
+				921B9E792A0E64B2009FB45B /* MyCertificate.c */,
+				921B9E762A0E645E009FB45B /* MyCertificate */,
 				921B9E442A0E5016009FB45B /* MyScriptInteractiveInk-Runtime-iOS-1 */,
 				921B9E432A0E4FB7009FB45B /* README.md */,
 				9283E6412A0E44F500EB66EC /* markdown-math */,
 				9283E6532A0E44F700EB66EC /* markdown-mathTests */,
 				9283E65D2A0E44F800EB66EC /* markdown-mathUITests */,
 				9283E6402A0E44F500EB66EC /* Products */,
+				921B9E582A0E6155009FB45B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +219,9 @@
 			dependencies = (
 			);
 			name = "markdown-math";
+			packageProductDependencies = (
+				921B9E562A0E6030009FB45B /* MarkdownUI */,
+			);
 			productName = "markdown-math";
 			productReference = 9283E63F2A0E44F500EB66EC /* markdown-math.app */;
 			productType = "com.apple.product-type.application";
@@ -241,6 +295,9 @@
 				Base,
 			);
 			mainGroup = 9283E6362A0E44F500EB66EC;
+			packageReferences = (
+				921B9E552A0E6030009FB45B /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+			);
 			productRefGroup = 9283E6402A0E44F500EB66EC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,6 +316,7 @@
 			files = (
 				9283E64B2A0E44F700EB66EC /* Preview Assets.xcassets in Resources */,
 				921B9E452A0E5016009FB45B /* MyScriptInteractiveInk-Runtime-iOS-1 in Resources */,
+				921B9E772A0E645E009FB45B /* MyCertificate in Resources */,
 				9283E6472A0E44F700EB66EC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,10 +342,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921B9E7A2A0E64B2009FB45B /* MyCertificate.c in Sources */,
 				921B9E4D2A0E5658009FB45B /* EngineProvider.swift in Sources */,
 				9283E6452A0E44F600EB66EC /* ContentView.swift in Sources */,
 				9283E6432A0E44F600EB66EC /* markdown_mathApp.swift in Sources */,
-				921B9E502A0E568B009FB45B /* MyCertificate.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +518,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyScriptInteractiveInk-Runtime-iOS-1",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ingun.markdown-math";
@@ -502,6 +564,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyScriptInteractiveInk-Runtime-iOS-1",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ingun.markdown-math";
@@ -642,6 +708,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		921B9E552A0E6030009FB45B /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		921B9E562A0E6030009FB45B /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 921B9E552A0E6030009FB45B /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9283E6372A0E44F500EB66EC /* Project object */;
 }

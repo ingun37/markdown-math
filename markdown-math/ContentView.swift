@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import MarkdownUI
 struct ContentView: View {
     @State var markdownContent: String = ""
     
@@ -17,6 +17,7 @@ struct ContentView: View {
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
             TextEditor(text: $markdownContent)
+            Markdown(markdownContent)
         }
         .padding()
     }

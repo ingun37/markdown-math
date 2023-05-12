@@ -3,5 +3,5 @@
 //
 
 #import <iink/IINK.h>
-#import "MyCertificate.hpp"
+#import "MyCertificate.h"
 
