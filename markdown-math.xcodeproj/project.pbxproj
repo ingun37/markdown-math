@@ -169,14 +169,14 @@
 		9283E6412A0E44F500EB66EC /* markdown-math */ = {
 			isa = PBXGroup;
 			children = (
-				9283E6422A0E44F600EB66EC /* markdown_mathApp.swift */,
+				9283E6462A0E44F700EB66EC /* Assets.xcassets */,
 				9283E6442A0E44F600EB66EC /* ContentView.swift */,
 				921B9E4C2A0E5658009FB45B /* EngineProvider.swift */,
 				921B9E7B2A0E67C1009FB45B /* Functions.swift */,
-				9283E6462A0E44F700EB66EC /* Assets.xcassets */,
 				9283E6482A0E44F700EB66EC /* markdown_math.entitlements */,
-				9283E6492A0E44F700EB66EC /* Preview Content */,
+				9283E6422A0E44F600EB66EC /* markdown_mathApp.swift */,
 				921B9E462A0E52C1009FB45B /* markdown-math-Bridging-Header.h */,
+				9283E6492A0E44F700EB66EC /* Preview Content */,
 			);
 			path = "markdown-math";
 			sourceTree = "<group>";
