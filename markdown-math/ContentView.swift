@@ -43,10 +43,7 @@ struct ContentView: View {
             SwiftDownEditor(text: $markdownContent)
                         .insetsSize(40)
                         .theme(Theme.BuiltIn.defaultDark.theme())
-//            TextEditor(text: $markdownContent)
-            Divider()
             WebView(markdown: $markdownContent, delimeter: $inlineDelimeter, format: $mathFormat)
-//            Markdown(markdownContent)
         }
         .padding()
     }
