@@ -7,17 +7,42 @@
 
 import SwiftUI
 import MarkdownUI
+
+
 struct ContentView: View {
-    @State var markdownContent: String = ""
-    
+    @State var markdownContent: String = initialMarkdown
+    @State var inlineDelimeter: DelimeterType = DelimeterType.GitLab
+    @State var mathFormat: MathFormatType = MathFormatType.Katex
     var body: some View {
         VStack {
             HStack{
-                Text("Hello, world!")
-                Button("click", action: doNothing)
+                Text("Add")
+                Button("Inline Math", action: doNothing)
+                Text("or")
+                Button("Math Block", action: doNothing)
+                
+                Text("In")
+                Picker("Inline Delimeter", selection: $inlineDelimeter) {
+
+                    ForEach(DelimeterType.allCases) { style in
+                        Text(style.rawValue.capitalized)
+                    }
+                }
+                Text("delimeter and ")
+                Picker("Format", selection: $mathFormat) {
+
+                    ForEach(MathFormatType.allCases) { style in
+                        Text(style.rawValue.capitalized)
+                    }
+                }
+                Text("format")
+
+
             }
             TextEditor(text: $markdownContent)
-            Markdown(markdownContent)
+            Divider()
+            WebView(markdown: $markdownContent, delimeter: $inlineDelimeter, format: $mathFormat)
+//            Markdown(markdownContent)
         }
         .padding()
     }

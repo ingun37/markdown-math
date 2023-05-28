@@ -25,6 +25,10 @@
 		921B9E772A0E645E009FB45B /* MyCertificate in Resources */ = {isa = PBXBuildFile; fileRef = 921B9E762A0E645E009FB45B /* MyCertificate */; };
 		921B9E7A2A0E64B2009FB45B /* MyCertificate.c in Sources */ = {isa = PBXBuildFile; fileRef = 921B9E792A0E64B2009FB45B /* MyCertificate.c */; };
 		921B9E7C2A0E67C1009FB45B /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921B9E7B2A0E67C1009FB45B /* Functions.swift */; };
+		9268CEA42A21D446005484FF /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268CEA32A21D446005484FF /* Data.swift */; };
+		9268CEA62A21D481005484FF /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268CEA52A21D481005484FF /* WebView.swift */; };
+		9268CEA92A21D89F005484FF /* Ink in Frameworks */ = {isa = PBXBuildFile; productRef = 9268CEA82A21D89F005484FF /* Ink */; };
+		9268CEAB2A21ED05005484FF /* Delimeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268CEAA2A21ED05005484FF /* Delimeter.swift */; };
 		9283E6432A0E44F600EB66EC /* markdown_mathApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283E6422A0E44F600EB66EC /* markdown_mathApp.swift */; };
 		9283E6452A0E44F600EB66EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283E6442A0E44F600EB66EC /* ContentView.swift */; };
 		9283E6472A0E44F700EB66EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9283E6462A0E44F700EB66EC /* Assets.xcassets */; };
@@ -71,6 +75,9 @@
 		921B9E762A0E645E009FB45B /* MyCertificate */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MyCertificate; sourceTree = "<group>"; };
 		921B9E792A0E64B2009FB45B /* MyCertificate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = MyCertificate.c; path = MyCertificate/MyCertificate.c; sourceTree = "<group>"; };
 		921B9E7B2A0E67C1009FB45B /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		9268CEA32A21D446005484FF /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		9268CEA52A21D481005484FF /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		9268CEAA2A21ED05005484FF /* Delimeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delimeter.swift; sourceTree = "<group>"; };
 		9283E63F2A0E44F500EB66EC /* markdown-math.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "markdown-math.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9283E6422A0E44F600EB66EC /* markdown_mathApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = markdown_mathApp.swift; sourceTree = "<group>"; };
 		9283E6442A0E44F600EB66EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +105,7 @@
 				921B9E692A0E6155009FB45B /* libMyScriptInk.a in Frameworks */,
 				921B9E6A2A0E6155009FB45B /* libMyScriptPrediction.a in Frameworks */,
 				921B9E6B2A0E6155009FB45B /* libMyScriptDocument.a in Frameworks */,
+				9268CEA92A21D89F005484FF /* Ink in Frameworks */,
 				921B9E6C2A0E6155009FB45B /* libMyScriptEngine.a in Frameworks */,
 				921B9E6D2A0E6155009FB45B /* libMyScriptMath.a in Frameworks */,
 				921B9E6E2A0E6156009FB45B /* libMyScriptShape.a in Frameworks */,
@@ -173,6 +181,9 @@
 				9283E6442A0E44F600EB66EC /* ContentView.swift */,
 				921B9E4C2A0E5658009FB45B /* EngineProvider.swift */,
 				921B9E7B2A0E67C1009FB45B /* Functions.swift */,
+				9268CEA52A21D481005484FF /* WebView.swift */,
+				9268CEA32A21D446005484FF /* Data.swift */,
+				9268CEAA2A21ED05005484FF /* Delimeter.swift */,
 				9283E6482A0E44F700EB66EC /* markdown_math.entitlements */,
 				9283E6422A0E44F600EB66EC /* markdown_mathApp.swift */,
 				921B9E462A0E52C1009FB45B /* markdown-math-Bridging-Header.h */,
@@ -224,6 +235,7 @@
 			name = "markdown-math";
 			packageProductDependencies = (
 				921B9E562A0E6030009FB45B /* MarkdownUI */,
+				9268CEA82A21D89F005484FF /* Ink */,
 			);
 			productName = "markdown-math";
 			productReference = 9283E63F2A0E44F500EB66EC /* markdown-math.app */;
@@ -300,6 +312,7 @@
 			mainGroup = 9283E6362A0E44F500EB66EC;
 			packageReferences = (
 				921B9E552A0E6030009FB45B /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				9268CEA72A21D89F005484FF /* XCRemoteSwiftPackageReference "ink" */,
 			);
 			productRefGroup = 9283E6402A0E44F500EB66EC /* Products */;
 			projectDirPath = "";
@@ -346,10 +359,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				921B9E7A2A0E64B2009FB45B /* MyCertificate.c in Sources */,
+				9268CEA42A21D446005484FF /* Data.swift in Sources */,
 				921B9E4D2A0E5658009FB45B /* EngineProvider.swift in Sources */,
 				9283E6452A0E44F600EB66EC /* ContentView.swift in Sources */,
 				921B9E7C2A0E67C1009FB45B /* Functions.swift in Sources */,
+				9268CEAB2A21ED05005484FF /* Delimeter.swift in Sources */,
 				9283E6432A0E44F600EB66EC /* markdown_mathApp.swift in Sources */,
+				9268CEA62A21D481005484FF /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,6 +738,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		9268CEA72A21D89F005484FF /* XCRemoteSwiftPackageReference "ink" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/johnsundell/ink.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -729,6 +753,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 921B9E552A0E6030009FB45B /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
 			productName = MarkdownUI;
+		};
+		9268CEA82A21D89F005484FF /* Ink */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9268CEA72A21D89F005484FF /* XCRemoteSwiftPackageReference "ink" */;
+			productName = Ink;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
