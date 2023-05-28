@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		921B9E452A0E5016009FB45B /* MyScriptInteractiveInk-Runtime-iOS-1 in Resources */ = {isa = PBXBuildFile; fileRef = 921B9E442A0E5016009FB45B /* MyScriptInteractiveInk-Runtime-iOS-1 */; };
 		921B9E4D2A0E5658009FB45B /* EngineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921B9E4C2A0E5658009FB45B /* EngineProvider.swift */; };
-		921B9E572A0E6030009FB45B /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 921B9E562A0E6030009FB45B /* MarkdownUI */; };
 		921B9E642A0E6155009FB45B /* libMyScriptGesture.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E592A0E6155009FB45B /* libMyScriptGesture.a */; };
 		921B9E652A0E6155009FB45B /* libMyScriptText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E5A2A0E6155009FB45B /* libMyScriptText.a */; };
 		921B9E662A0E6155009FB45B /* libMyScriptAnalyzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E5B2A0E6155009FB45B /* libMyScriptAnalyzer.a */; };
@@ -25,6 +24,7 @@
 		921B9E772A0E645E009FB45B /* MyCertificate in Resources */ = {isa = PBXBuildFile; fileRef = 921B9E762A0E645E009FB45B /* MyCertificate */; };
 		921B9E7A2A0E64B2009FB45B /* MyCertificate.c in Sources */ = {isa = PBXBuildFile; fileRef = 921B9E792A0E64B2009FB45B /* MyCertificate.c */; };
 		921B9E7C2A0E67C1009FB45B /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921B9E7B2A0E67C1009FB45B /* Functions.swift */; };
+		92396F8B2A2340C4000F0291 /* SwiftDown in Frameworks */ = {isa = PBXBuildFile; productRef = 92396F8A2A2340C4000F0291 /* SwiftDown */; };
 		9268CEA42A21D446005484FF /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268CEA32A21D446005484FF /* Data.swift */; };
 		9268CEA62A21D481005484FF /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268CEA52A21D481005484FF /* WebView.swift */; };
 		9268CEA92A21D89F005484FF /* Ink in Frameworks */ = {isa = PBXBuildFile; productRef = 9268CEA82A21D89F005484FF /* Ink */; };
@@ -106,10 +106,10 @@
 				921B9E6A2A0E6155009FB45B /* libMyScriptPrediction.a in Frameworks */,
 				921B9E6B2A0E6155009FB45B /* libMyScriptDocument.a in Frameworks */,
 				9268CEA92A21D89F005484FF /* Ink in Frameworks */,
+				92396F8B2A2340C4000F0291 /* SwiftDown in Frameworks */,
 				921B9E6C2A0E6155009FB45B /* libMyScriptEngine.a in Frameworks */,
 				921B9E6D2A0E6155009FB45B /* libMyScriptMath.a in Frameworks */,
 				921B9E6E2A0E6156009FB45B /* libMyScriptShape.a in Frameworks */,
-				921B9E572A0E6030009FB45B /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,8 +234,8 @@
 			);
 			name = "markdown-math";
 			packageProductDependencies = (
-				921B9E562A0E6030009FB45B /* MarkdownUI */,
 				9268CEA82A21D89F005484FF /* Ink */,
+				92396F8A2A2340C4000F0291 /* SwiftDown */,
 			);
 			productName = "markdown-math";
 			productReference = 9283E63F2A0E44F500EB66EC /* markdown-math.app */;
@@ -311,8 +311,8 @@
 			);
 			mainGroup = 9283E6362A0E44F500EB66EC;
 			packageReferences = (
-				921B9E552A0E6030009FB45B /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 				9268CEA72A21D89F005484FF /* XCRemoteSwiftPackageReference "ink" */,
+				92396F892A2340C4000F0291 /* XCRemoteSwiftPackageReference "SwiftDown" */,
 			);
 			productRefGroup = 9283E6402A0E44F500EB66EC /* Products */;
 			projectDirPath = "";
@@ -730,12 +730,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		921B9E552A0E6030009FB45B /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+		92396F892A2340C4000F0291 /* XCRemoteSwiftPackageReference "SwiftDown" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			repositoryURL = "https://github.com/qeude/SwiftDown.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				branch = main;
+				kind = branch;
 			};
 		};
 		9268CEA72A21D89F005484FF /* XCRemoteSwiftPackageReference "ink" */ = {
@@ -749,10 +749,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		921B9E562A0E6030009FB45B /* MarkdownUI */ = {
+		92396F8A2A2340C4000F0291 /* SwiftDown */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 921B9E552A0E6030009FB45B /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
-			productName = MarkdownUI;
+			package = 92396F892A2340C4000F0291 /* XCRemoteSwiftPackageReference "SwiftDown" */;
+			productName = SwiftDown;
 		};
 		9268CEA82A21D89F005484FF /* Ink */ = {
 			isa = XCSwiftPackageProductDependency;

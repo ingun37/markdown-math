@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MarkdownUI
+import SwiftDown
 
 
 struct ContentView: View {
@@ -39,7 +40,10 @@ struct ContentView: View {
 
 
             }
-            TextEditor(text: $markdownContent)
+            SwiftDownEditor(text: $markdownContent)
+                        .insetsSize(40)
+                        .theme(Theme.BuiltIn.defaultDark.theme())
+//            TextEditor(text: $markdownContent)
             Divider()
             WebView(markdown: $markdownContent, delimeter: $inlineDelimeter, format: $mathFormat)
 //            Markdown(markdownContent)
