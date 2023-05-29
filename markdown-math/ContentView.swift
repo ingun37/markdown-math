@@ -9,7 +9,6 @@ import SwiftUI
 import MarkdownUI
 import SwiftDown
 
-
 struct ContentView: View {
     @State var markdownContent: String = initialMarkdown
     @State var inlineDelimeter: DelimeterType = DelimeterType.GitLab
@@ -56,10 +55,15 @@ struct ContentView: View {
 
 
             }
+            
+            WebView(markdown: $markdownContent, delimeter: $inlineDelimeter, format: $mathFormat)
+            
             SwiftDownEditor(text: $markdownContent)
                         .insetsSize(40)
-                        .theme(Theme.BuiltIn.defaultDark.theme())
-            WebView(markdown: $markdownContent, delimeter: $inlineDelimeter, format: $mathFormat)
+                        .theme(Theme.BuiltIn.defaultDark.theme()).onSelectedRangeChange { range in
+                          print("onon", range)
+                        }
+
         }
         .padding()
     }

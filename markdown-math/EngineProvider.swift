@@ -16,8 +16,7 @@ class EngineProvider {
             if myCertificate.length == 0 {
                 throw EngineError.CFile;
             }
-print("mycert leng")
-        print(myCertificate.length)
+
             // Create the iink runtime environment
             let data = Data(bytes: myCertificate.bytes, count: myCertificate.length)
             guard let engine = IINKEngine(certificate: data) else {

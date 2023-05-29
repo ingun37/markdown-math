@@ -66,10 +66,9 @@
     {
       "identity" : "swiftdown",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/qeude/SwiftDown.git",
+      "location" : "https://github.com/ingun37/SwiftDown.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "67d24923863247afecb7af95b3b9a12b033329d6"
+        "revision" : "8b5f431a10b32ebc3ea736d7b73c948fe4aad304"
       }
     },
     {
