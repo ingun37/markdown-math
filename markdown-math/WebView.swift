@@ -36,7 +36,7 @@ struct WebView : UIViewRepresentable {
         self.parser.addModifier(Modifier(target: .inlineCode, closure: { html, markdown in
             if(markdown.starts(with: inlineMathBegin)) {
                 let html = "\\(" + markdown.dropFirst(inlineMathBegin.count).dropLast(inlineMathEnd.count) + "\\)";
-                print(html);
+//                print(html);
                 return html;
             } else {
                 return html
@@ -61,7 +61,7 @@ struct WebView : UIViewRepresentable {
             else {
                 newMD += markdown[idx!..<match.startIndex];
             }
-            print(markdown[match.startIndex..<match.endIndex].dropFirst(2).dropLast(2));
+//            print(markdown[match.startIndex..<match.endIndex].dropFirst(2).dropLast(2));
             newMD += inlineMathBegin + markdown[match.startIndex..<match.endIndex].dropFirst(2).dropLast(2) + inlineMathEnd
             idx = match.endIndex;
         }

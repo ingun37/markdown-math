@@ -14,12 +14,29 @@ struct ContentView: View {
     @State var markdownContent: String = initialMarkdown
     @State var inlineDelimeter: DelimeterType = DelimeterType.GitLab
     @State var mathFormat: MathFormatType = MathFormatType.Katex
+    @State private var inputMode = false
+
     let engine:IINKEngine
     var body: some View {
         VStack {
             HStack{
                 Text("Add")
-                Button("Math", action: doNothing)
+                Button("Math") {
+                    inputMode.toggle()
+                }.sheet(isPresented: $inputMode) {
+                    VStack {
+                        HStack {
+                            Button("Cancel") {
+                                inputMode.toggle()
+                            }
+                            Spacer()
+                            Button("Insert") {
+                                inputMode.toggle()
+                            }
+                        }
+                        MathInput(tex: "", format: mathFormat)
+                    }
+                }
                                 
                 Text("In")
                 Picker("Inline Delimeter", selection: $inlineDelimeter) {
