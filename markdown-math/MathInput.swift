@@ -10,20 +10,33 @@ import SwiftUI
 struct MathInput: View {
     @State var tex: String
     @State var format: MathFormatType
+    var onCancel: ()->Void
+    var onInsert: (String)->Void
     var body: some View {
         VStack {
+            HStack {
+                Button("Cancel") {
+                    onCancel()
+                }
+                Spacer()
+                Button("Insert") {
+                    onInsert(tex)
+                }
+            }
             InputWebView(tex: $tex, format: $format)
             TextEditor(text: $tex)
             Button("Handwriting") {}
+                
             
         }.padding()
     }
+    
 }
 
 struct MathInput_Previews: PreviewProvider {
     static var previews: some View {
         MathInput(tex: """
 \\tau
-""", format: .Katex)
+""", format: .Katex, onCancel: {}, onInsert:  {_ in })
     }
 }

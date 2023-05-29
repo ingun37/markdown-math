@@ -11,6 +11,7 @@ import SwiftDown
 
 struct ContentView: View {
     @State var markdownContent: String = initialMarkdown
+    @State var selectedrange: NSRange = NSRange()
     @State var inlineDelimeter: DelimeterType = DelimeterType.GitLab
     @State var mathFormat: MathFormatType = MathFormatType.Katex
     @State private var inputMode = false
@@ -24,16 +25,21 @@ struct ContentView: View {
                     inputMode.toggle()
                 }.sheet(isPresented: $inputMode) {
                     VStack {
-                        HStack {
-                            Button("Cancel") {
-                                inputMode.toggle()
+                        MathInput(tex: "", format: mathFormat, onCancel: {
+                            inputMode.toggle()
+
+                        }, onInsert: {tex in
+                            print("rng",selectedrange)
+                            let x = markdownContent.index(markdownContent.startIndex, offsetBy: selectedrange.location);
+                            let y = markdownContent.index(markdownContent.startIndex, offsetBy: selectedrange.location + selectedrange.length);
+                            
+                            DispatchQueue.main.async {
+                                markdownContent = markdownContent[..<x] + tex + markdownContent[y...]
                             }
-                            Spacer()
-                            Button("Insert") {
-                                inputMode.toggle()
-                            }
-                        }
-                        MathInput(tex: "", format: mathFormat)
+                            
+                            
+                            inputMode.toggle()
+                        })
                     }
                 }
                                 
@@ -58,10 +64,10 @@ struct ContentView: View {
             
             WebView(markdown: $markdownContent, delimeter: $inlineDelimeter, format: $mathFormat)
             
-            SwiftDownEditor(text: $markdownContent)
+            SwiftDownEditor(text: $markdownContent, selectedRange: $selectedrange)
                         .insetsSize(40)
-                        .theme(Theme.BuiltIn.defaultDark.theme()).onSelectedRangeChange { range in
-                          print("onon", range)
+                        .theme(Theme.BuiltIn.defaultDark.theme()).onSelectedRangeChange { rng in
+                            selectedrange = rng
                         }
 
         }
