@@ -7,24 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		921B9E452A0E5016009FB45B /* MyScriptInteractiveInk-Runtime-iOS-1 in Resources */ = {isa = PBXBuildFile; fileRef = 921B9E442A0E5016009FB45B /* MyScriptInteractiveInk-Runtime-iOS-1 */; };
 		921B9E4D2A0E5658009FB45B /* EngineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921B9E4C2A0E5658009FB45B /* EngineProvider.swift */; };
-		921B9E642A0E6155009FB45B /* libMyScriptGesture.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E592A0E6155009FB45B /* libMyScriptGesture.a */; };
-		921B9E652A0E6155009FB45B /* libMyScriptText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E5A2A0E6155009FB45B /* libMyScriptText.a */; };
-		921B9E662A0E6155009FB45B /* libMyScriptAnalyzer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E5B2A0E6155009FB45B /* libMyScriptAnalyzer.a */; };
-		921B9E672A0E6155009FB45B /* libMyScript2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E5C2A0E6155009FB45B /* libMyScript2D.a */; };
-		921B9E682A0E6155009FB45B /* libiink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E5D2A0E6155009FB45B /* libiink.a */; };
-		921B9E692A0E6155009FB45B /* libMyScriptInk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E5E2A0E6155009FB45B /* libMyScriptInk.a */; };
-		921B9E6A2A0E6155009FB45B /* libMyScriptPrediction.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E5F2A0E6155009FB45B /* libMyScriptPrediction.a */; };
-		921B9E6B2A0E6155009FB45B /* libMyScriptDocument.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E602A0E6155009FB45B /* libMyScriptDocument.a */; };
-		921B9E6C2A0E6155009FB45B /* libMyScriptEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E612A0E6155009FB45B /* libMyScriptEngine.a */; };
-		921B9E6D2A0E6155009FB45B /* libMyScriptMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E622A0E6155009FB45B /* libMyScriptMath.a */; };
-		921B9E6E2A0E6156009FB45B /* libMyScriptShape.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E632A0E6155009FB45B /* libMyScriptShape.a */; };
 		921B9E702A0E61FC009FB45B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E6F2A0E61FC009FB45B /* SystemConfiguration.framework */; };
-		921B9E772A0E645E009FB45B /* MyCertificate in Resources */ = {isa = PBXBuildFile; fileRef = 921B9E762A0E645E009FB45B /* MyCertificate */; };
-		921B9E7A2A0E64B2009FB45B /* MyCertificate.c in Sources */ = {isa = PBXBuildFile; fileRef = 921B9E792A0E64B2009FB45B /* MyCertificate.c */; };
 		921B9E7C2A0E67C1009FB45B /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921B9E7B2A0E67C1009FB45B /* Functions.swift */; };
 		92396F8B2A2340C4000F0291 /* SwiftDown in Frameworks */ = {isa = PBXBuildFile; productRef = 92396F8A2A2340C4000F0291 /* SwiftDown */; };
+		92595DD42A2461F40020A3FE /* ingun.markdown-math.c in Sources */ = {isa = PBXBuildFile; fileRef = 92595DD32A2461F40020A3FE /* ingun.markdown-math.c */; };
+		9268C6562A24593E001A99B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9268C6552A24593E001A99B5 /* Foundation.framework */; };
+		9268C6582A245944001A99B5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9268C6572A245944001A99B5 /* Security.framework */; };
+		9268C6CE2A245E1D001A99B5 /* IINKRecognitionAssetsBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C69F2A245E1D001A99B5 /* IINKRecognitionAssetsBuilder.h */; };
+		9268C6CF2A245E1D001A99B5 /* IINKIContentSelection.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6A02A245E1D001A99B5 /* IINKIContentSelection.h */; };
+		9268C6D02A245E1D001A99B5 /* IINKContentPart.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6A12A245E1D001A99B5 /* IINKContentPart.h */; };
+		9268C6D12A245E1D001A99B5 /* IINKConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6A22A245E1D001A99B5 /* IINKConfiguration.h */; };
+		9268C6D22A245E1D001A99B5 /* IINKMimeType.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6A32A245E1D001A99B5 /* IINKMimeType.h */; };
+		9268C6D32A245E1D001A99B5 /* IINKRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6A42A245E1D001A99B5 /* IINKRenderer.h */; };
+		9268C6D42A245E1D001A99B5 /* IINKIRenderTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6A52A245E1D001A99B5 /* IINKIRenderTarget.h */; };
+		9268C6D52A245E1D001A99B5 /* IINK.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6A62A245E1D001A99B5 /* IINK.h */; };
+		9268C6D62A245E1D001A99B5 /* IINKContentPackage.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6A72A245E1D001A99B5 /* IINKContentPackage.h */; };
+		9268C6D72A245E1D001A99B5 /* IINKEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6A82A245E1D001A99B5 /* IINKEditor.h */; };
+		9268C6D82A245E1D001A99B5 /* IINKRendererDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6A92A245E1D001A99B5 /* IINKRendererDelegate.h */; };
+		9268C6D92A245E1D001A99B5 /* IINKIImagePainter.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6AA2A245E1D001A99B5 /* IINKIImagePainter.h */; };
+		9268C6DA2A245E1D001A99B5 /* IINKEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6AB2A245E1D001A99B5 /* IINKEngine.h */; };
+		9268C6DB2A245E1D001A99B5 /* IINKContentBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6AC2A245E1D001A99B5 /* IINKContentBlock.h */; };
+		9268C6DC2A245E1D001A99B5 /* IINKEditorDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6AD2A245E1D001A99B5 /* IINKEditorDelegate.h */; };
+		9268C6DD2A245E1D001A99B5 /* IINKContentSelection.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6AE2A245E1D001A99B5 /* IINKContentSelection.h */; };
+		9268C6DE2A245E1D001A99B5 /* IINKGlyphMetrics.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6B02A245E1D001A99B5 /* IINKGlyphMetrics.h */; };
+		9268C6DF2A245E1D001A99B5 /* IINKTextSpan.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6B12A245E1D001A99B5 /* IINKTextSpan.h */; };
+		9268C6E02A245E1D001A99B5 /* IINKText.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6B22A245E1D001A99B5 /* IINKText.h */; };
+		9268C6E12A245E1D001A99B5 /* IINKIFontMetricsProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6B32A245E1D001A99B5 /* IINKIFontMetricsProvider.h */; };
+		9268C6E22A245E1D001A99B5 /* IINKToolController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6B42A245E1D001A99B5 /* IINKToolController.h */; };
+		9268C6E32A245E1D001A99B5 /* IINKICanvas.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6B62A245E1D001A99B5 /* IINKICanvas.h */; };
+		9268C6E42A245E1D001A99B5 /* IINKIStrokerFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6B72A245E1D001A99B5 /* IINKIStrokerFactory.h */; };
+		9268C6E52A245E1D001A99B5 /* IINKIPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6B82A245E1D001A99B5 /* IINKIPath.h */; };
+		9268C6E62A245E1D001A99B5 /* IINKStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6B92A245E1D001A99B5 /* IINKStyle.h */; };
+		9268C6E72A245E1D001A99B5 /* IINKIStroker.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6BA2A245E1D001A99B5 /* IINKIStroker.h */; };
+		9268C6E82A245E1D001A99B5 /* IINKParameterSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6BB2A245E1D001A99B5 /* IINKParameterSet.h */; };
+		9268C6E92A245E1E001A99B5 /* IINKError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6BC2A245E1D001A99B5 /* IINKError.h */; };
+		9268C6EA2A245E1E001A99B5 /* IINKConfigurationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6BD2A245E1D001A99B5 /* IINKConfigurationDelegate.h */; };
+		9268C6EC2A245E1E001A99B5 /* MyScriptInteractiveInk-Runtime-iOS.version.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9268C6C02A245E1D001A99B5 /* MyScriptInteractiveInk-Runtime-iOS.version.txt */; };
+		9268C6EF2A245E1E001A99B5 /* IINK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268C6C42A245E1D001A99B5 /* IINK.swift */; };
+		9268C6F32A245E1E001A99B5 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9268C6C82A245E1D001A99B5 /* LICENSE.txt */; };
+		9268C6F82A245E70001A99B5 /* MyCertificate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6F62A245E70001A99B5 /* MyCertificate.h */; };
+		9268C6F92A245FAF001A99B5 /* libiink.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9268C6C22A245E1D001A99B5 /* libiink.xcframework */; };
+		9268C6FA2A245FAF001A99B5 /* libMyScript2D.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9268C6C52A245E1D001A99B5 /* libMyScript2D.xcframework */; };
+		9268C6FB2A245FAF001A99B5 /* libMyScriptAnalyzer.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9268C6982A245E1D001A99B5 /* libMyScriptAnalyzer.xcframework */; };
+		9268C6FC2A245FAF001A99B5 /* libMyScriptDocument.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9268C6C72A245E1D001A99B5 /* libMyScriptDocument.xcframework */; };
+		9268C6FD2A245FAF001A99B5 /* libMyScriptEngine.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9268C69C2A245E1D001A99B5 /* libMyScriptEngine.xcframework */; };
+		9268C6FE2A245FAF001A99B5 /* libMyScriptGesture.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9268C6992A245E1D001A99B5 /* libMyScriptGesture.xcframework */; };
+		9268C6FF2A245FAF001A99B5 /* libMyScriptInk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9268C69B2A245E1D001A99B5 /* libMyScriptInk.xcframework */; };
+		9268C7002A245FAF001A99B5 /* libMyScriptMath.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9268C69A2A245E1D001A99B5 /* libMyScriptMath.xcframework */; };
+		9268C7012A245FAF001A99B5 /* libMyScriptPrediction.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9268C6C62A245E1D001A99B5 /* libMyScriptPrediction.xcframework */; };
+		9268C7022A245FAF001A99B5 /* libMyScriptShape.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9268C6BE2A245E1D001A99B5 /* libMyScriptShape.xcframework */; };
+		9268C7032A245FAF001A99B5 /* libMyScriptText.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9268C6C12A245E1D001A99B5 /* libMyScriptText.xcframework */; };
 		9268CEA42A21D446005484FF /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268CEA32A21D446005484FF /* Data.swift */; };
 		9268CEA62A21D481005484FF /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268CEA52A21D481005484FF /* WebView.swift */; };
 		9268CEA92A21D89F005484FF /* Ink in Frameworks */ = {isa = PBXBuildFile; productRef = 9268CEA82A21D89F005484FF /* Ink */; };
@@ -36,6 +69,9 @@
 		9283E6552A0E44F800EB66EC /* markdown_mathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283E6542A0E44F800EB66EC /* markdown_mathTests.swift */; };
 		9283E65F2A0E44F800EB66EC /* markdown_mathUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283E65E2A0E44F800EB66EC /* markdown_mathUITests.swift */; };
 		9283E6612A0E44F800EB66EC /* markdown_mathUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283E6602A0E44F800EB66EC /* markdown_mathUITestsLaunchTests.swift */; };
+		9285971B2A2377C400F672B3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9285971A2A2377C400F672B3 /* Launch Screen.storyboard */; };
+		9285971D2A23785900F672B3 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9285971C2A23785900F672B3 /* Storyboard.storyboard */; };
+		9285971F2A23788800F672B3 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9285971E2A23788800F672B3 /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,24 +93,57 @@
 
 /* Begin PBXFileReference section */
 		921B9E432A0E4FB7009FB45B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		921B9E442A0E5016009FB45B /* MyScriptInteractiveInk-Runtime-iOS-1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "MyScriptInteractiveInk-Runtime-iOS-1"; sourceTree = "<group>"; };
 		921B9E462A0E52C1009FB45B /* markdown-math-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "markdown-math-Bridging-Header.h"; sourceTree = "<group>"; };
 		921B9E4C2A0E5658009FB45B /* EngineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineProvider.swift; sourceTree = "<group>"; };
-		921B9E592A0E6155009FB45B /* libMyScriptGesture.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScriptGesture.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScriptGesture.a"; sourceTree = "<group>"; };
-		921B9E5A2A0E6155009FB45B /* libMyScriptText.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScriptText.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScriptText.a"; sourceTree = "<group>"; };
-		921B9E5B2A0E6155009FB45B /* libMyScriptAnalyzer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScriptAnalyzer.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScriptAnalyzer.a"; sourceTree = "<group>"; };
-		921B9E5C2A0E6155009FB45B /* libMyScript2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScript2D.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScript2D.a"; sourceTree = "<group>"; };
-		921B9E5D2A0E6155009FB45B /* libiink.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libiink.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libiink.a"; sourceTree = "<group>"; };
-		921B9E5E2A0E6155009FB45B /* libMyScriptInk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScriptInk.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScriptInk.a"; sourceTree = "<group>"; };
-		921B9E5F2A0E6155009FB45B /* libMyScriptPrediction.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScriptPrediction.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScriptPrediction.a"; sourceTree = "<group>"; };
-		921B9E602A0E6155009FB45B /* libMyScriptDocument.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScriptDocument.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScriptDocument.a"; sourceTree = "<group>"; };
-		921B9E612A0E6155009FB45B /* libMyScriptEngine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScriptEngine.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScriptEngine.a"; sourceTree = "<group>"; };
-		921B9E622A0E6155009FB45B /* libMyScriptMath.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScriptMath.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScriptMath.a"; sourceTree = "<group>"; };
-		921B9E632A0E6155009FB45B /* libMyScriptShape.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyScriptShape.a; path = "MyScriptInteractiveInk-Runtime-iOS-1/libMyScriptShape.a"; sourceTree = "<group>"; };
 		921B9E6F2A0E61FC009FB45B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		921B9E762A0E645E009FB45B /* MyCertificate */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MyCertificate; sourceTree = "<group>"; };
-		921B9E792A0E64B2009FB45B /* MyCertificate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = MyCertificate.c; path = MyCertificate/MyCertificate.c; sourceTree = "<group>"; };
 		921B9E7B2A0E67C1009FB45B /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		92595DD32A2461F40020A3FE /* ingun.markdown-math.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "ingun.markdown-math.c"; sourceTree = "<group>"; };
+		9268C6552A24593E001A99B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		9268C6572A245944001A99B5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		9268C6982A245E1D001A99B5 /* libMyScriptAnalyzer.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libMyScriptAnalyzer.xcframework; sourceTree = "<group>"; };
+		9268C6992A245E1D001A99B5 /* libMyScriptGesture.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libMyScriptGesture.xcframework; sourceTree = "<group>"; };
+		9268C69A2A245E1D001A99B5 /* libMyScriptMath.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libMyScriptMath.xcframework; sourceTree = "<group>"; };
+		9268C69B2A245E1D001A99B5 /* libMyScriptInk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libMyScriptInk.xcframework; sourceTree = "<group>"; };
+		9268C69C2A245E1D001A99B5 /* libMyScriptEngine.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libMyScriptEngine.xcframework; sourceTree = "<group>"; };
+		9268C69F2A245E1D001A99B5 /* IINKRecognitionAssetsBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKRecognitionAssetsBuilder.h; sourceTree = "<group>"; };
+		9268C6A02A245E1D001A99B5 /* IINKIContentSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKIContentSelection.h; sourceTree = "<group>"; };
+		9268C6A12A245E1D001A99B5 /* IINKContentPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKContentPart.h; sourceTree = "<group>"; };
+		9268C6A22A245E1D001A99B5 /* IINKConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKConfiguration.h; sourceTree = "<group>"; };
+		9268C6A32A245E1D001A99B5 /* IINKMimeType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKMimeType.h; sourceTree = "<group>"; };
+		9268C6A42A245E1D001A99B5 /* IINKRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKRenderer.h; sourceTree = "<group>"; };
+		9268C6A52A245E1D001A99B5 /* IINKIRenderTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKIRenderTarget.h; sourceTree = "<group>"; };
+		9268C6A62A245E1D001A99B5 /* IINK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINK.h; sourceTree = "<group>"; };
+		9268C6A72A245E1D001A99B5 /* IINKContentPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKContentPackage.h; sourceTree = "<group>"; };
+		9268C6A82A245E1D001A99B5 /* IINKEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKEditor.h; sourceTree = "<group>"; };
+		9268C6A92A245E1D001A99B5 /* IINKRendererDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKRendererDelegate.h; sourceTree = "<group>"; };
+		9268C6AA2A245E1D001A99B5 /* IINKIImagePainter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKIImagePainter.h; sourceTree = "<group>"; };
+		9268C6AB2A245E1D001A99B5 /* IINKEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKEngine.h; sourceTree = "<group>"; };
+		9268C6AC2A245E1D001A99B5 /* IINKContentBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKContentBlock.h; sourceTree = "<group>"; };
+		9268C6AD2A245E1D001A99B5 /* IINKEditorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKEditorDelegate.h; sourceTree = "<group>"; };
+		9268C6AE2A245E1D001A99B5 /* IINKContentSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKContentSelection.h; sourceTree = "<group>"; };
+		9268C6B02A245E1D001A99B5 /* IINKGlyphMetrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKGlyphMetrics.h; sourceTree = "<group>"; };
+		9268C6B12A245E1D001A99B5 /* IINKTextSpan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKTextSpan.h; sourceTree = "<group>"; };
+		9268C6B22A245E1D001A99B5 /* IINKText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKText.h; sourceTree = "<group>"; };
+		9268C6B32A245E1D001A99B5 /* IINKIFontMetricsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKIFontMetricsProvider.h; sourceTree = "<group>"; };
+		9268C6B42A245E1D001A99B5 /* IINKToolController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKToolController.h; sourceTree = "<group>"; };
+		9268C6B62A245E1D001A99B5 /* IINKICanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKICanvas.h; sourceTree = "<group>"; };
+		9268C6B72A245E1D001A99B5 /* IINKIStrokerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKIStrokerFactory.h; sourceTree = "<group>"; };
+		9268C6B82A245E1D001A99B5 /* IINKIPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKIPath.h; sourceTree = "<group>"; };
+		9268C6B92A245E1D001A99B5 /* IINKStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKStyle.h; sourceTree = "<group>"; };
+		9268C6BA2A245E1D001A99B5 /* IINKIStroker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKIStroker.h; sourceTree = "<group>"; };
+		9268C6BB2A245E1D001A99B5 /* IINKParameterSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKParameterSet.h; sourceTree = "<group>"; };
+		9268C6BC2A245E1D001A99B5 /* IINKError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKError.h; sourceTree = "<group>"; };
+		9268C6BD2A245E1D001A99B5 /* IINKConfigurationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IINKConfigurationDelegate.h; sourceTree = "<group>"; };
+		9268C6BE2A245E1D001A99B5 /* libMyScriptShape.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libMyScriptShape.xcframework; sourceTree = "<group>"; };
+		9268C6C02A245E1D001A99B5 /* MyScriptInteractiveInk-Runtime-iOS.version.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MyScriptInteractiveInk-Runtime-iOS.version.txt"; sourceTree = "<group>"; };
+		9268C6C12A245E1D001A99B5 /* libMyScriptText.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libMyScriptText.xcframework; sourceTree = "<group>"; };
+		9268C6C22A245E1D001A99B5 /* libiink.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libiink.xcframework; sourceTree = "<group>"; };
+		9268C6C42A245E1D001A99B5 /* IINK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IINK.swift; sourceTree = "<group>"; };
+		9268C6C52A245E1D001A99B5 /* libMyScript2D.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libMyScript2D.xcframework; sourceTree = "<group>"; };
+		9268C6C62A245E1D001A99B5 /* libMyScriptPrediction.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libMyScriptPrediction.xcframework; sourceTree = "<group>"; };
+		9268C6C72A245E1D001A99B5 /* libMyScriptDocument.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libMyScriptDocument.xcframework; sourceTree = "<group>"; };
+		9268C6C82A245E1D001A99B5 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		9268C6F62A245E70001A99B5 /* MyCertificate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCertificate.h; sourceTree = "<group>"; };
 		9268CEA32A21D446005484FF /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		9268CEA52A21D481005484FF /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		9268CEAA2A21ED05005484FF /* Delimeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delimeter.swift; sourceTree = "<group>"; };
@@ -89,6 +158,9 @@
 		9283E65A2A0E44F800EB66EC /* markdown-mathUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "markdown-mathUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9283E65E2A0E44F800EB66EC /* markdown_mathUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = markdown_mathUITests.swift; sourceTree = "<group>"; };
 		9283E6602A0E44F800EB66EC /* markdown_mathUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = markdown_mathUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9285971A2A2377C400F672B3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		9285971C2A23785900F672B3 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		9285971E2A23788800F672B3 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,20 +168,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9268C6F92A245FAF001A99B5 /* libiink.xcframework in Frameworks */,
+				9268C6FA2A245FAF001A99B5 /* libMyScript2D.xcframework in Frameworks */,
+				9268C6FB2A245FAF001A99B5 /* libMyScriptAnalyzer.xcframework in Frameworks */,
+				9268C6FC2A245FAF001A99B5 /* libMyScriptDocument.xcframework in Frameworks */,
+				9268C6FD2A245FAF001A99B5 /* libMyScriptEngine.xcframework in Frameworks */,
+				9268C6FE2A245FAF001A99B5 /* libMyScriptGesture.xcframework in Frameworks */,
+				9268C6FF2A245FAF001A99B5 /* libMyScriptInk.xcframework in Frameworks */,
+				9268C7002A245FAF001A99B5 /* libMyScriptMath.xcframework in Frameworks */,
+				9268C7012A245FAF001A99B5 /* libMyScriptPrediction.xcframework in Frameworks */,
+				9268C7022A245FAF001A99B5 /* libMyScriptShape.xcframework in Frameworks */,
+				9268C7032A245FAF001A99B5 /* libMyScriptText.xcframework in Frameworks */,
+				9268C6582A245944001A99B5 /* Security.framework in Frameworks */,
+				9268C6562A24593E001A99B5 /* Foundation.framework in Frameworks */,
 				921B9E702A0E61FC009FB45B /* SystemConfiguration.framework in Frameworks */,
-				921B9E642A0E6155009FB45B /* libMyScriptGesture.a in Frameworks */,
-				921B9E652A0E6155009FB45B /* libMyScriptText.a in Frameworks */,
-				921B9E662A0E6155009FB45B /* libMyScriptAnalyzer.a in Frameworks */,
-				921B9E672A0E6155009FB45B /* libMyScript2D.a in Frameworks */,
-				921B9E682A0E6155009FB45B /* libiink.a in Frameworks */,
-				921B9E692A0E6155009FB45B /* libMyScriptInk.a in Frameworks */,
-				921B9E6A2A0E6155009FB45B /* libMyScriptPrediction.a in Frameworks */,
-				921B9E6B2A0E6155009FB45B /* libMyScriptDocument.a in Frameworks */,
 				9268CEA92A21D89F005484FF /* Ink in Frameworks */,
 				92396F8B2A2340C4000F0291 /* SwiftDown in Frameworks */,
-				921B9E6C2A0E6155009FB45B /* libMyScriptEngine.a in Frameworks */,
-				921B9E6D2A0E6155009FB45B /* libMyScriptMath.a in Frameworks */,
-				921B9E6E2A0E6156009FB45B /* libMyScriptShape.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,28 +207,123 @@
 		921B9E582A0E6155009FB45B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9268C6572A245944001A99B5 /* Security.framework */,
+				9268C6552A24593E001A99B5 /* Foundation.framework */,
 				921B9E6F2A0E61FC009FB45B /* SystemConfiguration.framework */,
-				921B9E5D2A0E6155009FB45B /* libiink.a */,
-				921B9E5C2A0E6155009FB45B /* libMyScript2D.a */,
-				921B9E5B2A0E6155009FB45B /* libMyScriptAnalyzer.a */,
-				921B9E602A0E6155009FB45B /* libMyScriptDocument.a */,
-				921B9E612A0E6155009FB45B /* libMyScriptEngine.a */,
-				921B9E592A0E6155009FB45B /* libMyScriptGesture.a */,
-				921B9E5E2A0E6155009FB45B /* libMyScriptInk.a */,
-				921B9E622A0E6155009FB45B /* libMyScriptMath.a */,
-				921B9E5F2A0E6155009FB45B /* libMyScriptPrediction.a */,
-				921B9E632A0E6155009FB45B /* libMyScriptShape.a */,
-				921B9E5A2A0E6155009FB45B /* libMyScriptText.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9268C6972A245E1D001A99B5 /* MyScriptInteractiveInk-Runtime-iOS-2 */ = {
+			isa = PBXGroup;
+			children = (
+				9268C6982A245E1D001A99B5 /* libMyScriptAnalyzer.xcframework */,
+				9268C6992A245E1D001A99B5 /* libMyScriptGesture.xcframework */,
+				9268C69A2A245E1D001A99B5 /* libMyScriptMath.xcframework */,
+				9268C69B2A245E1D001A99B5 /* libMyScriptInk.xcframework */,
+				9268C69C2A245E1D001A99B5 /* libMyScriptEngine.xcframework */,
+				9268C69D2A245E1D001A99B5 /* include */,
+				9268C6BE2A245E1D001A99B5 /* libMyScriptShape.xcframework */,
+				9268C6BF2A245E1D001A99B5 /* INFO */,
+				9268C6C12A245E1D001A99B5 /* libMyScriptText.xcframework */,
+				9268C6C22A245E1D001A99B5 /* libiink.xcframework */,
+				9268C6C32A245E1D001A99B5 /* swift */,
+				9268C6C52A245E1D001A99B5 /* libMyScript2D.xcframework */,
+				9268C6C62A245E1D001A99B5 /* libMyScriptPrediction.xcframework */,
+				9268C6C72A245E1D001A99B5 /* libMyScriptDocument.xcframework */,
+				9268C6C82A245E1D001A99B5 /* LICENSE.txt */,
+			);
+			path = "MyScriptInteractiveInk-Runtime-iOS-2";
+			sourceTree = SOURCE_ROOT;
+		};
+		9268C69D2A245E1D001A99B5 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				9268C69E2A245E1D001A99B5 /* iink */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		9268C69E2A245E1D001A99B5 /* iink */ = {
+			isa = PBXGroup;
+			children = (
+				9268C69F2A245E1D001A99B5 /* IINKRecognitionAssetsBuilder.h */,
+				9268C6A02A245E1D001A99B5 /* IINKIContentSelection.h */,
+				9268C6A12A245E1D001A99B5 /* IINKContentPart.h */,
+				9268C6A22A245E1D001A99B5 /* IINKConfiguration.h */,
+				9268C6A32A245E1D001A99B5 /* IINKMimeType.h */,
+				9268C6A42A245E1D001A99B5 /* IINKRenderer.h */,
+				9268C6A52A245E1D001A99B5 /* IINKIRenderTarget.h */,
+				9268C6A62A245E1D001A99B5 /* IINK.h */,
+				9268C6A72A245E1D001A99B5 /* IINKContentPackage.h */,
+				9268C6A82A245E1D001A99B5 /* IINKEditor.h */,
+				9268C6A92A245E1D001A99B5 /* IINKRendererDelegate.h */,
+				9268C6AA2A245E1D001A99B5 /* IINKIImagePainter.h */,
+				9268C6AB2A245E1D001A99B5 /* IINKEngine.h */,
+				9268C6AC2A245E1D001A99B5 /* IINKContentBlock.h */,
+				9268C6AD2A245E1D001A99B5 /* IINKEditorDelegate.h */,
+				9268C6AE2A245E1D001A99B5 /* IINKContentSelection.h */,
+				9268C6AF2A245E1D001A99B5 /* text */,
+				9268C6B42A245E1D001A99B5 /* IINKToolController.h */,
+				9268C6B52A245E1D001A99B5 /* graphics */,
+				9268C6BB2A245E1D001A99B5 /* IINKParameterSet.h */,
+				9268C6BC2A245E1D001A99B5 /* IINKError.h */,
+				9268C6BD2A245E1D001A99B5 /* IINKConfigurationDelegate.h */,
+			);
+			path = iink;
+			sourceTree = "<group>";
+		};
+		9268C6AF2A245E1D001A99B5 /* text */ = {
+			isa = PBXGroup;
+			children = (
+				9268C6B02A245E1D001A99B5 /* IINKGlyphMetrics.h */,
+				9268C6B12A245E1D001A99B5 /* IINKTextSpan.h */,
+				9268C6B22A245E1D001A99B5 /* IINKText.h */,
+				9268C6B32A245E1D001A99B5 /* IINKIFontMetricsProvider.h */,
+			);
+			path = text;
+			sourceTree = "<group>";
+		};
+		9268C6B52A245E1D001A99B5 /* graphics */ = {
+			isa = PBXGroup;
+			children = (
+				9268C6B62A245E1D001A99B5 /* IINKICanvas.h */,
+				9268C6B72A245E1D001A99B5 /* IINKIStrokerFactory.h */,
+				9268C6B82A245E1D001A99B5 /* IINKIPath.h */,
+				9268C6B92A245E1D001A99B5 /* IINKStyle.h */,
+				9268C6BA2A245E1D001A99B5 /* IINKIStroker.h */,
+			);
+			path = graphics;
+			sourceTree = "<group>";
+		};
+		9268C6BF2A245E1D001A99B5 /* INFO */ = {
+			isa = PBXGroup;
+			children = (
+				9268C6C02A245E1D001A99B5 /* MyScriptInteractiveInk-Runtime-iOS.version.txt */,
+			);
+			path = INFO;
+			sourceTree = "<group>";
+		};
+		9268C6C32A245E1D001A99B5 /* swift */ = {
+			isa = PBXGroup;
+			children = (
+				9268C6C42A245E1D001A99B5 /* IINK.swift */,
+			);
+			path = swift;
+			sourceTree = "<group>";
+		};
+		9268C6F42A245E70001A99B5 /* MyCertificate */ = {
+			isa = PBXGroup;
+			children = (
+				92595DD32A2461F40020A3FE /* ingun.markdown-math.c */,
+				9268C6F62A245E70001A99B5 /* MyCertificate.h */,
+			);
+			path = MyCertificate;
+			sourceTree = SOURCE_ROOT;
+		};
 		9283E6362A0E44F500EB66EC = {
 			isa = PBXGroup;
 			children = (
-				921B9E792A0E64B2009FB45B /* MyCertificate.c */,
-				921B9E762A0E645E009FB45B /* MyCertificate */,
-				921B9E442A0E5016009FB45B /* MyScriptInteractiveInk-Runtime-iOS-1 */,
 				921B9E432A0E4FB7009FB45B /* README.md */,
 				9283E6412A0E44F500EB66EC /* markdown-math */,
 				9283E6532A0E44F700EB66EC /* markdown-mathTests */,
@@ -181,11 +350,16 @@
 				9283E6442A0E44F600EB66EC /* ContentView.swift */,
 				921B9E4C2A0E5658009FB45B /* EngineProvider.swift */,
 				921B9E7B2A0E67C1009FB45B /* Functions.swift */,
+				9268C6972A245E1D001A99B5 /* MyScriptInteractiveInk-Runtime-iOS-2 */,
 				9268CEA52A21D481005484FF /* WebView.swift */,
+				9268C6F42A245E70001A99B5 /* MyCertificate */,
 				9268CEA32A21D446005484FF /* Data.swift */,
 				9268CEAA2A21ED05005484FF /* Delimeter.swift */,
 				9283E6482A0E44F700EB66EC /* markdown_math.entitlements */,
+				9285971A2A2377C400F672B3 /* Launch Screen.storyboard */,
 				9283E6422A0E44F600EB66EC /* markdown_mathApp.swift */,
+				9285971E2A23788800F672B3 /* SwiftUIView.swift */,
+				9285971C2A23785900F672B3 /* Storyboard.storyboard */,
 				921B9E462A0E52C1009FB45B /* markdown-math-Bridging-Header.h */,
 				9283E6492A0E44F700EB66EC /* Preview Content */,
 			);
@@ -219,11 +393,52 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		9268C6382A245719001A99B5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9268C6E22A245E1D001A99B5 /* IINKToolController.h in Headers */,
+				9268C6D22A245E1D001A99B5 /* IINKMimeType.h in Headers */,
+				9268C6D62A245E1D001A99B5 /* IINKContentPackage.h in Headers */,
+				9268C6EA2A245E1E001A99B5 /* IINKConfigurationDelegate.h in Headers */,
+				9268C6D72A245E1D001A99B5 /* IINKEditor.h in Headers */,
+				9268C6D92A245E1D001A99B5 /* IINKIImagePainter.h in Headers */,
+				9268C6D12A245E1D001A99B5 /* IINKConfiguration.h in Headers */,
+				9268C6E72A245E1D001A99B5 /* IINKIStroker.h in Headers */,
+				9268C6D32A245E1D001A99B5 /* IINKRenderer.h in Headers */,
+				9268C6CF2A245E1D001A99B5 /* IINKIContentSelection.h in Headers */,
+				9268C6DA2A245E1D001A99B5 /* IINKEngine.h in Headers */,
+				9268C6DF2A245E1D001A99B5 /* IINKTextSpan.h in Headers */,
+				9268C6F82A245E70001A99B5 /* MyCertificate.h in Headers */,
+				9268C6E52A245E1D001A99B5 /* IINKIPath.h in Headers */,
+				9268C6E62A245E1D001A99B5 /* IINKStyle.h in Headers */,
+				9268C6E12A245E1D001A99B5 /* IINKIFontMetricsProvider.h in Headers */,
+				9268C6E92A245E1E001A99B5 /* IINKError.h in Headers */,
+				9268C6DD2A245E1D001A99B5 /* IINKContentSelection.h in Headers */,
+				9268C6E02A245E1D001A99B5 /* IINKText.h in Headers */,
+				9268C6CE2A245E1D001A99B5 /* IINKRecognitionAssetsBuilder.h in Headers */,
+				9268C6E82A245E1D001A99B5 /* IINKParameterSet.h in Headers */,
+				9268C6E42A245E1D001A99B5 /* IINKIStrokerFactory.h in Headers */,
+				9268C6D42A245E1D001A99B5 /* IINKIRenderTarget.h in Headers */,
+				9268C6E32A245E1D001A99B5 /* IINKICanvas.h in Headers */,
+				9268C6DC2A245E1D001A99B5 /* IINKEditorDelegate.h in Headers */,
+				9268C6D82A245E1D001A99B5 /* IINKRendererDelegate.h in Headers */,
+				9268C6D02A245E1D001A99B5 /* IINKContentPart.h in Headers */,
+				9268C6D52A245E1D001A99B5 /* IINK.h in Headers */,
+				9268C6DB2A245E1D001A99B5 /* IINKContentBlock.h in Headers */,
+				9268C6DE2A245E1D001A99B5 /* IINKGlyphMetrics.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		9283E63E2A0E44F500EB66EC /* markdown-math */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9283E6642A0E44F800EB66EC /* Build configuration list for PBXNativeTarget "markdown-math" */;
 			buildPhases = (
+				9268C6382A245719001A99B5 /* Headers */,
 				9283E63B2A0E44F500EB66EC /* Sources */,
 				9283E63C2A0E44F500EB66EC /* Frameworks */,
 				9283E63D2A0E44F500EB66EC /* Resources */,
@@ -330,10 +545,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9268C6F32A245E1E001A99B5 /* LICENSE.txt in Resources */,
 				9283E64B2A0E44F700EB66EC /* Preview Assets.xcassets in Resources */,
-				921B9E452A0E5016009FB45B /* MyScriptInteractiveInk-Runtime-iOS-1 in Resources */,
-				921B9E772A0E645E009FB45B /* MyCertificate in Resources */,
+				9268C6EC2A245E1E001A99B5 /* MyScriptInteractiveInk-Runtime-iOS.version.txt in Resources */,
+				9285971B2A2377C400F672B3 /* Launch Screen.storyboard in Resources */,
 				9283E6472A0E44F700EB66EC /* Assets.xcassets in Resources */,
+				9285971D2A23785900F672B3 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,10 +575,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				921B9E7A2A0E64B2009FB45B /* MyCertificate.c in Sources */,
 				9268CEA42A21D446005484FF /* Data.swift in Sources */,
+				9285971F2A23788800F672B3 /* SwiftUIView.swift in Sources */,
 				921B9E4D2A0E5658009FB45B /* EngineProvider.swift in Sources */,
 				9283E6452A0E44F600EB66EC /* ContentView.swift in Sources */,
+				9268C6EF2A245E1E001A99B5 /* IINK.swift in Sources */,
+				92595DD42A2461F40020A3FE /* ingun.markdown-math.c in Sources */,
 				921B9E7C2A0E67C1009FB45B /* Functions.swift in Sources */,
 				9268CEAB2A21ED05005484FF /* Delimeter.swift in Sources */,
 				9283E6432A0E44F600EB66EC /* markdown_mathApp.swift in Sources */,
@@ -516,6 +735,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "markdown-math/markdown_math.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -524,7 +744,9 @@
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				HEADER_SEARCH_PATHS = "${SRCROOT}/MyScriptInteractiveInk-Runtime-iOS-1/include/**";
+				HEADER_SEARCH_PATHS = "${SRCROOT}/MyScriptInteractiveInk-Runtime-iOS-2/include/**";
+				INFOPLIST_KEY_CFBundleDisplayName = "Markdown Math";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -544,6 +766,18 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-Wl,-u,_MyScript2D",
+					"-Wl,-u,_MyScriptAnalyzer",
+					"-Wl,-u,_MyScriptDocument",
+					"-Wl,-u,_MyScriptGesture",
+					"-Wl,-u,_MyScriptInk",
+					"-Wl,-u,_MyScriptMath",
+					"-Wl,-u,_MyScriptPrediction",
+					"-Wl,-u,_MyScriptShape",
+					"-Wl,-u,_MyScriptText",
+					"-Wl,-u,_MyScriptEngine",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ingun.markdown-math";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -562,6 +796,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "markdown-math/markdown_math.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -570,7 +805,9 @@
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				HEADER_SEARCH_PATHS = "${SRCROOT}/MyScriptInteractiveInk-Runtime-iOS-1/include/**";
+				HEADER_SEARCH_PATHS = "${SRCROOT}/MyScriptInteractiveInk-Runtime-iOS-2/include/**";
+				INFOPLIST_KEY_CFBundleDisplayName = "Markdown Math";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -590,6 +827,18 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-Wl,-u,_MyScript2D",
+					"-Wl,-u,_MyScriptAnalyzer",
+					"-Wl,-u,_MyScriptDocument",
+					"-Wl,-u,_MyScriptGesture",
+					"-Wl,-u,_MyScriptInk",
+					"-Wl,-u,_MyScriptMath",
+					"-Wl,-u,_MyScriptPrediction",
+					"-Wl,-u,_MyScriptShape",
+					"-Wl,-u,_MyScriptText",
+					"-Wl,-u,_MyScriptEngine",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ingun.markdown-math";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;

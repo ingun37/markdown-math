@@ -1,3 +1,4 @@
-/MyScriptInteractiveInk-Runtime-iOS-1
-/MyCertificate/MyCertificate.c
+/MyScriptInteractiveInk-Runtime-iOS-2
+/MyCertificate/*.c
 /.DS_Store
+**/*/.DS_Store

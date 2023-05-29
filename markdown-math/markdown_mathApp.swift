@@ -11,7 +11,7 @@ import SwiftUI
 struct markdown_mathApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SwiftUIView()
         }
     }
 }

@@ -14,14 +14,13 @@ struct ContentView: View {
     @State var markdownContent: String = initialMarkdown
     @State var inlineDelimeter: DelimeterType = DelimeterType.GitLab
     @State var mathFormat: MathFormatType = MathFormatType.Katex
+    let engine:IINKEngine
     var body: some View {
         VStack {
             HStack{
                 Text("Add")
-                Button("Inline Math", action: doNothing)
-                Text("or")
-                Button("Math Block", action: doNothing)
-                
+                Button("Math", action: doNothing)
+                                
                 Text("In")
                 Picker("Inline Delimeter", selection: $inlineDelimeter) {
 
@@ -51,6 +50,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(engine: try! EngineProvider.make())
     }
 }
