@@ -5,71 +5,72 @@
 //  Created by Ingun Jon on 2023/05/12.
 //
 
-import SwiftUI
-import MarkdownUI
 import SwiftDown
+import SwiftUI
+enum ManualOrientation {
+    case horizontal
+    case vertical
+}
 
 struct ContentView: View {
     @State var markdownContent: String = initialMarkdown
-    @State var selectedrange: NSRange = NSRange()
-    @State var inlineDelimeter: DelimeterType = DelimeterType.GitLab
-    @State var mathFormat: MathFormatType = MathFormatType.Katex
+    @State var selectedrange: NSRange = .init()
+    @State var inlineDelimeter: DelimeterType = .GitLab
+    @State var mathFormat: MathFormatType = .Katex
     @State private var inputMode = false
+    @State private var manualOrientation: ManualOrientation = .vertical
 
-    let engine:IINKEngine
+    let engine: IINKEngine
     var body: some View {
         VStack {
-            HStack{
-                Text("Add")
-                Button("Math") {
+            HStack {
+                Text("Delimeter style")
+                Picker("Inline Delimeter", selection: $inlineDelimeter) {
+                    ForEach(DelimeterType.allCases) { style in
+                        Text(style.rawValue.capitalized)
+                    }
+                }
+                Text("Math renderer")
+                Picker("Format", selection: $mathFormat) {
+                    ForEach(MathFormatType.allCases) { style in
+                        Text(style.rawValue.capitalized)
+                    }
+                }
+
+                Button("Input Math") {
                     inputMode.toggle()
                 }.sheet(isPresented: $inputMode) {
                     VStack {
                         MathInput(tex: "", format: mathFormat, onCancel: {
                             inputMode.toggle()
 
-                        }, onInsert: {tex in
-                            print("rng",selectedrange)
-                            let x = markdownContent.index(markdownContent.startIndex, offsetBy: selectedrange.location);
-                            let y = markdownContent.index(markdownContent.startIndex, offsetBy: selectedrange.location + selectedrange.length);
-                            
+                        }, onInsert: { tex in
+                            print("rng", selectedrange)
+                            let x = markdownContent.index(markdownContent.startIndex, offsetBy: selectedrange.location)
+                            let y = markdownContent.index(markdownContent.startIndex, offsetBy: selectedrange.location + selectedrange.length)
+
                             DispatchQueue.main.async {
                                 markdownContent = markdownContent[..<x] + tex + markdownContent[y...]
                             }
-                            
-                            
+
                             inputMode.toggle()
                         })
                     }
-                }
-                                
-                Text("In")
-                Picker("Inline Delimeter", selection: $inlineDelimeter) {
-
-                    ForEach(DelimeterType.allCases) { style in
-                        Text(style.rawValue.capitalized)
-                    }
-                }
-                Text("delimeter and ")
-                Picker("Format", selection: $mathFormat) {
-
-                    ForEach(MathFormatType.allCases) { style in
-                        Text(style.rawValue.capitalized)
-                    }
-                }
-                Text("format")
-
-
+                }.buttonStyle(.borderedProminent)
             }
-            
-            WebView(markdown: $markdownContent, delimeter: $inlineDelimeter, format: $mathFormat)
-            
-            SwiftDownEditor(text: $markdownContent, selectedRange: $selectedrange)
-                        .insetsSize(40)
-                        .theme(Theme.BuiltIn.defaultDark.theme()).onSelectedRangeChange { rng in
-                            selectedrange = rng
-                        }
 
+            let layout = manualOrientation == .vertical ?
+                AnyLayout(HStackLayout()) : AnyLayout(VStackLayout())
+
+            layout {
+                WebView(markdown: $markdownContent, delimeter: $inlineDelimeter, format: $mathFormat)
+
+                SwiftDownEditor(text: $markdownContent, selectedRange: $selectedrange)
+                    .insetsSize(40)
+                    .theme(Theme.BuiltIn.defaultDark.theme()).onSelectedRangeChange { rng in
+                        selectedrange = rng
+                    }
+            }
         }
         .padding()
     }

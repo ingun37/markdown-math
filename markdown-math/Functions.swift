@@ -6,6 +6,4 @@
 //
 
 import Foundation
-func doNothing() -> Void {
-    
-}
+func doNothing() {}

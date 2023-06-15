@@ -12,9 +12,9 @@ struct SwiftUIView: View {
     @State var errorMessage: String? = nil
 
     var body: some View {
-        if (engine != nil) {
+        if engine != nil {
             ContentView(engine: engine!)
-        } else if(errorMessage != nil) {
+        } else if errorMessage != nil {
             Text("Something went wrong")
             Text(errorMessage!)
         } else {
@@ -25,30 +25,21 @@ struct SwiftUIView: View {
                     } catch {
                         switch error {
                         case EngineError.CFile:
-                            errorMessage = "Certificate file";
-                            break;
+                            errorMessage = "Certificate file"
                         case EngineError.InvalidCert:
-                            errorMessage = "Invalid Certificate";
-                            break;
+                            errorMessage = "Invalid Certificate"
                         case let EngineError.RecognitionAsset(msg):
-                            errorMessage = "Recognition Asses problem: " + msg;
-                            break;
+                            errorMessage = "Recognition Asses problem: " + msg
                         case let EngineError.TempDirectory(msg):
-                            errorMessage = "Temp Directory problem: " + msg;
-                            break;
+                            errorMessage = "Temp Directory problem: " + msg
                         default:
-                            errorMessage = "unknown: " + error.localizedDescription;
-                            break;
-                        
+                            errorMessage = "unknown: " + error.localizedDescription
                         }
                     }
                 }
-
             }
         }
     }
-    
-    
 }
 
 struct SwiftUIView_Previews: PreviewProvider {
