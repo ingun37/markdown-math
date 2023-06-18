@@ -30,7 +30,7 @@ struct MathInput: View {
             Button("Handwriting") {
                 handwriting.toggle()
             }.sheet(isPresented: $handwriting) {
-                Text("hello i'm handrwingitng view")
+                Handwriting()
             }.buttonStyle(.borderedProminent)
 
         }.padding()
