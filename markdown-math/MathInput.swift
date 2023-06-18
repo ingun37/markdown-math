@@ -10,6 +10,8 @@ import SwiftUI
 struct MathInput: View {
     @State var tex: String
     @State var format: MathFormatType
+    @State private var handwriting = false
+
     var onCancel: () -> Void
     var onInsert: (String) -> Void
     var body: some View {
@@ -25,7 +27,11 @@ struct MathInput: View {
             }
             InputWebView(tex: $tex, format: $format)
             TextEditor(text: $tex)
-            Button("Handwriting") {}
+            Button("Handwriting") {
+                handwriting.toggle()
+            }.sheet(isPresented: $handwriting) {
+                Text("hello i'm handrwingitng view")
+            }.buttonStyle(.borderedProminent)
 
         }.padding()
     }
