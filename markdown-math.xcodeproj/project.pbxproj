@@ -64,6 +64,7 @@
 		9268CEA62A21D481005484FF /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268CEA52A21D481005484FF /* WebView.swift */; };
 		9268CEA92A21D89F005484FF /* Ink in Frameworks */ = {isa = PBXBuildFile; productRef = 9268CEA82A21D89F005484FF /* Ink */; };
 		9268CEAB2A21ED05005484FF /* Delimeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268CEAA2A21ED05005484FF /* Delimeter.swift */; };
+		927944022A3EDED4004C1314 /* recognition-assets in Resources */ = {isa = PBXBuildFile; fileRef = 927944012A3EDED4004C1314 /* recognition-assets */; };
 		9283E6432A0E44F600EB66EC /* markdown_mathApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283E6422A0E44F600EB66EC /* markdown_mathApp.swift */; };
 		9283E6452A0E44F600EB66EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283E6442A0E44F600EB66EC /* ContentView.swift */; };
 		9283E6472A0E44F700EB66EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9283E6462A0E44F700EB66EC /* Assets.xcassets */; };
@@ -151,6 +152,7 @@
 		9268CEA32A21D446005484FF /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		9268CEA52A21D481005484FF /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		9268CEAA2A21ED05005484FF /* Delimeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delimeter.swift; sourceTree = "<group>"; };
+		927944012A3EDED4004C1314 /* recognition-assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "recognition-assets"; path = "Resources/recognition-assets"; sourceTree = "<group>"; };
 		9283E63F2A0E44F500EB66EC /* markdown-math.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "markdown-math.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9283E6422A0E44F600EB66EC /* markdown_mathApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = markdown_mathApp.swift; sourceTree = "<group>"; };
 		9283E6442A0E44F600EB66EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 		9283E6362A0E44F500EB66EC = {
 			isa = PBXGroup;
 			children = (
+				927944012A3EDED4004C1314 /* recognition-assets */,
 				921B9E432A0E4FB7009FB45B /* README.md */,
 				9283E6412A0E44F500EB66EC /* markdown-math */,
 				9283E6532A0E44F700EB66EC /* markdown-mathTests */,
@@ -551,6 +554,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				927944022A3EDED4004C1314 /* recognition-assets in Resources */,
 				9268C6F32A245E1E001A99B5 /* LICENSE.txt in Resources */,
 				9283E64B2A0E44F700EB66EC /* Preview Assets.xcassets in Resources */,
 				9268C6EC2A245E1E001A99B5 /* MyScriptInteractiveInk-Runtime-iOS.version.txt in Resources */,
@@ -868,6 +872,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5P825H2NY5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -890,6 +895,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5P825H2NY5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -911,6 +917,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5P825H2NY5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -932,6 +939,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5P825H2NY5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;

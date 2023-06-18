@@ -8,6 +8,7 @@ enum EngineError: Error {
     case InvalidCert
     case RecognitionAsset(String)
     case TempDirectory(String)
+    case Config
 }
 
 enum EngineProvider {
@@ -37,6 +38,12 @@ enum EngineProvider {
                                          forKey: "content-package.temp-folder")
         } catch {
             throw EngineError.TempDirectory(error.localizedDescription)
+        }
+        
+        do {
+            try engine.configuration.set(boolean: false, forKey: "math.solver.enable")
+        } catch {
+            throw EngineError.Config
         }
 
         return engine
