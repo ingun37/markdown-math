@@ -9,7 +9,12 @@ import SwiftUI
 
 struct Handwriting: View {
     var body: some View {
-        Canvas()
+        VStack{
+            Canvas()
+            Button("finish") {
+                print("finish")
+            }
+        }
     }
 }
 
