@@ -27,3 +27,8 @@ brew install swiftlint
 # run
 swiftlint --fix
 ```
+
+## How to run MyScript Examples on your iPad
+
+- Change the sample's bundle identifier to `ingun.markdown-math`.
+- Copy the contents of `/MyCertificate/ingun.markdown-math.c` and paste to `.../MyCertificate.c`
