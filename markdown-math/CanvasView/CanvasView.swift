@@ -7,14 +7,21 @@
 
 import SwiftUI
 import PencilKit
+
+protocol CanvasViewDelegate {
+    func     didChange (strokes: [PKStroke]) ;
+}
+
 class CanvasView: UIView, PKCanvasViewDelegate {
     @IBOutlet weak var pkCanvasView: PKCanvasView!;
+    var delegate: CanvasViewDelegate?
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
     func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
-        print("did change!")
+        self.delegate?.didChange(strokes: canvasView.drawing.strokes)
     }
 }
 
