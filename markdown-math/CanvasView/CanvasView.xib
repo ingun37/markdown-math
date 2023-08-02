@@ -17,6 +17,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Yt-9U-5v4" customClass="PKCanvasView">
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="inp-PB-b2h"/>
+                    </connections>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

@@ -7,10 +7,14 @@
 
 import SwiftUI
 import PencilKit
-class CanvasView: UIView {
+class CanvasView: UIView, PKCanvasViewDelegate {
     @IBOutlet weak var pkCanvasView: PKCanvasView!;
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
+        print("did change!")
     }
 }
 
