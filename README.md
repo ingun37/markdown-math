@@ -16,3 +16,14 @@ Run
 
 The version is fixed to 2.0.1 in the script.
 
+## Linting
+
+Use [SwiftLint](https://github.com/realm/SwiftLint).
+
+```shell
+# install
+brew install swiftlint
+
+# run
+swiftlint --fix
+```
