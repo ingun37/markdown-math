@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SwiftUIView: View {
-    @State var engine: IINKEngine? = nil
-    @State var errorMessage: String? = nil
+    @State var engine: IINKEngine?
+    @State var errorMessage: String?
 
     var body: some View {
         if engine != nil {

@@ -11,9 +11,9 @@ import PencilKit
 struct Canvas: UIViewRepresentable, CanvasViewDelegate {
     var engine: IINKEngine
     func updateUIView(_ uiView: CanvasView, context: Context) {
-        
+
     }
-    
+
     func makeUIView(context: Context) -> CanvasView {
         let canvasView = UINib(nibName: "CanvasView", bundle: nil).instantiate(withOwner: nil).first as! CanvasView
         canvasView.delegate = self
@@ -24,8 +24,8 @@ struct Canvas: UIViewRepresentable, CanvasViewDelegate {
     }
 }
 
-//struct Canvas_Previews: PreviewProvider {
+// struct Canvas_Previews: PreviewProvider {
 //    static var previews: some View {
 //        Canvas()
 //    }
-//}
+// }

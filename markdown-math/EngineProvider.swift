@@ -39,7 +39,7 @@ enum EngineProvider {
         } catch {
             throw EngineError.TempDirectory(error.localizedDescription)
         }
-        
+
         do {
             try engine.configuration.set(boolean: false, forKey: "math.solver.enable")
         } catch {

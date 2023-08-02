@@ -54,7 +54,7 @@ struct WebView: UIViewRepresentable {
         let matches = markdown.matches(of: delimeter.style().inline)
         var newMD = ""
 
-        var idx: String.Index? = nil
+        var idx: String.Index?
         for match in matches {
             if idx == nil {
                 newMD += markdown[..<match.startIndex]

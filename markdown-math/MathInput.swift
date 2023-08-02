@@ -30,7 +30,7 @@ struct MathInput: View {
             Button("Handwriting") {
                 handwriting.toggle()
             }.sheet(isPresented: $handwriting) {
-                if (engine != nil){
+                if engine != nil {
                   Handwriting(engine: engine!)}
             }.buttonStyle(.borderedProminent)
 

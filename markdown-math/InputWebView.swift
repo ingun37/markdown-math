@@ -16,7 +16,6 @@ import SwiftUI
 
 import Foundation
 import Ink
-import SwiftUI
 import WebKit
 
 struct InputWebView: UIViewRepresentable {
