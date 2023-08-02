@@ -41,7 +41,7 @@ struct ContentView: View {
                     inputMode.toggle()
                 }.sheet(isPresented: $inputMode) {
                     VStack {
-                        MathInput(tex: "", format: mathFormat, onCancel: {
+                        MathInput(tex: "", format: mathFormat, engine: engine, onCancel: {
                             inputMode.toggle()
 
                         }, onInsert: { tex in

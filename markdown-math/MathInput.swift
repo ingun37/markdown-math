@@ -11,7 +11,7 @@ struct MathInput: View {
     @State var tex: String
     @State var format: MathFormatType
     @State private var handwriting = false
-
+    var engine: IINKEngine?
     var onCancel: () -> Void
     var onInsert: (String) -> Void
     var body: some View {
@@ -30,7 +30,8 @@ struct MathInput: View {
             Button("Handwriting") {
                 handwriting.toggle()
             }.sheet(isPresented: $handwriting) {
-                Handwriting()
+                if (engine != nil){
+                  Handwriting(engine: engine!)}
             }.buttonStyle(.borderedProminent)
 
         }.padding()

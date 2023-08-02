@@ -9,6 +9,7 @@ import SwiftUI
 import PencilKit
 
 struct Canvas: UIViewRepresentable, CanvasViewDelegate {
+    var engine: IINKEngine
     func updateUIView(_ uiView: CanvasView, context: Context) {
         
     }
@@ -23,8 +24,8 @@ struct Canvas: UIViewRepresentable, CanvasViewDelegate {
     }
 }
 
-struct Canvas_Previews: PreviewProvider {
-    static var previews: some View {
-        Canvas()
-    }
-}
+//struct Canvas_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Canvas()
+//    }
+//}
