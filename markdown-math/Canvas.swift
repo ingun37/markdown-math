@@ -6,21 +6,18 @@
 //
 
 import SwiftUI
-import PencilKit
 
-struct Canvas: UIViewRepresentable, CanvasViewDelegate {
+struct Canvas: UIViewRepresentable {
     var engine: IINKEngine
+    var delegate: CanvasViewDelegate
     func updateUIView(_ uiView: CanvasView, context: Context) {
 
     }
 
     func makeUIView(context: Context) -> CanvasView {
         let canvasView = UINib(nibName: "CanvasView", bundle: nil).instantiate(withOwner: nil).first as! CanvasView
-        canvasView.delegate = self
+        canvasView.delegate = delegate
         return canvasView
-    }
-    func didChange(strokes: [PKStroke]) {
-        print("hehe")
     }
 }
 
