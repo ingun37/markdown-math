@@ -20,21 +20,10 @@ struct SwiftUIView: View {
         } else {
             Text("Loading ...").onAppear {
                 DispatchQueue.global().async {
-                    do {
-                        engine = try EngineProvider.make()
-                    } catch {
-                        switch error {
-                        case EngineError.CFile:
-                            errorMessage = "Certificate file"
-                        case EngineError.InvalidCert:
-                            errorMessage = "Invalid Certificate"
-                        case let EngineError.RecognitionAsset(msg):
-                            errorMessage = "Recognition Asses problem: " + msg
-                        case let EngineError.TempDirectory(msg):
-                            errorMessage = "Temp Directory problem: " + msg
-                        default:
-                            errorMessage = "unknown: " + error.localizedDescription
-                        }
+                    self.engine = EngineProvider.sharedInstance.engine
+                    if self.engine == nil {
+                        errorMessage = "Failed to create myscript engine"
+
                     }
                 }
             }

@@ -8,15 +8,12 @@
 import SwiftUI
 import PencilKit
 
-struct Handwriting: View, CanvasViewDelegate {
+struct Handwriting: View {
     var engine: IINKEngine
     init(engine: IINKEngine) {
         self.engine = engine;
         do {
-            let contentPackage = try engine.createPackage("tmp");
-            let contentPart = contentPackage.createPart(with: "Math")
-            let editor = engine.createEditor(renderer: <#T##IINKRenderer#>, toolController: <#T##IINKToolController?#>)
-
+            
         } catch {
             
         }
@@ -24,14 +21,11 @@ struct Handwriting: View, CanvasViewDelegate {
     }
     var body: some View {
         VStack {
-            Canvas(engine: engine, delegate: self)
+            MyScript(engine: engine)
             Button("finish") {
                 print("finish")
             }
         }
-    }
-    func didChange(strokes: [PKStroke]) {
-        print("haha")
     }
 }
 
