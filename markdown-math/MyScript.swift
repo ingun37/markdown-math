@@ -16,8 +16,10 @@ struct MyScript: UIViewControllerRepresentable {
         FileManager.default.createIinkDirectory()
         // create the main navigation controller to be used for our app
         let navController = UINavigationController()
+        let engine = EngineProvider.sharedInstance.engine
+        try? engine?.configuration.set(boolean: false, forKey: "math.solver.enable")
         // send that into our coordinator so that it can display view controllers
-        context.coordinator.coordinator = MainCoordinator(navigationController: navController, engine: EngineProvider.sharedInstance.engine)
+        context.coordinator.coordinator = MainCoordinator(navigationController: navController, engine: engine)
         // tell the coordinator to take over control
         context.coordinator.coordinator?.start()
         return navController
