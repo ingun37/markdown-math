@@ -9,19 +9,9 @@ import SwiftUI
 import PencilKit
 
 struct Handwriting: View {
-    var engine: IINKEngine
-    init(engine: IINKEngine) {
-        self.engine = engine;
-        do {
-            
-        } catch {
-            
-        }
-        
-    }
     var body: some View {
         VStack {
-            MyScript(engine: engine)
+            MyScript()
             Button("finish") {
                 print("finish")
             }
@@ -34,3 +24,4 @@ struct Handwriting: View {
 //        Handwriting()
 //    }
 // }
+

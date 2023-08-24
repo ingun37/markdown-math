@@ -20,7 +20,6 @@ struct ContentView: View {
     @State private var inputMode = false
     @State private var manualOrientation: ManualOrientation = .vertical
 
-    let engine: IINKEngine
     var body: some View {
         VStack {
             HStack {
@@ -41,7 +40,7 @@ struct ContentView: View {
                     inputMode.toggle()
                 }.sheet(isPresented: $inputMode) {
                     VStack {
-                        MathInput(tex: "", format: mathFormat, engine: engine, onCancel: {
+                        MathInput(tex: "", format: mathFormat, onCancel: {
                             inputMode.toggle()
 
                         }, onInsert: { tex in
@@ -78,6 +77,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(engine: EngineProvider.sharedInstance.engine!)
+        ContentView()
     }
 }

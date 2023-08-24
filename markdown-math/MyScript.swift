@@ -8,21 +8,33 @@
 import SwiftUI
 
 struct MyScript: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> MainViewController {
-        let vc = MainViewController.instantiate(from: .main)!
-        return vc
+    func makeCoordinator() -> Con {
+        Con()
+    }
+
+    func makeUIViewController(context: Context) -> UINavigationController {
+        FileManager.default.createIinkDirectory()
+        // create the main navigation controller to be used for our app
+        let navController = UINavigationController()
+        // send that into our coordinator so that it can display view controllers
+        context.coordinator.coordinator = MainCoordinator(navigationController: navController, engine: EngineProvider.sharedInstance.engine)
+        // tell the coordinator to take over control
+        context.coordinator.coordinator?.start()
+        return navController
     }
     
-    func updateUIViewController(_ uiViewController: MainViewController, context: Context) {
+    func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {
         
     }
     
-    typealias UIViewControllerType = MainViewController
     
-    var engine: IINKEngine
-
+    typealias UIViewControllerType = UINavigationController
+    
 }
 
+class Con {
+    var coordinator: MainCoordinator?
+}
 // struct Canvas_Previews: PreviewProvider {
 //    static var previews: some View {
 //        Canvas()

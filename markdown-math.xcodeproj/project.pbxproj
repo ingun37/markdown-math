@@ -11,6 +11,7 @@
 		921B9E702A0E61FC009FB45B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E6F2A0E61FC009FB45B /* SystemConfiguration.framework */; };
 		921B9E7C2A0E67C1009FB45B /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921B9E7B2A0E67C1009FB45B /* Functions.swift */; };
 		9228770C2A95EC080099D5AC /* MyScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228770B2A95EC080099D5AC /* MyScript.swift */; };
+		924D6F8A2A96DF9D002D314B /* recognition-assets in Resources */ = {isa = PBXBuildFile; fileRef = 924D6F892A96DF9D002D314B /* recognition-assets */; };
 		92595DD42A2461F40020A3FE /* ingun.markdown-math.c in Sources */ = {isa = PBXBuildFile; fileRef = 92595DD32A2461F40020A3FE /* ingun.markdown-math.c */; };
 		92595DD62A2466490020A3FE /* MathInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92595DD52A2466490020A3FE /* MathInput.swift */; };
 		92595DD82A2466AC0020A3FE /* InputWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92595DD72A2466AC0020A3FE /* InputWebView.swift */; };
@@ -45,7 +46,6 @@
 		9268C6E82A245E1D001A99B5 /* IINKParameterSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6BB2A245E1D001A99B5 /* IINKParameterSet.h */; };
 		9268C6E92A245E1E001A99B5 /* IINKError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6BC2A245E1D001A99B5 /* IINKError.h */; };
 		9268C6EA2A245E1E001A99B5 /* IINKConfigurationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6BD2A245E1D001A99B5 /* IINKConfigurationDelegate.h */; };
-		9268C6EC2A245E1E001A99B5 /* MyScriptInteractiveInk-Runtime-iOS.version.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9268C6C02A245E1D001A99B5 /* MyScriptInteractiveInk-Runtime-iOS.version.txt */; };
 		9268C6EF2A245E1E001A99B5 /* IINK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268C6C42A245E1D001A99B5 /* IINK.swift */; };
 		9268C6F32A245E1E001A99B5 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9268C6C82A245E1D001A99B5 /* LICENSE.txt */; };
 		9268C6F82A245E70001A99B5 /* MyCertificate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9268C6F62A245E70001A99B5 /* MyCertificate.h */; };
@@ -94,23 +94,8 @@
 		9275273F2A95C98D00D3BCFC /* StoryboardNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927527062A95C98D00D3BCFC /* StoryboardNames.swift */; };
 		927527402A95C98D00D3BCFC /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927527072A95C98D00D3BCFC /* Storyboarded.swift */; };
 		927527412A95C98D00D3BCFC /* AlertModelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927527082A95C98D00D3BCFC /* AlertModelHelper.swift */; };
-		927527432A95C98D00D3BCFC /* shk-diagram.res in Resources */ = {isa = PBXBuildFile; fileRef = 9275270E2A95C98D00D3BCFC /* shk-diagram.res */; };
-		927527442A95C98D00D3BCFC /* en_US-lk-text.res in Resources */ = {isa = PBXBuildFile; fileRef = 927527102A95C98D00D3BCFC /* en_US-lk-text.res */; };
-		927527452A95C98D00D3BCFC /* en_US-ak-cur.res in Resources */ = {isa = PBXBuildFile; fileRef = 927527112A95C98D00D3BCFC /* en_US-ak-cur.res */; };
-		927527462A95C98D00D3BCFC /* math-ak.res in Resources */ = {isa = PBXBuildFile; fileRef = 927527132A95C98D00D3BCFC /* math-ak.res */; };
-		927527472A95C98D00D3BCFC /* math-grm-standard.res in Resources */ = {isa = PBXBuildFile; fileRef = 927527142A95C98D00D3BCFC /* math-grm-standard.res */; };
-		927527482A95C98D00D3BCFC /* ank-raw-content.res in Resources */ = {isa = PBXBuildFile; fileRef = 927527162A95C98D00D3BCFC /* ank-raw-content.res */; };
-		927527492A95C98D00D3BCFC /* ank-diagram.res in Resources */ = {isa = PBXBuildFile; fileRef = 927527172A95C98D00D3BCFC /* ank-diagram.res */; };
-		9275274A2A95C98D00D3BCFC /* diagram.conf in Resources */ = {isa = PBXBuildFile; fileRef = 927527192A95C98D00D3BCFC /* diagram.conf */; };
-		9275274B2A95C98D00D3BCFC /* math.conf in Resources */ = {isa = PBXBuildFile; fileRef = 9275271A2A95C98D00D3BCFC /* math.conf */; };
-		9275274C2A95C98D00D3BCFC /* raw-content.conf in Resources */ = {isa = PBXBuildFile; fileRef = 9275271B2A95C98D00D3BCFC /* raw-content.conf */; };
-		9275274D2A95C98D00D3BCFC /* en_US.conf in Resources */ = {isa = PBXBuildFile; fileRef = 9275271C2A95C98D00D3BCFC /* en_US.conf */; };
 		9275274E2A95C98D00D3BCFC /* theme.css in Resources */ = {isa = PBXBuildFile; fileRef = 9275271D2A95C98D00D3BCFC /* theme.css */; };
 		9275274F2A95C98D00D3BCFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9275271E2A95C98D00D3BCFC /* Assets.xcassets */; };
-		927527502A95C98D00D3BCFC /* myscript-iink-recognition-diagram.version.txt in Resources */ = {isa = PBXBuildFile; fileRef = 927527202A95C98D00D3BCFC /* myscript-iink-recognition-diagram.version.txt */; };
-		927527512A95C98D00D3BCFC /* myscript-iink-recognition-raw-content.version.txt in Resources */ = {isa = PBXBuildFile; fileRef = 927527212A95C98D00D3BCFC /* myscript-iink-recognition-raw-content.version.txt */; };
-		927527522A95C98D00D3BCFC /* myscript-iink-recognition-text-en_US.version.txt in Resources */ = {isa = PBXBuildFile; fileRef = 927527222A95C98D00D3BCFC /* myscript-iink-recognition-text-en_US.version.txt */; };
-		927527532A95C98D00D3BCFC /* myscript-iink-recognition-math.version.txt in Resources */ = {isa = PBXBuildFile; fileRef = 927527232A95C98D00D3BCFC /* myscript-iink-recognition-math.version.txt */; };
 		927527762A95C9BE00D3BCFC /* OffscreenRenderSurfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927527572A95C9BE00D3BCFC /* OffscreenRenderSurfaces.swift */; };
 		927527772A95C9BE00D3BCFC /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927527582A95C9BE00D3BCFC /* Canvas.swift */; };
 		927527782A95C9BE00D3BCFC /* RenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927527592A95C9BE00D3BCFC /* RenderView.swift */; };
@@ -174,6 +159,7 @@
 		921B9E6F2A0E61FC009FB45B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		921B9E7B2A0E67C1009FB45B /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		9228770B2A95EC080099D5AC /* MyScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScript.swift; sourceTree = "<group>"; };
+		924D6F892A96DF9D002D314B /* recognition-assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "recognition-assets"; path = "markdown-math/Resources/recognition-assets"; sourceTree = "<group>"; };
 		92595DD32A2461F40020A3FE /* ingun.markdown-math.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "ingun.markdown-math.c"; sourceTree = "<group>"; };
 		92595DD52A2466490020A3FE /* MathInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathInput.swift; sourceTree = "<group>"; };
 		92595DD72A2466AC0020A3FE /* InputWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputWebView.swift; sourceTree = "<group>"; };
@@ -758,6 +744,7 @@
 		9283E6362A0E44F500EB66EC = {
 			isa = PBXGroup;
 			children = (
+				924D6F892A96DF9D002D314B /* recognition-assets */,
 				921B9E432A0E4FB7009FB45B /* README.md */,
 				9283E6412A0E44F500EB66EC /* markdown-math */,
 				9283E6532A0E44F700EB66EC /* markdown-mathTests */,
@@ -987,29 +974,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				927527452A95C98D00D3BCFC /* en_US-ak-cur.res in Resources */,
-				927527532A95C98D00D3BCFC /* myscript-iink-recognition-math.version.txt in Resources */,
-				9275274B2A95C98D00D3BCFC /* math.conf in Resources */,
+				924D6F8A2A96DF9D002D314B /* recognition-assets in Resources */,
 				9268C6F32A245E1E001A99B5 /* LICENSE.txt in Resources */,
-				9275274D2A95C98D00D3BCFC /* en_US.conf in Resources */,
 				9275274F2A95C98D00D3BCFC /* Assets.xcassets in Resources */,
-				927527462A95C98D00D3BCFC /* math-ak.res in Resources */,
-				927527442A95C98D00D3BCFC /* en_US-lk-text.res in Resources */,
-				927527482A95C98D00D3BCFC /* ank-raw-content.res in Resources */,
 				927527302A95C98D00D3BCFC /* Main.storyboard in Resources */,
-				927527472A95C98D00D3BCFC /* math-grm-standard.res in Resources */,
 				9275274E2A95C98D00D3BCFC /* theme.css in Resources */,
-				927527512A95C98D00D3BCFC /* myscript-iink-recognition-raw-content.version.txt in Resources */,
 				927527242A95C98D00D3BCFC /* LaunchScreen.storyboard in Resources */,
 				9283E64B2A0E44F700EB66EC /* Preview Assets.xcassets in Resources */,
-				9268C6EC2A245E1E001A99B5 /* MyScriptInteractiveInk-Runtime-iOS.version.txt in Resources */,
-				927527432A95C98D00D3BCFC /* shk-diagram.res in Resources */,
-				927527522A95C98D00D3BCFC /* myscript-iink-recognition-text-en_US.version.txt in Resources */,
 				9285971B2A2377C400F672B3 /* Launch Screen.storyboard in Resources */,
-				927527492A95C98D00D3BCFC /* ank-diagram.res in Resources */,
-				9275274C2A95C98D00D3BCFC /* raw-content.conf in Resources */,
-				927527502A95C98D00D3BCFC /* myscript-iink-recognition-diagram.version.txt in Resources */,
-				9275274A2A95C98D00D3BCFC /* diagram.conf in Resources */,
 				9283E6472A0E44F700EB66EC /* Assets.xcassets in Resources */,
 				9275272B2A95C98D00D3BCFC /* Toolbar.storyboard in Resources */,
 				9285971D2A23785900F672B3 /* Storyboard.storyboard in Resources */,

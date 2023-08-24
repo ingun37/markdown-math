@@ -8,28 +8,28 @@ final class MainCoordinator {
 
     // MARK: - Properties
 
-//    var navigationController: UINavigationController
+    var navigationController: UINavigationController
     weak var mainViewController: MainViewController?
     weak var editorViewController: EditorViewController?
     weak var toolBarViewController: ToolbarViewController?
     private var engine: IINKEngine?
 
-    init(engine: IINKEngine?) {
-//        self.navigationController = navigationController
+    init(navigationController: UINavigationController, engine: IINKEngine?) {
+        self.navigationController = navigationController
         self.engine = engine
     }
 
     func start() {
-//        self.mainViewController = MainViewController.instantiate(from: .main)
-//        self.mainViewController?.coordinator = self
-//        if let mainViewController = self.mainViewController {
-//            navigationController.pushViewController(mainViewController, animated: false)
-//        }
+        self.mainViewController = MainViewController.instantiate(from: .main)
+        self.mainViewController?.coordinator = self
+        if let mainViewController = self.mainViewController {
+            navigationController.pushViewController(mainViewController, animated: false)
+        }
     }
 
     func dissmissModal() {
         self.enableEditing(enable: true)
-//        self.navigationController.dismiss(animated: true, completion: nil)
+        self.navigationController.dismiss(animated: true, completion: nil)
     }
 
     // MARK: - Editor
@@ -66,11 +66,11 @@ final class MainCoordinator {
         }
         vc.isModalInPresentation = true
         self.enableEditing(enable: false)
-//        self.navigationController.present(vc, animated: true, completion: nil)
+        self.navigationController.present(vc, animated: true, completion: nil)
     }
 
     func didSelectPartTypeToCreate(partType:SelectedPartTypeModel) {
-//        self.navigationController.dismiss(animated: true, completion: nil)
+        self.navigationController.dismiss(animated: true, completion: nil)
         self.mainViewController?.partTypeToCreate = partType
     }
 
@@ -82,11 +82,11 @@ final class MainCoordinator {
         }
         vc.isModalInPresentation = true
         self.enableEditing(enable: false)
-//        self.navigationController.present(vc, animated: true, completion: nil)
+        self.navigationController.present(vc, animated: true, completion: nil)
     }
 
     func didSelectFileToOpen(file:File) {
-//        self.navigationController.dismiss(animated: true, completion: nil)
+        self.navigationController.dismiss(animated: true, completion: nil)
         self.mainViewController?.fileToOpen = file
     }
 
@@ -99,7 +99,7 @@ final class MainCoordinator {
             return
         }
         vc.isModalInPresentation = true
-//        self.navigationController.present(vc, animated: true, completion: nil)
+        self.navigationController.present(vc, animated: true, completion: nil)
     }
 
     // MARK: - Toolbar
