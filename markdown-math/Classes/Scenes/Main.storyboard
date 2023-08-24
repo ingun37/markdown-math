@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad10_2" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="markdown_math" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -32,19 +31,13 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ae-TT-xOW">
                                 <rect key="frame" x="0.0" y="1030" width="810" height="50"/>
                                 <items>
-                                    <barButtonItem enabled="NO" title="Previous" id="4bF-cq-9Ew">
+                                    <barButtonItem systemItem="cancel" id="4bF-cq-9Ew">
                                         <connections>
                                             <action selector="previousPart:" destination="BYZ-38-t0r" id="8Cf-fP-nl9"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="afS-iO-b0Q"/>
-                                    <barButtonItem enabled="NO" systemItem="add" id="VUR-E0-rwq">
-                                        <connections>
-                                            <action selector="addPart:" destination="BYZ-38-t0r" id="GMv-Lr-w9h"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem systemItem="flexibleSpace" id="iaq-Md-LWS"/>
-                                    <barButtonItem enabled="NO" title="Next" id="xnp-3i-6w9">
+                                    <barButtonItem systemItem="done" id="xnp-3i-6w9">
                                         <connections>
                                             <action selector="nextPart:" destination="BYZ-38-t0r" id="AaL-Xr-nC1"/>
                                         </connections>
@@ -91,7 +84,6 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="addPartBarButtonItem" destination="VUR-E0-rwq" id="afU-6S-PMN"/>
                         <outlet property="containerView" destination="dXR-DN-tZk" id="iVm-zT-HJn"/>
                         <outlet property="convertBarButtonItem" destination="u2G-rj-We2" id="KIJ-ws-87M"/>
                         <outlet property="moreBarButtonItem" destination="Nej-TO-Doh" id="zin-Ct-FYc"/>
@@ -109,14 +101,14 @@
         <!--Part Types Table View Controller-->
         <scene sceneID="Apd-YN-1re">
             <objects>
-                <tableViewController storyboardIdentifier="PartTypesTableViewController" id="nBL-LW-eWc" customClass="PartTypesTableViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PartTypesTableViewController" id="nBL-LW-eWc" customClass="PartTypesTableViewController" customModule="markdown_math" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Ef-zU-lCh">
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.99989593030000001" blue="0.99996638299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PartTypeCellReuseIdentifier" textLabel="PcD-pM-dHJ" style="IBUITableViewCellStyleDefault" id="5Nu-aL-GF0">
-                                <rect key="frame" x="0.0" y="44.5" width="810" height="44"/>
+                                <rect key="frame" x="0.0" y="50" width="810" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Nu-aL-GF0" id="DsO-q9-TU0">
                                     <rect key="frame" x="0.0" y="0.0" width="810" height="44"/>
@@ -147,14 +139,14 @@
         <!--Files Table ViewController-->
         <scene sceneID="kC6-oy-DOM">
             <objects>
-                <tableViewController storyboardIdentifier="FilesTableViewController" title="Files" id="P9M-tc-09p" userLabel="Files Table ViewController" customClass="FilesTableViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FilesTableViewController" title="Files" id="P9M-tc-09p" userLabel="Files Table ViewController" customClass="FilesTableViewController" customModule="markdown_math" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="tig-Ei-6ew">
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.99989593030000001" blue="0.99996638299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FileCellReuseIdentifier" textLabel="pD6-nT-3Li" detailTextLabel="c0z-kf-Z7y" style="IBUITableViewCellStyleSubtitle" id="rqG-gV-K46">
-                                <rect key="frame" x="0.0" y="44.5" width="810" height="44"/>
+                                <rect key="frame" x="0.0" y="50" width="810" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rqG-gV-K46" id="w1J-uo-EeP">
                                     <rect key="frame" x="0.0" y="0.0" width="810" height="44"/>
@@ -191,14 +183,14 @@
         <!--Export-->
         <scene sceneID="BmP-A3-66Z">
             <objects>
-                <tableViewController storyboardIdentifier="ExportTableViewController" id="9ms-rF-KaX" customClass="ExportTableViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ExportTableViewController" id="9ms-rF-KaX" customClass="ExportTableViewController" customModule="markdown_math" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ETS-ek-kCV">
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExportCellReuseIdentifier" textLabel="LHv-jj-gON" style="IBUITableViewCellStyleDefault" id="nYS-lp-kvv">
-                                <rect key="frame" x="0.0" y="49.5" width="810" height="44"/>
+                                <rect key="frame" x="0.0" y="55.5" width="810" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nYS-lp-kvv" id="SAd-WB-LL8">
                                     <rect key="frame" x="0.0" y="0.0" width="810" height="44"/>
@@ -235,8 +227,8 @@
     </scenes>
     <resources>
         <image name="IconToolbar-More" width="24" height="24"/>
-        <image name="minus.magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="plus.magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="minus.magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="plus.magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

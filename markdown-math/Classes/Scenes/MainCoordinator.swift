@@ -12,16 +12,19 @@ final class MainCoordinator {
     weak var mainViewController: MainViewController?
     weak var editorViewController: EditorViewController?
     weak var toolBarViewController: ToolbarViewController?
+    var myScriptSampleDelegate: MyScriptSampleDelegate
     private var engine: IINKEngine?
 
-    init(navigationController: UINavigationController, engine: IINKEngine?) {
+    init(navigationController: UINavigationController, myScriptSampleDelegate: MyScriptSampleDelegate, engine: IINKEngine?) {
         self.navigationController = navigationController
         self.engine = engine
+        self.myScriptSampleDelegate = myScriptSampleDelegate
     }
 
     func start() {
         self.mainViewController = MainViewController.instantiate(from: .main)
         self.mainViewController?.coordinator = self
+        self.mainViewController?.myscriptSampleDelegate = self.myScriptSampleDelegate
         if let mainViewController = self.mainViewController {
             navigationController.pushViewController(mainViewController, animated: false)
         }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MyScript: UIViewControllerRepresentable {
+    var myScriptSampleDelegate: MyScriptSampleDelegate
     func makeCoordinator() -> Con {
         Con()
     }
@@ -26,7 +27,7 @@ struct MyScript: UIViewControllerRepresentable {
         let engine = EngineProvider.sharedInstance.engine
         try? engine?.configuration.set(boolean: false, forKey: "math.solver.enable")
         // send that into our coordinator so that it can display view controllers
-        context.coordinator.coordinator = MainCoordinator(navigationController: navController, engine: engine)
+        context.coordinator.coordinator = MainCoordinator(navigationController: navController, myScriptSampleDelegate: self.myScriptSampleDelegate, engine: engine)
         // tell the coordinator to take over control
         context.coordinator.coordinator?.start()
         return navController

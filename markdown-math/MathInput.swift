@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MathInput: View {
+struct MathInput: View, MyScriptSampleDelegate {
     @State var tex: String
     @State var format: MathFormatType
     @State private var handwriting = false
@@ -29,10 +29,13 @@ struct MathInput: View {
             Button("Handwriting") {
                 handwriting.toggle()
             }.fullScreenCover(isPresented: $handwriting) {
-                Handwriting()
+                MyScript(myScriptSampleDelegate: self)
             }.buttonStyle(.borderedProminent)
 
         }.padding()
+    }
+    func cancel() {
+        handwriting.toggle()
     }
 }
 

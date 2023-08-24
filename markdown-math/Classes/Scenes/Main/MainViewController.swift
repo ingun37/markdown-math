@@ -29,6 +29,8 @@ class MainViewController: UIViewController, Storyboarded {
     @IBOutlet private weak var zoomInBarButtonItem: UIBarButtonItem!
     @IBOutlet private weak var navToolbarContainer: UIView!
 
+     var myscriptSampleDelegate: MyScriptSampleDelegate?
+
     // MARK: Properties
 
     weak var coordinator: MainCoordinator?
@@ -74,7 +76,7 @@ class MainViewController: UIViewController, Storyboarded {
 
     private func bindViewModel() {
         // Enable/Disable buttons and gestures
-        self.viewModel?.$addPartItemEnabled.assign(to: \.isEnabled, on: self.addPartBarButtonItem).store(in: &cancellables)
+//        self.viewModel?.$addPartItemEnabled.assign(to: \.isEnabled, on: self.addPartBarButtonItem).store(in: &cancellables)
         self.viewModel?.$editingEnabled.assign(to: \.isEnabled, on: self.convertBarButtonItem).store(in: &cancellables)
         self.viewModel?.$editingEnabled.assign(to: \.isEnabled, on: self.zoomInBarButtonItem).store(in: &cancellables)
         self.viewModel?.$editingEnabled.assign(to: \.isEnabled, on: self.zoomOutBarButtonItem).store(in: &cancellables)
@@ -176,7 +178,8 @@ class MainViewController: UIViewController, Storyboarded {
     }
 
     @IBAction private func previousPart(_ sender: Any) {
-        self.viewModel?.loadPreviousPart()
+        self.myscriptSampleDelegate?.cancel()
+//        self.viewModel?.loadPreviousPart()
     }
 
     @IBAction private func addPart(_ sender: Any) {
@@ -192,6 +195,7 @@ class MainViewController: UIViewController, Storyboarded {
             self.viewModel?.handleLongPressGesture(state: longPressgestureRecognizer.state, position: position, sourceView: sourceView)
         }
     }
+    
 }
 
 extension MainViewController: MainViewControllerDisplayLogic {

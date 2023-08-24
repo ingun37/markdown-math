@@ -25,8 +25,8 @@ class MainViewModel: NSObject {
     // Enable/Disable buttons and gestures
     @Published var addPartItemEnabled: Bool = false
     @Published var editingEnabled: Bool = false
-    @Published var previousButtonEnabled: Bool = false
-    @Published var nextButtonEnabled: Bool = false
+    @Published var previousButtonEnabled: Bool = true
+    @Published var nextButtonEnabled: Bool = true
     @Published var longPressGestureEnabled: Bool = true
 
     // MARK: - Properties
@@ -420,8 +420,8 @@ extension MainViewModel: MainViewModelEditorLogic {
     func didLoadPart(title: String, index: Int, partCount: Int) {
         // Enable buttons
         self.editingEnabled = true
-        self.previousButtonEnabled = index > 0
-        self.nextButtonEnabled = index < partCount - 1
+//        self.previousButtonEnabled = index > 0
+//        self.nextButtonEnabled = index < partCount - 1
         // Set title
         self.title = title
     }
@@ -433,6 +433,6 @@ extension MainViewModel: MainViewModelEditorLogic {
 
     func didOpenFile() {
         self.addPartItemEnabled = true
-        self.previousButtonEnabled = false
+//        self.previousButtonEnabled = false
     }
 }
