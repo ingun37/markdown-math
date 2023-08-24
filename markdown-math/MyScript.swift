@@ -14,6 +14,13 @@ struct MyScript: UIViewControllerRepresentable {
 
     func makeUIViewController(context: Context) -> UINavigationController {
         FileManager.default.createIinkDirectory()
+
+        let lastOpenedFile = FilesProvider.retrieveLastModifiedFile()
+        
+        if(lastOpenedFile == nil) {
+            try? self.createPackage(engineProvider: EngineProvider.sharedInstance)
+        }
+        
         // create the main navigation controller to be used for our app
         let navController = UINavigationController()
         let engine = EngineProvider.sharedInstance.engine
@@ -32,6 +39,31 @@ struct MyScript: UIViewControllerRepresentable {
     
     typealias UIViewControllerType = UINavigationController
     
+    private func createPackage(engineProvider: EngineProvider) throws {
+        guard let engine = engineProvider.engine else {
+            return
+        }
+        let existingIInkFiles = FilesProvider.iinkFilesFromIInkDirectory()
+        let fileNames: [String] = existingIInkFiles.map({ $0.fileName })
+        var index: Int = 0
+        var newName = ""
+        var newTempName = ""
+        repeat {
+            index+=1
+            newName = String(format: "File%d.iink", index)
+            newTempName = String(format: "File%d.iink-files", index)
+        } while fileNames.contains(newName) || fileNames.contains(newTempName)
+        do {
+            let fullPath = FileManager.default.pathForFileInIinkDirectory(fileName: newName)
+            let package = try engine.createPackage(fullPath.decomposedStringWithCanonicalMapping)
+            let part = try package.createPart(with: "Math")
+            try package.save()
+        } catch {
+            print("Error while creating package : " + error.localizedDescription)
+            throw error
+        }
+    }
+
 }
 
 class Con {
