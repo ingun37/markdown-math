@@ -62,7 +62,8 @@ class MainViewModel: NSObject {
 
     func openLastModifiedFileIfAny() -> Bool {
         guard let lastOpenedFile = FilesProvider.retrieveLastModifiedFile() else {
-            self.delegate?.displayNewDocumentOptions(cancelEnabled: false)
+            try? self.editorWorker.createNewPart(partType: SelectedPartTypeModel(partType: "Math", onNewPackage: true), engineProvider: engineProvider)
+//            self.delegate?.displayNewDocumentOptions(cancelEnabled: false)
             return false
         }
         self.openFile(file: lastOpenedFile, engineProvider: self.engineProvider)

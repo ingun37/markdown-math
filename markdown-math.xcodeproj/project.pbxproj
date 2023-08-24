@@ -134,6 +134,7 @@
 		9285971B2A2377C400F672B3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9285971A2A2377C400F672B3 /* Launch Screen.storyboard */; };
 		9285971D2A23785900F672B3 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9285971C2A23785900F672B3 /* Storyboard.storyboard */; };
 		9285971F2A23788800F672B3 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9285971E2A23788800F672B3 /* SwiftUIView.swift */; };
+		92ABFEFD2A9719F3007F1689 /* MyScriptDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABFEFC2A9719F3007F1689 /* MyScriptDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -301,6 +302,7 @@
 		9285971A2A2377C400F672B3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		9285971C2A23785900F672B3 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		9285971E2A23788800F672B3 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		92ABFEFC2A9719F3007F1689 /* MyScriptDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScriptDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -788,6 +790,7 @@
 				9285971C2A23785900F672B3 /* Storyboard.storyboard */,
 				921B9E462A0E52C1009FB45B /* markdown-math-Bridging-Header.h */,
 				9228770B2A95EC080099D5AC /* MyScript.swift */,
+				92ABFEFC2A9719F3007F1689 /* MyScriptDelegate.swift */,
 				9283E6492A0E44F700EB66EC /* Preview Content */,
 			);
 			path = "markdown-math";
@@ -1062,6 +1065,7 @@
 				9268CEAB2A21ED05005484FF /* Delimeter.swift in Sources */,
 				927527292A95C98D00D3BCFC /* ToolbarViewModel.swift in Sources */,
 				9283E6432A0E44F600EB66EC /* markdown_mathApp.swift in Sources */,
+				92ABFEFD2A9719F3007F1689 /* MyScriptDelegate.swift in Sources */,
 				927527902A95C9BE00D3BCFC /* EditorViewController.swift in Sources */,
 				9275277D2A95C9BE00D3BCFC /* IInkUIRefImplUtils.swift in Sources */,
 				9275277C2A95C9BE00D3BCFC /* ImageLoader.swift in Sources */,
