@@ -69,3 +69,13 @@ Set default value of `previousButtonEnabled` and `nextButtonEnabled` to true. It
 ### MainCoordinator.swift
 
 Add `myScriptSampleDelegate: MyScriptSampleDelegate` parameter to `init()` and pass it to `mainViewController`.
+
+### Bundle Resources
+
+Add `Resources/recognition-assets` as folder.
+
+### Frameworks
+
+Copy and add `/interactive-ink-examples-ios/Examples/Frameworks` to somewhere.
+
+If there are errors anywhere `CONTROL_GRAY_COLOR` or `WORD_GRAY_COLOR` is used then delete them.
