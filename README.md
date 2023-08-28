@@ -32,3 +32,40 @@ swiftlint --fix
 
 - Change the sample's bundle identifier to `ingun.markdown-math`.
 - Copy the contents of `/MyCertificate/ingun.markdown-math.c` and paste to `.../MyCertificate.c`
+
+## Implement MyScript Demo
+
+### Main.storyboard
+
+Fix bottom tool bar.
+
+### MainViewController
+
+Add property `var myscriptSampleDelegate: MyScriptSampleDelegate?`
+
+Call `myscriptSampleDelegate.done(tex: String)` from `@IBAction private func nextPart(_ sender: Any)` with exported latex as parameter.
+
+```swift
+let imageLoader = ImageLoader()
+let imagePainter = ImagePainter(imageLoader: imageLoader)
+if let editor = self.viewModel?.editor {
+    let part = editor.part?.identifier ?? ""
+    let type = editor.part?.type ?? ""
+    editor.waitForIdle() // Waits until part modification operations are over.
+    if let aaa = try? editor.export(selection: editor.rootBlock,
+                                mimeType: IINKMimeType.laTeX
+    ) {
+        self.myscriptSampleDelegate?.done(tex:aaa)
+    }
+}
+```
+
+Call `myscriptSampleDelegate.cancel()` from `@IBAction private func previousPart(_ sender: Any)`.
+
+### MainViewModel.swift
+
+Set default value of `previousButtonEnabled` and `nextButtonEnabled` to true. It has to remain ture so search for all their changes and delete.
+
+### MainCoordinator.swift
+
+Add `myScriptSampleDelegate: MyScriptSampleDelegate` parameter to `init()` and pass it to `mainViewController`.
