@@ -16,7 +16,7 @@ struct ContentView: View {
     @State var markdownContent: String = initialMarkdown
     @State var selectedrange: NSRange = .init()
     @State var inlineDelimeter: DelimeterType = .GitLab
-    @State var mathFormat: MathFormatType = .Katex
+    @State var mathFormat: MathFormatType = .Latex
     @State private var inputMode = false
     @State private var manualOrientation: ManualOrientation = .vertical
 

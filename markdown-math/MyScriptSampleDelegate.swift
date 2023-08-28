@@ -9,4 +9,5 @@ import Foundation
 
 protocol MyScriptSampleDelegate {
     func cancel()
+    func done(tex:String)
 }

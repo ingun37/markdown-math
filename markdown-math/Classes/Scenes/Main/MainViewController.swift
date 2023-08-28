@@ -174,7 +174,23 @@ class MainViewController: UIViewController, Storyboarded {
     }
 
     @IBAction private func nextPart(_ sender: Any) {
-        self.viewModel?.loadNextPart()
+        let imageLoader = ImageLoader()
+        let imagePainter = ImagePainter(imageLoader: imageLoader)
+        if let editor = self.viewModel?.editor {
+            let part = editor.part?.identifier ?? ""
+            let type = editor.part?.type ?? ""
+            editor.waitForIdle() // Waits until part modification operations are over.
+            
+            if let aaa = try? editor.export(selection: editor.rootBlock,
+                                    
+                                        mimeType: IINKMimeType.laTeX
+            ) {
+                self.myscriptSampleDelegate?.done(tex:aaa)
+            }
+            
+        }
+        
+//        self.viewModel?.loadNextPart()
     }
 
     @IBAction private func previousPart(_ sender: Any) {

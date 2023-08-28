@@ -37,6 +37,10 @@ struct MathInput: View, MyScriptSampleDelegate {
     func cancel() {
         handwriting.toggle()
     }
+    func done(tex:String) {
+        self.tex = tex
+        handwriting.toggle()
+    }
 }
 
 struct MathInput_Previews: PreviewProvider {
