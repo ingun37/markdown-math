@@ -35,13 +35,15 @@ swiftlint --fix
 
 ## Implement MyScript Demo
 
-### Main.storyboard
+Download sample from [myscript/interactive-ink-examples-ios](https://github.com/myscript/interactive-ink-examples-ios).
 
-Fix bottom tool bar.
+Import `/interactive-ink-examples-ios/Examples/Demo/Demo` directory to project.
 
-### MainViewController
+Make some changes.
 
-Add property `var myscriptSampleDelegate: MyScriptSampleDelegate?`
+### Implement MyScriptSampleDelegate in MainViewController
+
+Add property `var myscriptSampleDelegate: MyScriptSampleDelegate?` to `MainViewController`.
 
 Call `myscriptSampleDelegate.done(tex: String)` from `@IBAction private func nextPart(_ sender: Any)` with exported latex as parameter.
 
@@ -62,17 +64,24 @@ if let editor = self.viewModel?.editor {
 
 Call `myscriptSampleDelegate.cancel()` from `@IBAction private func previousPart(_ sender: Any)`.
 
-### MainViewModel.swift
+Add `myScriptSampleDelegate: MyScriptSampleDelegate` parameter to `MainCoordinator`'s `init()` and pass it to `mainViewController`.
 
-Set default value of `previousButtonEnabled` and `nextButtonEnabled` to true. It has to remain ture so search for all their changes and delete.
 
-### MainCoordinator.swift
+### Remove redundant UI components
 
-Add `myScriptSampleDelegate: MyScriptSampleDelegate` parameter to `init()` and pass it to `mainViewController`.
+In `Main.storyboard`, remove
+
+* Add button in the middle of bottom bar
+
+### Change Prev and Next to Cancel and Done
+
+In `Main.storyboard`, change the Prev and Next at the bottom toolbar to Cancel and Done.
+
+In `MainViewModel`, set default value of `previousButtonEnabled` and `nextButtonEnabled` to true. It has to remain true and never change so search for all their usages and delete.
 
 ### Bundle Resources
 
-Add `Resources/recognition-assets` as folder.
+Go to project setting > Build Phases > Copy Bundle Resources and add `.../recognition-assets` as folder.
 
 ### Frameworks
 
