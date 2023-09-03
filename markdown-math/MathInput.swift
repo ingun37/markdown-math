@@ -26,7 +26,7 @@ struct MathInput: View, MyScriptSampleObserverDelegate {
                 }
             }
             InputWebView(tex: $tex, format: $format)
-            TextEditor(text: $tex).scrollContentBackground(.hidden).background(Color(hex: 0x1D1F21)).foregroundColor(Color(hex: 0xA1A8B5))
+            TextEditor(text: $tex).scrollContentBackground(.hidden).background(Color(hex: 0x1D1F21)).foregroundColor(Color(hex: 0xA1A8B5)).font(Font.system(.body, design: .monospaced))
             Button("Handwriting") {
                 handwriting.toggle()
             }.fullScreenCover(isPresented: $handwriting) {
