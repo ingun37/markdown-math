@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad10_2" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +11,7 @@
         <!--Toolbar View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="ToolbarViewController" id="Y6W-OH-hqX" customClass="ToolbarViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ToolbarViewController" id="Y6W-OH-hqX" customClass="ToolbarViewController" customModule="markdown_math" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="50"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,10 +44,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftx-kZ-DIg">
-                                <rect key="frame" x="299.5" y="0.0" width="401" height="50"/>
+                                <rect key="frame" x="329.5" y="0.0" width="341" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RwT-ed-KHd">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7C-jp-RJM">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
@@ -88,30 +87,21 @@
                                                     <action selector="selectLassoTool:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="R33-Zd-Ljy"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRJ-rC-RQ3">
-                                                <rect key="frame" x="240" y="0.0" width="60" height="50"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Button" image="Icon-MarkerPen-32"/>
-                                                <connections>
-                                                    <action selector="selectHighlighterTool:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bhp-fs-qxx"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="PRJ-rC-RQ3" firstAttribute="width" secondItem="z7C-jp-RJM" secondAttribute="width" id="YVi-k8-LwV"/>
                                             <constraint firstItem="vFz-FY-eUh" firstAttribute="width" secondItem="z7C-jp-RJM" secondAttribute="width" id="l19-5O-mk1"/>
                                             <constraint firstItem="VDD-KO-ydj" firstAttribute="width" secondItem="z7C-jp-RJM" secondAttribute="width" id="zLj-dV-yHX"/>
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWc-92-cUF" userLabel="Separator">
-                                        <rect key="frame" x="310" y="10" width="1" height="30"/>
+                                        <rect key="frame" x="250" y="10" width="1" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="Xng-1a-dbx"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJV-dK-Lpw">
-                                        <rect key="frame" x="321" y="0.0" width="80" height="50"/>
+                                        <rect key="frame" x="261" y="0.0" width="80" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="8nY-xw-rh2"/>
                                         </constraints>
@@ -187,7 +177,6 @@
                         <outlet property="eraserButton" destination="VDD-KO-ydj" id="oVV-Lz-WVK"/>
                         <outlet property="handButton" destination="kiw-rW-yQo" id="ZYq-aa-Iws"/>
                         <outlet property="handButtonWidthConstraint" destination="zi4-ZY-Epd" id="yON-p5-Esb"/>
-                        <outlet property="highlighterButton" destination="PRJ-rC-RQ3" id="zLJ-sd-dao"/>
                         <outlet property="lassoButton" destination="vFz-FY-eUh" id="Age-20-h9F"/>
                         <outlet property="penButton" destination="z7C-jp-RJM" id="Y97-9N-ixk"/>
                         <outlet property="redoButton" destination="OHW-Oh-E74" id="shD-SX-7R5"/>
@@ -201,7 +190,7 @@
         <!--Tool Style View Controller-->
         <scene sceneID="Pgq-qu-H9A">
             <objects>
-                <viewController storyboardIdentifier="ToolStyleViewController" id="LFI-JL-8hS" customClass="ToolStyleViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ToolStyleViewController" id="LFI-JL-8hS" customClass="ToolStyleViewController" customModule="markdown_math" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oXg-N5-Ncx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -388,7 +377,6 @@
         <image name="Icon-Eraser" width="32" height="32"/>
         <image name="Icon-Finger" width="32" height="32"/>
         <image name="Icon-Lasso" width="32" height="32"/>
-        <image name="Icon-MarkerPen-32" width="32" height="32"/>
         <image name="Icon-Pen" width="32" height="32"/>
         <image name="Redo" width="24" height="24"/>
         <image name="Undo" width="24" height="24"/>

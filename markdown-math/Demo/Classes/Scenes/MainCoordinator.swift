@@ -166,7 +166,7 @@ final class MainCoordinator {
             popover?.sourceRect = sourceRect
         } else {
             popover?.permittedArrowDirections = .up
-            popover?.barButtonItem = self.mainViewController?.moreBarButtonItem
+            
         }
         self.mainViewController?.present(alertVC, animated: true, completion: nil)
     }

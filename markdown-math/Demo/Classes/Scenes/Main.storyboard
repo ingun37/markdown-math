@@ -61,11 +61,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="QAk-cb-H3n">
                         <rightBarButtonItems>
-                            <barButtonItem enabled="NO" image="IconToolbar-More" id="Nej-TO-Doh">
-                                <connections>
-                                    <action selector="moreButtonTapped:" destination="BYZ-38-t0r" id="w7K-zC-gTW"/>
-                                </connections>
-                            </barButtonItem>
                             <barButtonItem enabled="NO" title="Convert" id="u2G-rj-We2">
                                 <connections>
                                     <action selector="convert:" destination="BYZ-38-t0r" id="g7O-16-HwG"/>
@@ -86,7 +81,6 @@
                     <connections>
                         <outlet property="containerView" destination="dXR-DN-tZk" id="iVm-zT-HJn"/>
                         <outlet property="convertBarButtonItem" destination="u2G-rj-We2" id="KIJ-ws-87M"/>
-                        <outlet property="moreBarButtonItem" destination="Nej-TO-Doh" id="zin-Ct-FYc"/>
                         <outlet property="navToolbarContainer" destination="fpc-A2-KBG" id="r49-pC-kLg"/>
                         <outlet property="nextPartBarButtonItem" destination="xnp-3i-6w9" id="ChI-On-Uzl"/>
                         <outlet property="previousPartBarButtonItem" destination="4bF-cq-9Ew" id="gpD-Pk-Vp6"/>
@@ -226,7 +220,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="IconToolbar-More" width="24" height="24"/>
         <image name="minus.magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="plus.magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="groupTableViewBackgroundColor">

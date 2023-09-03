@@ -20,7 +20,6 @@ class MainViewController: UIViewController, Storyboarded {
     // MARK: Outlets
 
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var moreBarButtonItem: UIBarButtonItem!
     @IBOutlet private weak var previousPartBarButtonItem: UIBarButtonItem!
     @IBOutlet private weak var nextPartBarButtonItem: UIBarButtonItem!
     @IBOutlet private weak var convertBarButtonItem: UIBarButtonItem!
@@ -76,7 +75,7 @@ class MainViewController: UIViewController, Storyboarded {
         self.viewModel?.$editingEnabled.assign(to: \.isEnabled, on: self.convertBarButtonItem).store(in: &cancellables)
         self.viewModel?.$editingEnabled.assign(to: \.isEnabled, on: self.zoomInBarButtonItem).store(in: &cancellables)
         self.viewModel?.$editingEnabled.assign(to: \.isEnabled, on: self.zoomOutBarButtonItem).store(in: &cancellables)
-        self.viewModel?.$editingEnabled.assign(to: \.isEnabled, on: self.moreBarButtonItem).store(in: &cancellables)
+        
         self.viewModel?.$editingEnabled.sink { [weak self] enabled in
             self?.coordinator?.enableEditing(enable: enabled)
         }.store(in: &cancellables)
@@ -166,7 +165,7 @@ class MainViewController: UIViewController, Storyboarded {
     }
 
     @IBAction private func moreButtonTapped(_ sender: Any) {
-        self.viewModel?.moreActions(barButtonIdem: self.moreBarButtonItem)
+        
     }
 
     @IBAction private func nextPart(_ sender: Any) {
