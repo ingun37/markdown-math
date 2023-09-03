@@ -105,7 +105,7 @@ typedef NS_ENUM(NSUInteger, TextBlockStyle)
         self.word = word;
         self.index = index;
         self.text = word.label;
-//        self.textColor = word.modified ? [UIColor blackColor] : WORD_GRAY_COLOR;
+        self.textColor = word.modified ? [UIColor blackColor] : WORD_GRAY_COLOR;
 
         if (!isWhitespace)
         {
@@ -185,14 +185,14 @@ typedef NS_ENUM(NSUInteger, TextBlockStyle)
 
     self.moreButton = [[UIButton alloc] init];
     [self.moreButton setTitle:@"•••" forState:UIControlStateNormal];
-//    [self.moreButton setTitleColor:CONTROL_GRAY_COLOR forState:UIControlStateNormal];
+    [self.moreButton setTitleColor:CONTROL_GRAY_COLOR forState:UIControlStateNormal];
     self.moreButton.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.moreButton];
     self.moreButton.hidden = YES;
 
     self.rulerView = [[UIView alloc] init];
     self.rulerView.userInteractionEnabled = NO;
-//    self.rulerView.backgroundColor = CONTROL_GRAY_COLOR;
+    self.rulerView.backgroundColor = CONTROL_GRAY_COLOR;
     self.rulerView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.rulerView];
 
@@ -291,24 +291,24 @@ typedef NS_ENUM(NSUInteger, TextBlockStyle)
         case TextBlockStyleH2:
             [self.styleButton setTitle:@"H2" forState:UIControlStateNormal];
             [self.styleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//            [self.styleButton setBackgroundColor:CONTROL_GRAY_COLOR];
+            [self.styleButton setBackgroundColor:CONTROL_GRAY_COLOR];
             self.styleButton.layer.borderWidth = 0.f;
             break;
 
         case TextBlockStyleH3:
             [self.styleButton setTitle:@"H3" forState:UIControlStateNormal];
             [self.styleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//            [self.styleButton setBackgroundColor:CONTROL_GRAY_COLOR];
+            [self.styleButton setBackgroundColor:CONTROL_GRAY_COLOR];
             self.styleButton.layer.borderWidth = 0.f;
             break;
 
         case TextBlockStyleNormal:
         default:
             [self.styleButton setTitle:@"¶" forState:UIControlStateNormal];
-//            [self.styleButton setTitleColor:CONTROL_GRAY_COLOR forState:UIControlStateNormal];
+            [self.styleButton setTitleColor:CONTROL_GRAY_COLOR forState:UIControlStateNormal];
             [self.styleButton setBackgroundColor:[UIColor whiteColor]];
             self.styleButton.layer.borderWidth = 1.f;
-//            self.styleButton.layer.borderColor = CONTROL_GRAY_COLOR.CGColor;
+            self.styleButton.layer.borderColor = CONTROL_GRAY_COLOR.CGColor;
             break;
     }
 }
@@ -559,8 +559,8 @@ typedef NS_ENUM(NSUInteger, TextBlockStyle)
 - (void)removeHighlightTimerFireMethod:(NSTimer *)timer
 {
     self.removeHighlightTimer = nil;
-//    for (SmartGuideWordView *wordView in [self.wordStackView subviews])
-//        wordView.textColor = WORD_GRAY_COLOR;
+    for (SmartGuideWordView *wordView in [self.wordStackView subviews])
+        wordView.textColor = WORD_GRAY_COLOR;
 }
 
 - (void)smartGuideWordViewDidReceiveTap:(SmartGuideWordView *)smartGuideWordView

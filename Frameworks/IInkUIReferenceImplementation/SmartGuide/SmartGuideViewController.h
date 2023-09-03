@@ -19,4 +19,3 @@
 @property (weak, nonatomic) id<SmartGuideViewControllerDelegate> delegate;
 
 @end
-

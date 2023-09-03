@@ -37,9 +37,17 @@ swiftlint --fix
 
 Download sample from [myscript/interactive-ink-examples-ios](https://github.com/myscript/interactive-ink-examples-ios).
 
-Import `/interactive-ink-examples-ios/Examples/Demo/Demo` directory to project.
+Import [Demo](https://github.com/MyScript/interactive-ink-examples-ios/tree/master/Examples/Demo/Demo) and [Frameworks](https://github.com/MyScript/interactive-ink-examples-ios/tree/master/Examples/Frameworks/) to project. Choose *Create groups* when adding the folders.
 
 Make some changes.
+
+### Header search path
+
+Add `${SRCROOT}/Frameworks` or wherever the `Frameworks` folder is to  Header Search Paths as non-recursive.
+
+### Remuve conflicting project data
+
+Remove `Demo/Supporting Files`
 
 ### Implement MyScriptSampleDelegate in MainViewController
 
