@@ -26,7 +26,7 @@ struct MathInput: View, MyScriptSampleObserverDelegate {
                 }
             }
             InputWebView(tex: $tex, format: $format)
-            TextEditor(text: $tex)
+            TextEditor(text: $tex).scrollContentBackground(.hidden).background(Color(hex: 0x1D1F21)).foregroundColor(Color(hex:0xA1A8B5))
             Button("Handwriting") {
                 handwriting.toggle()
             }.fullScreenCover(isPresented: $handwriting) {
@@ -49,5 +49,17 @@ struct MathInput_Previews: PreviewProvider {
         MathInput(tex: """
         \\tau
         """, format: .Katex, onCancel: {}, onInsert: { _ in })
+    }
+}
+
+extension Color {
+    init(hex: UInt, alpha: Double = 1) {
+        self.init(
+            .sRGB,
+            red: Double((hex >> 16) & 0xff) / 255,
+            green: Double((hex >> 08) & 0xff) / 255,
+            blue: Double((hex >> 00) & 0xff) / 255,
+            opacity: alpha
+        )
     }
 }
