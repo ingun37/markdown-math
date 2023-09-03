@@ -64,14 +64,19 @@ struct ContentView: View {
 
                             let delimiters = inlineDelimeter.style()
 
-                            let d: Delimeter
+                            let start: String
+                            let end: String
                             switch display {
-                            case .Block: d = delimiters.block
-                            case .Inline: d = delimiters.inline
+                            case .Block:
+                                start = "\n" + delimiters.block.start + "\n"
+                                end = "\n" + delimiters.block.end + "\n"
+                            case .Inline:
+                                start = delimiters.inline.start
+                                end = delimiters.inline.end
                             }
 
                             DispatchQueue.main.async {
-                                markdownContent = markdownContent[..<x] + d.start + tex + d.end + markdownContent[y...]
+                                markdownContent = markdownContent[..<x] + start + tex + end + markdownContent[y...]
                             }
 
                             inputMode.toggle()
