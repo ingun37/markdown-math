@@ -8,10 +8,10 @@
 import Foundation
 protocol MyScriptSampleObserverDelegate {
     func cancel()
-    func done(tex:String)
+    func done(tex: String)
 }
 class MyScriptSampleObserver {
-    
+
     private static var sharedNetworkManager: MyScriptSampleObserver = {
         let networkManager = MyScriptSampleObserver()
 
@@ -23,10 +23,8 @@ class MyScriptSampleObserver {
 
     // MARK: -
 
-    
-    var delegate:MyScriptSampleObserverDelegate?
+    var delegate: MyScriptSampleObserverDelegate?
     // Initialization
-
 
     // MARK: - Accessors
 
@@ -34,4 +32,3 @@ class MyScriptSampleObserver {
         return sharedNetworkManager
     }
 }
-

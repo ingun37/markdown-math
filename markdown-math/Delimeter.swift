@@ -13,14 +13,15 @@ struct Delimeter {
 }
 
 struct DelimeterStyle {
-    var inline: Regex<Substring>
+    var inlineMatcher: Regex<Substring>
+    var inline: Delimeter
     var block: Delimeter
 }
 
 enum DelimeterType: String, CaseIterable, Identifiable {
     func style() -> DelimeterStyle {
         switch self {
-        case .GitLab: return DelimeterStyle(inline: /\$`.+?`\$/, block: Delimeter(start: "```math", end: "```"))
+        case .GitLab: return DelimeterStyle(inlineMatcher: /\$`.+?`\$/, inline: Delimeter(start: "$`", end: "`$"), block: Delimeter(start: "```math", end: "```"))
         }
     }
 

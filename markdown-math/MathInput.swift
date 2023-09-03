@@ -11,7 +11,7 @@ struct MathInput: View, MyScriptSampleObserverDelegate {
     @State var tex: String
     @State var format: MathFormatType
     @State private var handwriting = false
-    
+
     var onCancel: () -> Void
     var onInsert: (String) -> Void
     var body: some View {
@@ -26,7 +26,7 @@ struct MathInput: View, MyScriptSampleObserverDelegate {
                 }
             }
             InputWebView(tex: $tex, format: $format)
-            TextEditor(text: $tex).scrollContentBackground(.hidden).background(Color(hex: 0x1D1F21)).foregroundColor(Color(hex:0xA1A8B5))
+            TextEditor(text: $tex).scrollContentBackground(.hidden).background(Color(hex: 0x1D1F21)).foregroundColor(Color(hex: 0xA1A8B5))
             Button("Handwriting") {
                 handwriting.toggle()
             }.fullScreenCover(isPresented: $handwriting) {
@@ -38,7 +38,7 @@ struct MathInput: View, MyScriptSampleObserverDelegate {
     func cancel() {
         handwriting.toggle()
     }
-    func done(tex:String) {
+    func done(tex: String) {
         self.tex = tex
         handwriting.toggle()
     }

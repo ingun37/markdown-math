@@ -51,7 +51,7 @@ struct WebView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: WKWebView, context _: Context) {
-        let matches = markdown.matches(of: delimeter.style().inline)
+        let matches = markdown.matches(of: delimeter.style().inlineMatcher)
         var newMD = ""
 
         var idx: String.Index?
@@ -71,4 +71,4 @@ struct WebView: UIViewRepresentable {
 }
 
 let inlineMathBegin = "`#inline-math-begin# "
-let inlineMathEnd = " #inline-math-begin#`"
+let inlineMathEnd = " #inline-math-end#`"

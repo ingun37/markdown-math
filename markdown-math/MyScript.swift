@@ -18,11 +18,11 @@ struct MyScript: UIViewControllerRepresentable {
         FileManager.default.createIinkDirectory()
 
         let lastOpenedFile = FilesProvider.retrieveLastModifiedFile()
-        
-        if(lastOpenedFile == nil) {
+
+        if lastOpenedFile == nil {
             try? self.createPackage(engineProvider: EngineProvider.sharedInstance)
         }
-        
+
         // create the main navigation controller to be used for our app
         let navController = UINavigationController()
         let engine = EngineProvider.sharedInstance.engine
@@ -33,14 +33,13 @@ struct MyScript: UIViewControllerRepresentable {
         context.coordinator.coordinator?.start()
         return navController
     }
-    
+
     func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {
-        
+
     }
-    
-    
+
     typealias UIViewControllerType = UINavigationController
-    
+
     private func createPackage(engineProvider: EngineProvider) throws {
         guard let engine = engineProvider.engine else {
             return
@@ -76,4 +75,3 @@ class Con {
 //        Canvas()
 //    }
 // }
-

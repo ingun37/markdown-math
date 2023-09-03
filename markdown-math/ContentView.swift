@@ -12,11 +12,19 @@ enum ManualOrientation {
     case vertical
 }
 
+enum Display: String, CaseIterable, Identifiable {
+
+    var id: Self { self }
+    case Block
+    case Inline
+}
+
 struct ContentView: View {
     @State var markdownContent: String = initialMarkdown
     @State var selectedrange: NSRange = .init()
     @State var inlineDelimeter: DelimeterType = .GitLab
     @State var mathFormat: MathFormatType = .Latex
+    @State var display: Display = .Inline
     @State private var inputMode = false
     @State private var manualOrientation: ManualOrientation = .vertical
 
@@ -32,7 +40,13 @@ struct ContentView: View {
                 Text("Math renderer")
                 Picker("Format", selection: $mathFormat) {
                     ForEach(MathFormatType.allCases) { style in
-                        Text(style.rawValue.capitalized)
+                        Text(style.rawValue)
+                    }
+                }
+                Text("Display")
+                Picker("Display", selection: $display) {
+                    ForEach(Display.allCases) { display in
+                        Text(display.rawValue)
                     }
                 }
 
@@ -48,8 +62,16 @@ struct ContentView: View {
                             let x = markdownContent.index(markdownContent.startIndex, offsetBy: selectedrange.location)
                             let y = markdownContent.index(markdownContent.startIndex, offsetBy: selectedrange.location + selectedrange.length)
 
+                            let delimiters = inlineDelimeter.style()
+
+                            let d: Delimeter
+                            switch display {
+                            case .Block: d = delimiters.block
+                            case .Inline: d = delimiters.inline
+                            }
+
                             DispatchQueue.main.async {
-                                markdownContent = markdownContent[..<x] + tex + markdownContent[y...]
+                                markdownContent = markdownContent[..<x] + d.start + tex + d.end + markdownContent[y...]
                             }
 
                             inputMode.toggle()
