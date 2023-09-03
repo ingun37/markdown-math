@@ -83,6 +83,9 @@ struct ContentView: View {
                         })
                     }
                 }.buttonStyle(.borderedProminent)
+                
+                Spacer()
+                ShareLink(item: markdownContent)
             }
 
             let layout = manualOrientation == .vertical ?
