@@ -21,7 +21,6 @@ class MainViewController: UIViewController, Storyboarded {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var moreBarButtonItem: UIBarButtonItem!
-    @IBOutlet private weak var addPartBarButtonItem: UIBarButtonItem!
     @IBOutlet private weak var previousPartBarButtonItem: UIBarButtonItem!
     @IBOutlet private weak var nextPartBarButtonItem: UIBarButtonItem!
     @IBOutlet private weak var convertBarButtonItem: UIBarButtonItem!
@@ -74,7 +73,6 @@ class MainViewController: UIViewController, Storyboarded {
 
     private func bindViewModel() {
         // Enable/Disable buttons and gestures
-        self.viewModel?.$addPartItemEnabled.assign(to: \.isEnabled, on: self.addPartBarButtonItem).store(in: &cancellables)
         self.viewModel?.$editingEnabled.assign(to: \.isEnabled, on: self.convertBarButtonItem).store(in: &cancellables)
         self.viewModel?.$editingEnabled.assign(to: \.isEnabled, on: self.zoomInBarButtonItem).store(in: &cancellables)
         self.viewModel?.$editingEnabled.assign(to: \.isEnabled, on: self.zoomOutBarButtonItem).store(in: &cancellables)

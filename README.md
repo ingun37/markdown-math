@@ -43,56 +43,50 @@ Make some changes.
 
 ### Header search path
 
-Add `${SRCROOT}/Frameworks` or wherever the `Frameworks` folder is to  Header Search Paths as non-recursive.
+Add `${SRCROOT}/Frameworks` or wherever the `Frameworks` folder is to  Header Search Paths as recursive.
 
-### Remuve conflicting project data
+### Remove conflicting project data
 
-Remove `Demo/Supporting Files`
-
-### Implement MyScriptSampleDelegate in MainViewController
-
-Add property `var myscriptSampleDelegate: MyScriptSampleDelegate?` to `MainViewController`.
-
-Call `myscriptSampleDelegate.done(tex: String)` from `@IBAction private func nextPart(_ sender: Any)` with exported latex as parameter.
-
-```swift
-let imageLoader = ImageLoader()
-let imagePainter = ImagePainter(imageLoader: imageLoader)
-if let editor = self.viewModel?.editor {
-    let part = editor.part?.identifier ?? ""
-    let type = editor.part?.type ?? ""
-    editor.waitForIdle() // Waits until part modification operations are over.
-    if let aaa = try? editor.export(selection: editor.rootBlock,
-                                mimeType: IINKMimeType.laTeX
-    ) {
-        self.myscriptSampleDelegate?.done(tex:aaa)
-    }
-}
-```
-
-Call `myscriptSampleDelegate.cancel()` from `@IBAction private func previousPart(_ sender: Any)`.
-
-Add `myScriptSampleDelegate: MyScriptSampleDelegate` parameter to `MainCoordinator`'s `init()` and pass it to `mainViewController`.
-
-
-### Remove redundant UI components
-
-In `Main.storyboard`, remove
-
-* Add button in the middle of bottom bar
+Remove `Demo/Supporting Files/` and `Demo/Classe/Utils/AppDelegate.swift` and `Demo/MyCertificate/`
 
 ### Change Prev and Next to Cancel and Done
 
-In `Main.storyboard`, change the Prev and Next at the bottom toolbar to Cancel and Done.
+In `Main.storyboard`, change the Prev and Next at the bottom toolbar to Cancel and Done by setting `System Item`. Remove + button.
 
 In `MainViewModel`, set default value of `previousButtonEnabled` and `nextButtonEnabled` to true. It has to remain true and never change so search for all their usages and delete.
+
+Remove + button at the bottom toolbar and `addPartBarButtonItem` and their usages from `MainViewController`.
+
+### Notify Done and Cancel
+
+In `EditorWorker.swift`, Call `MyScriptSampleObserver.done(tex: String)` and `MyScriptSampleObserver.cancel()` from `func loadNextPart()` and `func loadPreviousPart()` respectively.
+
+```swift
+    func loadNextPart() {
+        if let editor = self.editor,
+           let part = editor.part{
+            let type = part.type
+            editor.waitForIdle() // Waits until part modification operations are over.
+            if let aaa = try? editor.export(selection: editor.rootBlock,
+                                        mimeType: IINKMimeType.laTeX
+            ) {
+                MyScriptSampleObserver.shared().delegate?.done(tex: aaa)
+            }
+        }
+    }
+
+    func loadPreviousPart() {
+        MyScriptSampleObserver.shared().delegate?.cancel()
+    }
+```
 
 ### Bundle Resources
 
 Go to project setting > Build Phases > Copy Bundle Resources and add `.../recognition-assets` as folder.
 
-### Frameworks
+Remove all the individual files under recognition-assets added by adding `Demo` folder before.
 
-Copy and add `/interactive-ink-examples-ios/Examples/Frameworks` to somewhere.
 
-If there are errors anywhere `CONTROL_GRAY_COLOR` or `WORD_GRAY_COLOR` is used then delete them.
+### Import Swift into ObjC
+
+In `SmartGuideViewController.mm`, change Swift module import header to `#import "markdown_math-Swift.h"`

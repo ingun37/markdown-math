@@ -1,11 +1,7 @@
 // Copyright @ MyScript. All rights reserved.
 
 #import "SmartGuideViewController.h"
-#if DEMO
-#import "Demo-Swift.h"
-#elif GET_STARTED
-#import "GetStarted-Swift.h"
-#endif
+#import "markdown_math-Swift.h"
 #import <iink/IINKRenderer.h>
 #import <iink/IINKEngine.h>
 #import <iink/IINKConfiguration.h>

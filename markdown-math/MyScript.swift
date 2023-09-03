@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct MyScript: UIViewControllerRepresentable {
-    var myScriptSampleDelegate: MyScriptSampleDelegate
+    let delegate: MyScriptSampleObserverDelegate
     func makeCoordinator() -> Con {
         Con()
     }
 
     func makeUIViewController(context: Context) -> UINavigationController {
+        MyScriptSampleObserver.shared().delegate = self.delegate
         FileManager.default.createIinkDirectory()
 
         let lastOpenedFile = FilesProvider.retrieveLastModifiedFile()
@@ -27,7 +28,7 @@ struct MyScript: UIViewControllerRepresentable {
         let engine = EngineProvider.sharedInstance.engine
         try? engine?.configuration.set(boolean: false, forKey: "math.solver.enable")
         // send that into our coordinator so that it can display view controllers
-        context.coordinator.coordinator = MainCoordinator(navigationController: navController, myScriptSampleDelegate: self.myScriptSampleDelegate, engine: engine)
+        context.coordinator.coordinator = MainCoordinator(navigationController: navController, engine: engine)
         // tell the coordinator to take over control
         context.coordinator.coordinator?.start()
         return navController

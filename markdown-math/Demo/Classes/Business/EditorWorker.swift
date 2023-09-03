@@ -75,27 +75,19 @@ class EditorWorker: EditorWorkerLogic {
 
     func loadNextPart() {
         if let editor = self.editor,
-           let part = editor.part,
-           let currentPackage = self.currentPackage {
-            let partCount: Int = currentPackage.partCount()
-            let currentIndex: Int = currentPackage.index(of: part)
-            if currentIndex < partCount - 1,
-               let nextPart = try? currentPackage.part(at: currentIndex + 1) {
-                self.loadPart(part: nextPart)
+           let part = editor.part{
+            let type = part.type
+            editor.waitForIdle() // Waits until part modification operations are over.
+            if let aaa = try? editor.export(selection: editor.rootBlock,
+                                        mimeType: IINKMimeType.laTeX
+            ) {
+                MyScriptSampleObserver.shared().delegate?.done(tex: aaa)
             }
         }
     }
 
     func loadPreviousPart() {
-        if let editor = self.editor,
-           let part = editor.part,
-           let currentPackage = self.currentPackage {
-            let currentIndex: Int = currentPackage.index(of: part)
-            if currentIndex > 0,
-               let nextPart = try? currentPackage.part(at: currentIndex - 1) {
-                self.loadPart(part: nextPart)
-            }
-        }
+        MyScriptSampleObserver.shared().delegate?.cancel()
     }
 
     func undo() {
