@@ -26,7 +26,7 @@ struct ContentView: View {
                 Text("Delimeter style")
                 Picker("Inline Delimeter", selection: $inlineDelimeter) {
                     ForEach(DelimeterType.allCases) { style in
-                        Text(style.rawValue.capitalized)
+                        Text(style.rawValue)
                     }
                 }
                 Text("Math renderer")
