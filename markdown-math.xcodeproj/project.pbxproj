@@ -74,6 +74,7 @@
 		9285971B2A2377C400F672B3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9285971A2A2377C400F672B3 /* Launch Screen.storyboard */; };
 		9285971D2A23785900F672B3 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9285971C2A23785900F672B3 /* Storyboard.storyboard */; };
 		9285971F2A23788800F672B3 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9285971E2A23788800F672B3 /* SwiftUIView.swift */; };
+		92A151492AD98A54000605A2 /* MathSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A151482AD98A54000605A2 /* MathSheet.swift */; };
 		92B1C89D2AA41FCD0068D7A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92B1C8572AA41FCD0068D7A6 /* LaunchScreen.storyboard */; };
 		92B1C89E2AA41FCD0068D7A6 /* PartTypesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1C8592AA41FCD0068D7A6 /* PartTypesViewModel.swift */; };
 		92B1C89F2AA41FCD0068D7A6 /* PartTypesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1C85A2AA41FCD0068D7A6 /* PartTypesModel.swift */; };
@@ -231,6 +232,7 @@
 		9285971A2A2377C400F672B3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		9285971C2A23785900F672B3 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		9285971E2A23788800F672B3 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		92A151482AD98A54000605A2 /* MathSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathSheet.swift; sourceTree = "<group>"; };
 		92B1C8572AA41FCD0068D7A6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92B1C8592AA41FCD0068D7A6 /* PartTypesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartTypesViewModel.swift; sourceTree = "<group>"; };
 		92B1C85A2AA41FCD0068D7A6 /* PartTypesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartTypesModel.swift; sourceTree = "<group>"; };
@@ -499,6 +501,7 @@
 				92B1C8542AA41FCD0068D7A6 /* Demo */,
 				9283E6462A0E44F700EB66EC /* Assets.xcassets */,
 				9283E6442A0E44F600EB66EC /* ContentView.swift */,
+				92A151482AD98A54000605A2 /* MathSheet.swift */,
 				921B9E7B2A0E67C1009FB45B /* Functions.swift */,
 				9268C6972A245E1D001A99B5 /* MyScriptInteractiveInk-Runtime-iOS-2 */,
 				9268CEA52A21D481005484FF /* WebView.swift */,
@@ -1039,6 +1042,7 @@
 				92B1C8F62AA420C50068D7A6 /* ContextualActionsHelper.swift in Sources */,
 				92B1C8AF2AA41FCD0068D7A6 /* ExportModel.swift in Sources */,
 				92B1C8B92AA41FCD0068D7A6 /* Storyboarded.swift in Sources */,
+				92A151492AD98A54000605A2 /* MathSheet.swift in Sources */,
 				92B1C90E2AA425960068D7A6 /* MyScriptSampleObserver.swift in Sources */,
 				92B1C8FB2AA420C50068D7A6 /* Path.swift in Sources */,
 				92B1C8A62AA41FCD0068D7A6 /* ToolStyleViewModel.swift in Sources */,

@@ -21,13 +21,18 @@ enum Display: String, CaseIterable, Identifiable {
 
 struct ContentView: View {
     @State var markdownContent: String = initialMarkdown
-    @State var selectedrange: (NSRange, MarkdownNode?) = (NSRange(), nil);
+    @State var selectedrange: (NSRange, MarkdownNode?) = (NSRange(), nil)
     @State var inlineDelimeter: DelimeterType = .GitLab
     @State var mathFormat: MathFormatType = .Latex
     @State var display: Display = .Inline
     @State private var inputMode = false
     @State private var manualOrientation: ManualOrientation = .vertical
-
+    var isInsert: Bool {
+        get {
+            selectedrange.1?.type != MarkdownNode.MarkdownType.codeBlock &&
+            selectedrange.1?.type != MarkdownNode.MarkdownType.code
+        }
+    }
     var body: some View {
         VStack {
             HStack {
@@ -52,37 +57,31 @@ struct ContentView: View {
 
                 Button("Input Math") {
                     inputMode.toggle()
-                }.sheet(isPresented: $inputMode) {
-                    VStack {
-                        MathInput(tex: "", format: mathFormat, onCancel: {
-                            inputMode.toggle()
+                }
+                .sheet(isPresented: $inputMode) {
+                    MathSheet(
+                        mathFormat: $mathFormat,
+                        inputMode: $inputMode,
+                        markdownContent: $markdownContent,
+                        inlineDelimeter: $inlineDelimeter,
+                        display: $display,
+                        offset: selectedrange.0.location,
+                        length: selectedrange.0.length,
+                        initialTex: ""
+                    )
+                }
+                .buttonStyle(.borderedProminent)
+                .disabled(!isInsert)
 
-                        }, onInsert: { tex in
-                            let x = markdownContent.index(markdownContent.startIndex, offsetBy: selectedrange.0.location)
-                            let y = markdownContent.index(markdownContent.startIndex, offsetBy: selectedrange.0.location + selectedrange.0.length)
+                Button("Edit Math") {
+                    inputMode.toggle()
+                }
+                .sheet(isPresented: $inputMode) {
+                }
+                .buttonStyle(.borderedProminent)
+                .disabled(isInsert)
 
-                            let delimiters = inlineDelimeter.style()
 
-                            let start: String
-                            let end: String
-                            switch display {
-                            case .Block:
-                                start = "\n" + delimiters.block.start + "\n"
-                                end = "\n" + delimiters.block.end + "\n"
-                            case .Inline:
-                                start = delimiters.inline.start
-                                end = delimiters.inline.end
-                            }
-
-                            DispatchQueue.main.async {
-                                markdownContent = markdownContent[..<x] + start + tex + end + markdownContent[y...]
-                            }
-
-                            inputMode.toggle()
-                        })
-                    }
-                }.buttonStyle(.borderedProminent)
-                
                 Spacer()
                 ShareLink(item: markdownContent)
             }
@@ -96,7 +95,7 @@ struct ContentView: View {
                 SwiftDownEditor(text: $markdownContent, selectedRange: $selectedrange)
                     .insetsSize(40)
                     .theme(Theme.BuiltIn.defaultDark.theme())
-                
+
             }
         }
         .padding()
