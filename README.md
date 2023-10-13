@@ -90,3 +90,8 @@ Remove all the individual files under recognition-assets added by adding `Demo` 
 ### Import Swift into ObjC
 
 In `SmartGuideViewController.mm`, change Swift module import header to `#import "markdown_math-Swift.h"`
+
+### Remevo redundant UI components
+
+In `Demo/Clasess/Scenes/Main.storyboard`, remove Navigation Item > Right Bar Button Items > More Bar Button Item.
+In `Demo/Classes/Scenes/Toolbar/Toolbar.storyboard`, remove Highlighter and Style button.

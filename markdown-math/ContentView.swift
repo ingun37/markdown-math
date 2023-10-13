@@ -21,7 +21,7 @@ enum Display: String, CaseIterable, Identifiable {
 
 struct ContentView: View {
     @State var markdownContent: String = initialMarkdown
-    @State var selectedrange: NSRange = .init()
+    @State var selectedrange: (NSRange, MarkdownNode?) = (NSRange(), nil);
     @State var inlineDelimeter: DelimeterType = .GitLab
     @State var mathFormat: MathFormatType = .Latex
     @State var display: Display = .Inline
@@ -58,9 +58,8 @@ struct ContentView: View {
                             inputMode.toggle()
 
                         }, onInsert: { tex in
-                            print("rng", selectedrange)
-                            let x = markdownContent.index(markdownContent.startIndex, offsetBy: selectedrange.location)
-                            let y = markdownContent.index(markdownContent.startIndex, offsetBy: selectedrange.location + selectedrange.length)
+                            let x = markdownContent.index(markdownContent.startIndex, offsetBy: selectedrange.0.location)
+                            let y = markdownContent.index(markdownContent.startIndex, offsetBy: selectedrange.0.location + selectedrange.0.length)
 
                             let delimiters = inlineDelimeter.style()
 
@@ -96,9 +95,8 @@ struct ContentView: View {
 
                 SwiftDownEditor(text: $markdownContent, selectedRange: $selectedrange)
                     .insetsSize(40)
-                    .theme(Theme.BuiltIn.defaultDark.theme()).onSelectedRangeChange { rng in
-                        selectedrange = rng
-                    }
+                    .theme(Theme.BuiltIn.defaultDark.theme())
+                
             }
         }
         .padding()
