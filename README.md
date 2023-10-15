@@ -104,4 +104,5 @@ EditorDelegate <|-- MainViewModel
 EditorDelegate : didCreateEditor()
 EditorWorker --> MyScriptSampleObserver
 MainViewModel o-- EditorWorker
+MainCoordinator --> EditorViewModel : (create)
 ```
