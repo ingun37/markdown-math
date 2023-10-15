@@ -54,7 +54,6 @@ struct WebView: UIViewRepresentable {
     func updateUIView(_ uiView: WKWebView, context c: Context) {
         c.coordinator.cancellable?.cancel()
         c.coordinator.cancellable = Timer.publish(every: 0.5, on: .main, in: .default).autoconnect().first().sink { _ in
-            print("rendered!!!")
             let matches = markdown.matches(of: delimeter.style().inlineMatcher)
             var newMD = ""
 
