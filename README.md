@@ -94,13 +94,15 @@ In `Demo/Classes/Scenes/Toolbar/Toolbar.storyboard`, remove Highlighter and Styl
 
 ```mermaid
 classDiagram
+EditorDelegate <|-- MainViewModel
+MainViewModelEditorLogic <|-- MainViewModel
+MainViewModelEditorLogic : didLoadPart()
 MainViewController o-- MainViewModel
 MainViewController o-- MainCoordinator : coordinator
 MainCoordinator : displayEditor()
 MainViewModel <-- EditorViewModel : editorDelegate
 EditorViewModel : initEditor()
 EditorViewModel : setupModel()
-EditorDelegate <|-- MainViewModel
 EditorDelegate : didCreateEditor()
 EditorWorker --> MyScriptSampleObserver
 MainViewModel o-- EditorWorker
