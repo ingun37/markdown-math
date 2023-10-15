@@ -96,6 +96,7 @@ In `Demo/Classes/Scenes/Toolbar/Toolbar.storyboard`, remove Highlighter and Styl
 classDiagram
 MainViewController o-- MainViewModel
 MainViewController o-- MainCoordinator : coordinator
+MainCoordinator : displayEditor()
 MainViewModel <-- EditorViewModel : editorDelegate
 EditorViewModel : initEditor()
 EditorViewModel : setupModel()
