@@ -8,12 +8,6 @@ Download [MyScriptInteractiveInk-Runtime-iOS](https://s3-us-west-2.amazonaws.com
 
 Place `ingun.markdown-math.c` that is sent you by email under MyCertificate/ folder.
 
-Run
-
-```sh
-./retrieve_recognition-assets.sh .
-```
-
 The version is fixed to 2.0.1 in the script.
 
 ## Linting
