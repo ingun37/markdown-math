@@ -74,6 +74,19 @@ In `EditorWorker.swift`, Call `MyScriptSampleObserver.done(tex: String)` and `My
     }
 ```
 
+### Import LaTex to editor
+
+In `MainViewModel`, append following code to `didLoadPart()`
+
+```swift
+    func didLoadPart(title: String, index: Int, partCount: Int) {
+        // ...
+        if let editor = self.editor, let tex = MyScriptSampleObserver.shared().latex {
+            try? editor.import(mimeType: IINKMimeType.laTeX, data: tex, selection: editor.rootBlock)
+        }
+    }
+```
+
 ### Bundle Resources
 
 Go to project setting > Build Phases > Copy Bundle Resources and add `.../recognition-assets` as folder.
@@ -108,3 +121,8 @@ EditorWorker --> MyScriptSampleObserver
 MainViewModel o-- EditorWorker
 MainCoordinator --> EditorViewModel : (create)
 ```
+
+## TODO
+
+- [ ] (SwiftDown) Make cue from `updateUIView/updateNSView` instead of `NSNotification`.
+- [ ] Use slightly smaller box than `IINKEditor.rootBlock`
