@@ -89,3 +89,18 @@ In `SmartGuideViewController.mm`, change Swift module import header to `#import 
 
 In `Demo/Clasess/Scenes/Main.storyboard`, remove Navigation Item > Right Bar Button Items > More Bar Button Item.
 In `Demo/Classes/Scenes/Toolbar/Toolbar.storyboard`, remove Highlighter and Style button.
+
+### Diagram
+
+```mermaid
+classDiagram
+MainViewController o-- MainViewModel
+MainViewController o-- MainCoordinator : coordinator
+MainViewModel <-- EditorViewModel : editorDelegate
+EditorViewModel : initEditor()
+EditorViewModel : setupModel()
+EditorDelegate <|-- MainViewModel
+EditorDelegate : didCreateEditor()
+EditorWorker --> MyScriptSampleObserver
+MainViewModel o-- EditorWorker
+```
