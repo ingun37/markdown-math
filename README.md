@@ -126,3 +126,6 @@ MainCoordinator --> EditorViewModel : (create)
 
 - [ ] (SwiftDown) Make cue from `updateUIView/updateNSView` instead of `NSNotification`.
 - [ ] Use slightly smaller box than `IINKEditor.rootBlock`
+- [ ] Conform to LaTex.
+- [ ] Remove KaTex support.
+- [ ] Import error message on LaTex Error.
