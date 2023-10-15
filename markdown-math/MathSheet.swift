@@ -13,7 +13,7 @@ struct MathSheet: View {
     @Binding var inputMode: Bool
     @Binding var markdownContent: String
     @Binding var inlineDelimeter: DelimeterType
-    @Binding var display: Display
+    var display: Display
     var offset: Int
     var length: Int
     var initialTex: String

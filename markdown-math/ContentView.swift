@@ -27,10 +27,27 @@ struct ContentView: View {
     @State var display: Display = .Inline
     @State private var inputMode = false
     @State private var manualOrientation: ManualOrientation = .vertical
-    var isInsert: Bool {
+    var isInsert: (String, NSRange, Bool)? {
         get {
-            selectedrange.1?.type != MarkdownNode.MarkdownType.codeBlock &&
-            selectedrange.1?.type != MarkdownNode.MarkdownType.code
+            if let markdownNode = selectedrange.1 {
+                let nodeType = markdownNode.type
+                let rng = markdownNode.range
+                if nodeType == MarkdownNode.MarkdownType.codeBlock ||
+                   nodeType == MarkdownNode.MarkdownType.code {
+                    let idx0 = markdownContent.startIndex
+                    let delStyle = inlineDelimeter.style()
+                    let isInline = nodeType == MarkdownNode.MarkdownType.code
+                    let del = isInline ? delStyle.inline : delStyle.block
+                    
+                    let A = markdownContent.index(idx0, offsetBy: rng.location + del.start.count)
+                    let B = markdownContent.index(idx0, offsetBy: rng.location + rng.length - del.end.count)
+                    
+                    let sub = markdownContent[A..<B]
+                    return (String(sub), rng, isInline)
+                    
+                }
+            }
+            return nil
         }
     }
     var body: some View {
@@ -55,31 +72,47 @@ struct ContentView: View {
                     }
                 }
 
-                Button("Input Math") {
-                    inputMode.toggle()
+                if let isInsert = isInsert {
+                    Button("Input Math") {
+                        inputMode.toggle()
+                    }.disabled(true)
+                    Button("Edit Math") {
+                        inputMode.toggle()
+                    }
+                    .sheet(isPresented: $inputMode) {
+                        MathSheet(
+                            mathFormat: $mathFormat,
+                            inputMode: $inputMode,
+                            markdownContent: $markdownContent,
+                            inlineDelimeter: $inlineDelimeter,
+                            display: isInsert.2 ? .Inline : .Block,
+                            offset: isInsert.1.location,
+                            length: isInsert.1.length,
+                            initialTex: isInsert.0
+                        )
+                    }
+                    .buttonStyle(.borderedProminent)
+                } else {
+                    Button("Input Math") {
+                        inputMode.toggle()
+                    }
+                    .sheet(isPresented: $inputMode) {
+                        MathSheet(
+                            mathFormat: $mathFormat,
+                            inputMode: $inputMode,
+                            markdownContent: $markdownContent,
+                            inlineDelimeter: $inlineDelimeter,
+                            display: display,
+                            offset: selectedrange.0.location,
+                            length: selectedrange.0.length,
+                            initialTex: ""
+                        )
+                    }
+                    .buttonStyle(.borderedProminent)
+                    Button("Edit Math") {
+                        inputMode.toggle()
+                    }.disabled(true)
                 }
-                .sheet(isPresented: $inputMode) {
-                    MathSheet(
-                        mathFormat: $mathFormat,
-                        inputMode: $inputMode,
-                        markdownContent: $markdownContent,
-                        inlineDelimeter: $inlineDelimeter,
-                        display: $display,
-                        offset: selectedrange.0.location,
-                        length: selectedrange.0.length,
-                        initialTex: ""
-                    )
-                }
-                .buttonStyle(.borderedProminent)
-                .disabled(!isInsert)
-
-                Button("Edit Math") {
-                    inputMode.toggle()
-                }
-                .sheet(isPresented: $inputMode) {
-                }
-                .buttonStyle(.borderedProminent)
-                .disabled(isInsert)
 
 
                 Spacer()
