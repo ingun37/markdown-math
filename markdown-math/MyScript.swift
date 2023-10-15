@@ -9,11 +9,17 @@ import SwiftUI
 
 struct MyScript: UIViewControllerRepresentable {
     let delegate: MyScriptSampleObserverDelegate
+    let latex: String?
     func makeCoordinator() -> Con {
         Con()
     }
 
     func makeUIViewController(context: Context) -> UINavigationController {
+        if let latex = self.latex, 0 < latex.count {
+            MyScriptSampleObserver.shared().latex = latex
+        } else {
+            MyScriptSampleObserver.shared().latex = nil
+        }
         MyScriptSampleObserver.shared().delegate = self.delegate
         FileManager.default.createIinkDirectory()
 

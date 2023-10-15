@@ -30,7 +30,7 @@ struct MathInput: View, MyScriptSampleObserverDelegate {
             Button("Handwriting") {
                 handwriting.toggle()
             }.fullScreenCover(isPresented: $handwriting) {
-                MyScript(delegate: self)
+                MyScript(delegate: self, latex: tex)
             }.buttonStyle(.borderedProminent)
 
         }.padding()

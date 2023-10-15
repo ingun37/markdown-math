@@ -424,6 +424,9 @@ extension MainViewModel: MainViewModelEditorLogic {
         
         // Set title
         self.title = title
+        if let editor = self.editor, let tex = MyScriptSampleObserver.shared().latex {
+            try? editor.import(mimeType: IINKMimeType.laTeX, data: tex, selection: editor.rootBlock)
+        }
     }
 
     func didUnloadPart() {

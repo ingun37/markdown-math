@@ -11,7 +11,7 @@ protocol MyScriptSampleObserverDelegate {
     func done(tex: String)
 }
 class MyScriptSampleObserver {
-
+    public var latex: String?
     private static var sharedNetworkManager: MyScriptSampleObserver = {
         let networkManager = MyScriptSampleObserver()
 
