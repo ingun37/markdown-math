@@ -38,13 +38,13 @@ struct ContentView: View {
                     let delStyle = inlineDelimeter.style()
                     let isInline = nodeType == MarkdownNode.MarkdownType.code
                     let del = isInline ? delStyle.inline : delStyle.block
-                    
+
                     let A = markdownContent.index(idx0, offsetBy: rng.location + del.start.count)
                     let B = markdownContent.index(idx0, offsetBy: rng.location + rng.length - del.end.count)
-                    
+
                     let sub = markdownContent[A..<B]
                     return (String(sub), rng, isInline)
-                    
+
                 }
             }
             return nil
@@ -113,7 +113,6 @@ struct ContentView: View {
                         inputMode.toggle()
                     }.disabled(true)
                 }
-
 
                 Spacer()
                 ShareLink(item: markdownContent)

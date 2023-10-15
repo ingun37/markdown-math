@@ -71,10 +71,9 @@ struct WebView: UIViewRepresentable {
             newMD += markdown[idx!...]
             uiView.loadHTMLString(format.header() + parser.html(from: newMD), baseURL: nil)
         }
-        
 
     }
-    
+
     func makeCoordinator() -> Coordinator {
         Coordinator()
     }
