@@ -20,7 +20,7 @@ enum Display: String, CaseIterable, Identifiable {
 }
 
 struct ContentView: View {
-    @State var markdownContent: String = initialMarkdown
+    @StateObject var appState = AppState()
     @State var selectedrange: (NSRange, MarkdownNode?) = (NSRange(), nil)
     @State var inlineDelimeter: DelimeterType = .GitLab
     @State var mathFormat: MathFormatType = .Latex
@@ -34,15 +34,15 @@ struct ContentView: View {
                 let rng = markdownNode.range
                 if nodeType == MarkdownNode.MarkdownType.codeBlock ||
                    nodeType == MarkdownNode.MarkdownType.code {
-                    let idx0 = markdownContent.startIndex
+                    let idx0 = appState.markdownContent.startIndex
                     let delStyle = inlineDelimeter.style()
                     let isInline = nodeType == MarkdownNode.MarkdownType.code
                     let del = isInline ? delStyle.inline : delStyle.block
 
-                    let A = markdownContent.index(idx0, offsetBy: rng.location + del.start.count)
-                    let B = markdownContent.index(idx0, offsetBy: rng.location + rng.length - del.end.count)
+                    let A = appState.markdownContent.index(idx0, offsetBy: rng.location + del.start.count)
+                    let B = appState.markdownContent.index(idx0, offsetBy: rng.location + rng.length - del.end.count)
 
-                    let sub = markdownContent[A..<B]
+                    let sub = appState.markdownContent[A..<B]
                     return (String(sub), rng, isInline)
 
                 }
@@ -83,7 +83,7 @@ struct ContentView: View {
                         MathSheet(
                             mathFormat: $mathFormat,
                             inputMode: $inputMode,
-                            markdownContent: $markdownContent,
+                            markdownContent: $appState.markdownContent,
                             inlineDelimeter: $inlineDelimeter,
                             display: isInsert.2 ? .Inline : .Block,
                             offset: isInsert.1.location,
@@ -100,7 +100,7 @@ struct ContentView: View {
                         MathSheet(
                             mathFormat: $mathFormat,
                             inputMode: $inputMode,
-                            markdownContent: $markdownContent,
+                            markdownContent: $appState.markdownContent,
                             inlineDelimeter: $inlineDelimeter,
                             display: display,
                             offset: selectedrange.0.location,
@@ -115,16 +115,16 @@ struct ContentView: View {
                 }
 
                 Spacer()
-                ShareLink(item: markdownContent)
+                ShareLink(item: appState.markdownContent)
             }
 
             let layout = manualOrientation == .vertical ?
                 AnyLayout(HStackLayout()) : AnyLayout(VStackLayout())
 
             layout {
-                WebView(markdown: $markdownContent, delimeter: $inlineDelimeter, format: $mathFormat)
+                WebView(markdown: $appState.markdownContent, delimeter: $inlineDelimeter, format: $mathFormat)
 
-                SwiftDownEditor(text: $markdownContent, selectedRange: $selectedrange)
+                SwiftDownEditor(text: $appState.markdownContent, selectedRange: $selectedrange)
                     .insetsSize(40)
                     .theme(Theme.BuiltIn.defaultDark.theme())
 

@@ -11,6 +11,7 @@
 		921B9E702A0E61FC009FB45B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E6F2A0E61FC009FB45B /* SystemConfiguration.framework */; };
 		921B9E7C2A0E67C1009FB45B /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921B9E7B2A0E67C1009FB45B /* Functions.swift */; };
 		9228770C2A95EC080099D5AC /* MyScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228770B2A95EC080099D5AC /* MyScript.swift */; };
+		925048822ADE015E00180DFF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925048812ADE015E00180DFF /* AppState.swift */; };
 		92595DD42A2461F40020A3FE /* ingun.markdown-math.c in Sources */ = {isa = PBXBuildFile; fileRef = 92595DD32A2461F40020A3FE /* ingun.markdown-math.c */; };
 		92595DD62A2466490020A3FE /* MathInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92595DD52A2466490020A3FE /* MathInput.swift */; };
 		92595DD82A2466AC0020A3FE /* InputWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92595DD72A2466AC0020A3FE /* InputWebView.swift */; };
@@ -165,6 +166,7 @@
 		921B9E6F2A0E61FC009FB45B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		921B9E7B2A0E67C1009FB45B /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		9228770B2A95EC080099D5AC /* MyScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScript.swift; sourceTree = "<group>"; };
+		925048812ADE015E00180DFF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		92595DD32A2461F40020A3FE /* ingun.markdown-math.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "ingun.markdown-math.c"; sourceTree = "<group>"; };
 		92595DD52A2466490020A3FE /* MathInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathInput.swift; sourceTree = "<group>"; };
 		92595DD72A2466AC0020A3FE /* InputWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputWebView.swift; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 				921B9E7B2A0E67C1009FB45B /* Functions.swift */,
 				9268C6972A245E1D001A99B5 /* MyScriptInteractiveInk-Runtime-iOS-2 */,
 				9268CEA52A21D481005484FF /* WebView.swift */,
+				925048812ADE015E00180DFF /* AppState.swift */,
 				9268C6F42A245E70001A99B5 /* MyCertificate */,
 				9268CEA32A21D446005484FF /* Data.swift */,
 				9268CEAA2A21ED05005484FF /* Delimeter.swift */,
@@ -1071,6 +1074,7 @@
 				9268C6EF2A245E1E001A99B5 /* IINK.swift in Sources */,
 				92B1C90C2AA420C50068D7A6 /* EditorViewController.swift in Sources */,
 				92595DD42A2461F40020A3FE /* ingun.markdown-math.c in Sources */,
+				925048822ADE015E00180DFF /* AppState.swift in Sources */,
 				92B1C9062AA420C50068D7A6 /* DisplayViewController.swift in Sources */,
 				92B1C8F32AA420C50068D7A6 /* Canvas.swift in Sources */,
 				921B9E7C2A0E67C1009FB45B /* Functions.swift in Sources */,
