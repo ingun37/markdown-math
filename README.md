@@ -128,13 +128,13 @@ MainCoordinator --> EditorViewModel : (create)
 
 ```mermaid
 classDiagram
-UITextView <|-- SwiftDown
-SwiftDown o-- Storage
-SwiftDown --> Coordinator : delegate
-UITextViewDelegate <|-- Coordinator
+UIViewRepresentable <|-- SwiftDownEditor
 SwiftDownEditor o-- Coordinator
+UITextViewDelegate <|-- Coordinator
+SwiftDown --> Coordinator : delegate
+UITextView <|-- SwiftDown
 Coordinator --> SwiftDownEditor : parent
-
+SwiftDown o-- Storage
 ```
 
 ### MacOS
