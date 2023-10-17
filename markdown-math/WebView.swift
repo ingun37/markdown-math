@@ -52,34 +52,23 @@ struct WebView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: WKWebView, context c: Context) {
-        c.coordinator.cancellable?.cancel()
-        c.coordinator.cancellable = Timer.publish(every: 0.5, on: .main, in: .default).autoconnect().first().sink { _ in
-            let matches = markdown.matches(of: delimeter.style().inlineMatcher)
-            var newMD = ""
+        let matches = markdown.matches(of: delimeter.style().inlineMatcher)
+        var newMD = ""
 
-            var idx: String.Index?
-            for match in matches {
-                if idx == nil {
-                    newMD += markdown[..<match.startIndex]
-                } else {
-                    newMD += markdown[idx! ..< match.startIndex]
-                }
-    //            print(markdown[match.startIndex..<match.endIndex].dropFirst(2).dropLast(2));
-                newMD += inlineMathBegin + markdown[match.startIndex ..< match.endIndex].dropFirst(2).dropLast(2) + inlineMathEnd
-                idx = match.endIndex
+        var idx: String.Index?
+        for match in matches {
+            if idx == nil {
+                newMD += markdown[..<match.startIndex]
+            } else {
+                newMD += markdown[idx! ..< match.startIndex]
             }
-            newMD += markdown[idx!...]
-            uiView.loadHTMLString(format.header() + parser.html(from: newMD), baseURL: nil)
+            newMD += inlineMathBegin + markdown[match.startIndex ..< match.endIndex].dropFirst(2).dropLast(2) + inlineMathEnd
+            idx = match.endIndex
         }
-
+        newMD += markdown[idx!...]
+        uiView.loadHTMLString(format.header() + parser.html(from: newMD), baseURL: nil)
     }
 
-    func makeCoordinator() -> Coordinator {
-        Coordinator()
-    }
-    class Coordinator {
-        var cancellable: Cancellable?
-    }
 }
 
 let inlineMathBegin = "`#inline-math-begin# "
