@@ -122,3 +122,34 @@ MainViewModel o-- EditorWorker
 MainCoordinator --> EditorViewModel : (create)
 ```
 
+## SwiftDown
+
+### iOS
+
+```mermaid
+classDiagram
+UITextView <|-- SwiftDown
+SwiftDown o-- Storage
+SwiftDown --> Coordinator : delegate
+UITextViewDelegate <|-- Coordinator
+SwiftDownEditor o-- Coordinator
+Coordinator --> SwiftDownEditor : parent
+
+```
+
+### MacOS
+
+```mermaid
+classDiagram
+NSTextView <|-- CustomTextView
+CustomTextView o-- Storage
+NSView <|-- SwiftDown
+SwiftDown o-- CustomTextView
+SwiftDownEditor o-- SwiftDown
+NSViewRepresentable <|-- SwiftDownEditor
+SwiftDownEditor o-- Coordinator
+NSTextViewDelegate <|-- Coordinator
+Coordinator --> SwiftDownEditor : parent
+Storage : +MarkdownNode[] markdownNodes
+Coordinator <-- CustomTextView : delegate
+```
