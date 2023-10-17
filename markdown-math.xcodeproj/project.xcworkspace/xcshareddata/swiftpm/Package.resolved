@@ -68,7 +68,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ingun37/SwiftDown.git",
       "state" : {
-        "revision" : "1e8598a34d3992482d066399b0d8accd5977048e"
+        "revision" : "d93e8dcb79fd212efebe6a945eb16be656f442e6"
       }
     },
     {

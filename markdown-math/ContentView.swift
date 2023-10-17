@@ -60,12 +60,6 @@ struct ContentView: View {
                         Text(style.rawValue)
                     }
                 }
-                Text("Math renderer")
-                Picker("Format", selection: $mathFormat) {
-                    ForEach(MathFormatType.allCases) { style in
-                        Text(style.rawValue)
-                    }
-                }
                 Text("Display")
                 Picker("Display", selection: $display) {
                     ForEach(Display.allCases) { display in
@@ -127,7 +121,9 @@ struct ContentView: View {
                         debouncedMarkdown = newValue
                 })
 
-                SwiftDownEditor(text: $appState.markdownContent, selectedRange: $selectedrange)
+              SwiftDownEditor(text: $appState.markdownContent, onSelectionChange: { rng, mn in
+                self.selectedrange = (rng, mn)
+              })
                     .insetsSize(40)
                     .theme(Theme.BuiltIn.defaultDark.theme())
 
