@@ -7,5 +7,8 @@
 
 import Foundation
 class AppState: ObservableObject {
-    @Published var markdownContent = initialMarkdown
+    @Published var markdownContent: String
+    init(_ markdownContent: String) {
+        self.markdownContent = markdownContent
+    }
 }

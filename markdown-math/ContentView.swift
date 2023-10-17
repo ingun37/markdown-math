@@ -20,7 +20,8 @@ enum Display: String, CaseIterable, Identifiable {
 }
 
 struct ContentView: View {
-    @StateObject var appState = AppState()
+    @StateObject var appState = AppState(initialMarkdown)
+    @State var debouncedMarkdown = initialMarkdown
     @State var selectedrange: (NSRange, MarkdownNode?) = (NSRange(), nil)
     @State var inlineDelimeter: DelimeterType = .GitLab
     @State var mathFormat: MathFormatType = .Latex
@@ -122,7 +123,9 @@ struct ContentView: View {
                 AnyLayout(HStackLayout()) : AnyLayout(VStackLayout())
 
             layout {
-                WebView(markdown: $appState.markdownContent, delimeter: $inlineDelimeter, format: $mathFormat)
+                WebView(markdown: $debouncedMarkdown, delimeter: $inlineDelimeter, format: $mathFormat).onReceive(appState.$markdownContent.debounce(for: .seconds(0.3), scheduler: RunLoop.main), perform: { newValue in
+                        debouncedMarkdown = newValue
+                })
 
                 SwiftDownEditor(text: $appState.markdownContent, selectedRange: $selectedrange)
                     .insetsSize(40)

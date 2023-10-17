@@ -19,7 +19,7 @@ Use [SwiftLint](https://github.com/realm/SwiftLint).
 brew install swiftlint
 
 # run
-swiftlint --fix
+swiftlint --fix --strict markdown-math/*.swift
 ```
 
 ## How to run MyScript Examples on your iPad
