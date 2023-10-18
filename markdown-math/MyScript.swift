@@ -49,7 +49,7 @@ struct MyScript: UIViewControllerRepresentable {
                 MyScriptSampleObserver.shared().delegate?.cancel()
             }))
             context.coordinator.coordinator?.navigationController.present(alert, animated: true, completion: nil)
-            
+
         }
     }
 

@@ -13,7 +13,6 @@ enum ManualOrientation {
 }
 
 enum Display: String, CaseIterable, Identifiable {
-
     var id: Self { self }
     case Block
     case Inline
@@ -22,35 +21,12 @@ enum Display: String, CaseIterable, Identifiable {
 struct ContentView: View {
     @StateObject var appState = AppState(initialMarkdown)
     @State var debouncedMarkdown = initialMarkdown
-    @State var selectedrange: (NSRange, MarkdownNode?) = (NSRange(), nil)
     @State var inlineDelimeter: DelimeterType = .GitLab
     @State var mathFormat: MathFormatType = .Latex
     @State var display: Display = .Inline
     @State private var inputMode = false
     @State private var manualOrientation: ManualOrientation = .vertical
-    var isInsert: (String, NSRange, Bool)? {
-        get {
-            if let markdownNode = selectedrange.1 {
-                let nodeType = markdownNode.type
-                let rng = markdownNode.range
-                if nodeType == MarkdownNode.MarkdownType.codeBlock ||
-                   nodeType == MarkdownNode.MarkdownType.code {
-                    let idx0 = appState.markdownContent.startIndex
-                    let delStyle = inlineDelimeter.style()
-                    let isInline = nodeType == MarkdownNode.MarkdownType.code
-                    let del = isInline ? delStyle.inline : delStyle.block
-
-                    let A = appState.markdownContent.index(idx0, offsetBy: rng.location + del.start.count)
-                    let B = appState.markdownContent.index(idx0, offsetBy: rng.location + rng.length - del.end.count)
-
-                    let sub = appState.markdownContent[A..<B]
-                    return (String(sub), rng, isInline)
-
-                }
-            }
-            return nil
-        }
-    }
+    @State var isInsert: (String, NSRange, Bool)?
     var body: some View {
         VStack {
             HStack {
@@ -98,8 +74,8 @@ struct ContentView: View {
                             markdownContent: $appState.markdownContent,
                             inlineDelimeter: $inlineDelimeter,
                             display: display,
-                            offset: selectedrange.0.location,
-                            length: selectedrange.0.length,
+                            offset: appState.selectedrange.0.location,
+                            length: appState.selectedrange.0.length,
                             initialTex: ""
                         )
                     }
@@ -122,10 +98,32 @@ struct ContentView: View {
                 })
 
               SwiftDownEditor(text: $appState.markdownContent, onSelectionChange: { rng, mn in
-                self.selectedrange = (rng, mn)
+                  appState.selectedrange = (rng, mn)
               })
-                    .insetsSize(40)
-                    .theme(Theme.BuiltIn.defaultDark.theme())
+                .insetsSize(40)
+                .theme(Theme.BuiltIn.defaultDark.theme())
+                .onReceive(appState.$selectedrange.debounce(for: .seconds(0.3), scheduler: RunLoop.main)) { mmm in
+                        if let markdownNode = mmm.1 {
+                            let nodeType = markdownNode.type
+                            let rng = markdownNode.range
+                            if nodeType == MarkdownNode.MarkdownType.codeBlock ||
+                               nodeType == MarkdownNode.MarkdownType.code {
+                                let idx0 = appState.markdownContent.startIndex
+                                let delStyle = inlineDelimeter.style()
+                                let isInline = nodeType == MarkdownNode.MarkdownType.code
+                                let del = isInline ? delStyle.inline : delStyle.block
+
+                                let A = appState.markdownContent.index(idx0, offsetBy: rng.location + del.start.count)
+                                let B = appState.markdownContent.index(idx0, offsetBy: rng.location + rng.length - del.end.count)
+
+                                let sub = appState.markdownContent[A..<B]
+                                self.isInsert = (String(sub), rng, isInline)
+                                return
+                            }
+                        }
+                        self.isInsert = nil
+
+                    }
 
             }
         }
