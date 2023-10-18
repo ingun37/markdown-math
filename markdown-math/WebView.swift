@@ -65,7 +65,9 @@ struct WebView: UIViewRepresentable {
             newMD += inlineMathBegin + markdown[match.startIndex ..< match.endIndex].dropFirst(2).dropLast(2) + inlineMathEnd
             idx = match.endIndex
         }
-        newMD += markdown[idx!...]
+        if let idx = idx {
+            newMD += markdown[idx...]
+        }
         uiView.loadHTMLString(format.header() + parser.html(from: newMD), baseURL: nil)
     }
 

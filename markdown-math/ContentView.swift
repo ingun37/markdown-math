@@ -130,7 +130,6 @@ struct ContentView: View {
                         debouncedMarkdown = newValue
                     }
               SwiftDownEditor(text: $markdownContent, onSelectionChange: { rng, mn in
-                  print("haggap")
                   selectedRangePassThrough.send((rng, mn))
               })
                 .insetsSize(40)
