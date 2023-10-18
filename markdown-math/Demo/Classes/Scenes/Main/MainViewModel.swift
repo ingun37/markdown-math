@@ -428,7 +428,7 @@ extension MainViewModel: MainViewModelEditorLogic {
             do {
                 try editor.import(mimeType: IINKMimeType.laTeX, data: tex, selection: editor.rootBlock)
             } catch {
-                print("\(error)")
+                MyScriptSampleObserver.shared().delegate?.alert(err: error)
             }
         }
     }

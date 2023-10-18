@@ -6,9 +6,26 @@
 //
 
 import Foundation
+
+struct TexError: LocalizedError {
+    var errorDescription: String?
+    init(err: Error) {
+        do {
+            if let m = try /import failed :(.+$)/.firstMatch(in: err.localizedDescription) {
+                errorDescription = String(m.output.1)
+            } else {
+                errorDescription = "Unknown Error"
+            }
+        } catch {
+            errorDescription = "Unknown Error"
+        }
+
+    }
+}
 protocol MyScriptSampleObserverDelegate {
     func cancel()
     func done(tex: String)
+    func alert(err: Error)
 }
 class MyScriptSampleObserver {
     public var latex: String?

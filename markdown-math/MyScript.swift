@@ -10,6 +10,7 @@ import SwiftUI
 struct MyScript: UIViewControllerRepresentable {
     let delegate: MyScriptSampleObserverDelegate
     let latex: String?
+    @Binding var err: TexError?
     func makeCoordinator() -> Con {
         Con()
     }
@@ -41,7 +42,15 @@ struct MyScript: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {
-
+        if let err = err {
+            let alert = UIAlertController(title: "Tex Error", message: err.errorDescription, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                self.err = nil
+                MyScriptSampleObserver.shared().delegate?.cancel()
+            }))
+            context.coordinator.coordinator?.navigationController.present(alert, animated: true, completion: nil)
+            
+        }
     }
 
     typealias UIViewControllerType = UINavigationController
