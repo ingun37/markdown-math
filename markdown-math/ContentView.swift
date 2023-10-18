@@ -109,12 +109,13 @@ struct ContentView: View {
                             if nodeType == MarkdownNode.MarkdownType.codeBlock ||
                                nodeType == MarkdownNode.MarkdownType.code {
                                 let idx0 = appState.markdownContent.startIndex
-                                let delStyle = inlineDelimeter.style()
+//                                let delStyle = inlineDelimeter.style()
                                 let isInline = nodeType == MarkdownNode.MarkdownType.code
-                                let del = isInline ? delStyle.inline : delStyle.block
-
-                                let A = appState.markdownContent.index(idx0, offsetBy: rng.location + del.start.count)
-                                let B = appState.markdownContent.index(idx0, offsetBy: rng.location + rng.length - del.end.count)
+//                                let del = isInline ? delStyle.inline : delStyle.block
+                                let offsetA = isInline ? 0 : 8
+                                let offsetB = isInline ? 0 : -4
+                                let A = appState.markdownContent.index(idx0, offsetBy: rng.location + offsetA)
+                                let B = appState.markdownContent.index(idx0, offsetBy: rng.location + rng.length + offsetB)
 
                                 let sub = appState.markdownContent[A..<B]
                                 self.isInsert = (String(sub), rng, isInline)
