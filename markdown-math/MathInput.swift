@@ -25,7 +25,7 @@ struct MathInput: View, MyScriptSampleObserverDelegate {
                     onInsert(tex)
                 }
             }
-            InputWebView(tex: $tex, format: $format)
+            InputWebView(tex: tex, format: $format)
             TextEditor(text: $tex)
                 .scrollContentBackground(.hidden)
                 .background(Color(hex: 0x1D1F21))

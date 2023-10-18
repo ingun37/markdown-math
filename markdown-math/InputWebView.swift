@@ -19,7 +19,7 @@ import Ink
 import WebKit
 
 struct InputWebView: UIViewRepresentable {
-    @Binding var tex: String
+    var tex: String
     @Binding var format: MathFormatType
 
 //    let request: URLRequest
@@ -40,6 +40,6 @@ struct InputWebView_Previews: PreviewProvider {
     """
     @State static var format: MathFormatType = .Katex
     static var previews: some View {
-        InputWebView(tex: $tex, format: $format)
+        InputWebView(tex: tex, format: $format)
     }
 }
