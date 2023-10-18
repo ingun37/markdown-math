@@ -7,6 +7,8 @@
 
 import SwiftDown
 import SwiftUI
+import Combine
+
 enum ManualOrientation {
     case horizontal
     case vertical
@@ -19,8 +21,13 @@ enum Display: String, CaseIterable, Identifiable {
 }
 
 struct ContentView: View {
-    @StateObject var appState = AppState(initialMarkdown)
+    @State var markdownContent: String = initialMarkdown
+    var markdownContentPassThrough = PassthroughSubject<String, Never>()
     @State var debouncedMarkdown = initialMarkdown
+
+    var selectedRangePassThrough = PassthroughSubject<(NSRange, MarkdownNode?), Never>()
+    @State var debouncedSelectedRange: (NSRange, MarkdownNode?) = (NSRange(), nil)
+
     @State var inlineDelimeter: DelimeterType = .GitLab
     @State var mathFormat: MathFormatType = .Latex
     @State var display: Display = .Inline
@@ -54,7 +61,7 @@ struct ContentView: View {
                         MathSheet(
                             mathFormat: $mathFormat,
                             inputMode: $inputMode,
-                            markdownContent: $appState.markdownContent,
+                            markdownContent: $markdownContent,
                             inlineDelimeter: $inlineDelimeter,
                             display: isInsert.2 ? .Inline : .Block,
                             offset: isInsert.1.location,
@@ -71,11 +78,11 @@ struct ContentView: View {
                         MathSheet(
                             mathFormat: $mathFormat,
                             inputMode: $inputMode,
-                            markdownContent: $appState.markdownContent,
+                            markdownContent: $markdownContent,
                             inlineDelimeter: $inlineDelimeter,
                             display: display,
-                            offset: appState.selectedrange.0.location,
-                            length: appState.selectedrange.0.length,
+                            offset: debouncedSelectedRange.0.location,
+                            length: debouncedSelectedRange.0.length,
                             initialTex: ""
                         )
                     }
@@ -86,46 +93,48 @@ struct ContentView: View {
                 }
 
                 Spacer()
-                ShareLink(item: appState.markdownContent)
+                ShareLink(item: markdownContent)
+            }.onReceive(selectedRangePassThrough.debounce(for: .seconds(0.3), scheduler: RunLoop.main)) { mmm in
+                debouncedSelectedRange = mmm
+                if let markdownNode = mmm.1 {
+                    let nodeType = markdownNode.type
+                    let rng = markdownNode.range
+                    if nodeType == MarkdownNode.MarkdownType.codeBlock ||
+                       nodeType == MarkdownNode.MarkdownType.code {
+                        let idx0 = markdownContent.startIndex
+//                                let delStyle = inlineDelimeter.style()
+                        let isInline = nodeType == MarkdownNode.MarkdownType.code
+//                                let del = isInline ? delStyle.inline : delStyle.block
+                        let offsetA = isInline ? 0 : 8
+                        let offsetB = isInline ? 0 : -4
+                        let A = markdownContent.index(idx0, offsetBy: rng.location + offsetA)
+                        let B = markdownContent.index(idx0, offsetBy: rng.location + rng.length + offsetB)
+
+                        let sub = markdownContent[A..<B]
+                        self.isInsert = (String(sub), rng, isInline)
+                        return
+                    }
+                }
+                self.isInsert = nil
             }
 
             let layout = manualOrientation == .vertical ?
                 AnyLayout(HStackLayout()) : AnyLayout(VStackLayout())
 
             layout {
-                WebView(markdown: $debouncedMarkdown, delimeter: $inlineDelimeter, format: $mathFormat).onReceive(appState.$markdownContent.debounce(for: .seconds(0.3), scheduler: RunLoop.main), perform: { newValue in
+                WebView(markdown: $debouncedMarkdown, delimeter: $inlineDelimeter, format: $mathFormat)
+                    .onChange(of: markdownContent) {
+                        markdownContentPassThrough.send(markdownContent)
+                    }
+                    .onReceive(markdownContentPassThrough.debounce(for: .seconds(0.3), scheduler: RunLoop.main)) { newValue in
                         debouncedMarkdown = newValue
-                })
-
-              SwiftDownEditor(text: $appState.markdownContent, onSelectionChange: { rng, mn in
-                  appState.selectedrange = (rng, mn)
+                    }
+              SwiftDownEditor(text: $markdownContent, onSelectionChange: { rng, mn in
+                  print("haggap")
+                  selectedRangePassThrough.send((rng, mn))
               })
                 .insetsSize(40)
                 .theme(Theme.BuiltIn.defaultDark.theme())
-                .onReceive(appState.$selectedrange.debounce(for: .seconds(0.3), scheduler: RunLoop.main)) { mmm in
-                        if let markdownNode = mmm.1 {
-                            let nodeType = markdownNode.type
-                            let rng = markdownNode.range
-                            if nodeType == MarkdownNode.MarkdownType.codeBlock ||
-                               nodeType == MarkdownNode.MarkdownType.code {
-                                let idx0 = appState.markdownContent.startIndex
-//                                let delStyle = inlineDelimeter.style()
-                                let isInline = nodeType == MarkdownNode.MarkdownType.code
-//                                let del = isInline ? delStyle.inline : delStyle.block
-                                let offsetA = isInline ? 0 : 8
-                                let offsetB = isInline ? 0 : -4
-                                let A = appState.markdownContent.index(idx0, offsetBy: rng.location + offsetA)
-                                let B = appState.markdownContent.index(idx0, offsetBy: rng.location + rng.length + offsetB)
-
-                                let sub = appState.markdownContent[A..<B]
-                                self.isInsert = (String(sub), rng, isInline)
-                                return
-                            }
-                        }
-                        self.isInsert = nil
-
-                    }
-
             }
         }
         .padding()
