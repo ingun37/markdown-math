@@ -43,7 +43,7 @@ struct MyScript: UIViewControllerRepresentable {
 
     func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {
         if let err = err {
-            let alert = UIAlertController(title: "Tex Error", message: err.errorDescription, preferredStyle: .alert)
+            let alert = UIAlertController(title: err.failureReason, message: err.errorDescription, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
                 self.err = nil
                 MyScriptSampleObserver.shared().delegate?.cancel()

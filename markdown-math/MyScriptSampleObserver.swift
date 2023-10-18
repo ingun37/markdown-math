@@ -9,17 +9,20 @@ import Foundation
 
 struct TexError: LocalizedError {
     var errorDescription: String?
+    var failureReason: String?
     init(err: Error) {
         do {
-            if let m = try /import failed :(.+$)/.firstMatch(in: err.localizedDescription) {
+            if let m = try /\[IINKEditor import_:data:selection:error:\]::(.+$)/.firstMatch(in: err.localizedDescription) {
+                failureReason = "Incorrect LaTex format"
                 errorDescription = String(m.output.1)
             } else {
+                failureReason = "Unknown"
                 errorDescription = "Unknown Error"
             }
         } catch {
+            failureReason = "Unknown"
             errorDescription = "Unknown Error"
         }
-
     }
 }
 protocol MyScriptSampleObserverDelegate {
