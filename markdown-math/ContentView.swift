@@ -83,7 +83,7 @@ struct ContentView: View {
                             display: display,
                             offset: debouncedSelectedRange.0.location,
                             length: debouncedSelectedRange.0.length,
-                            initialTex: ""
+                            initialTex: "\\text{Write LaTex here}"
                         )
                     }
                     .buttonStyle(.borderedProminent)
