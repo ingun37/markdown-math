@@ -57,36 +57,38 @@ struct ContentView: View {
                     Button("Edit Math") {
                         inputMode.toggle()
                     }
-                    .sheet(isPresented: $inputMode) {
-                        MathSheet(
-                            mathFormat: $mathFormat,
-                            inputMode: $inputMode,
-                            markdownContent: $markdownContent,
-                            inlineDelimeter: $inlineDelimeter,
-                            display: isInsert.2 ? .Inline : .Block,
-                            offset: isInsert.1.location,
-                            length: isInsert.1.length,
-                            initialTex: isInsert.0
-                        )
-                    }
-                    .buttonStyle(.borderedProminent)
+                        .sheet(isPresented: $inputMode) {
+                            MathSheet(
+                                mathFormat: $mathFormat,
+                                inputMode: $inputMode,
+                                markdownContent: $markdownContent,
+                                inlineDelimeter: $inlineDelimeter,
+                                display: isInsert.2 ? .Inline : .Block,
+                                offset: isInsert.1.location,
+                                length: isInsert.1.length,
+                                initialTex: isInsert.0
+                            )
+                                .interactiveDismissDisabled()
+                        }
+                        .buttonStyle(.borderedProminent)
                 } else {
                     Button("Input Math") {
                         inputMode.toggle()
                     }
-                    .sheet(isPresented: $inputMode) {
-                        MathSheet(
-                            mathFormat: $mathFormat,
-                            inputMode: $inputMode,
-                            markdownContent: $markdownContent,
-                            inlineDelimeter: $inlineDelimeter,
-                            display: display,
-                            offset: debouncedSelectedRange.0.location,
-                            length: debouncedSelectedRange.0.length,
-                            initialTex: ""
-                        )
-                    }
-                    .buttonStyle(.borderedProminent)
+                        .sheet(isPresented: $inputMode) {
+                            MathSheet(
+                                mathFormat: $mathFormat,
+                                inputMode: $inputMode,
+                                markdownContent: $markdownContent,
+                                inlineDelimeter: $inlineDelimeter,
+                                display: display,
+                                offset: debouncedSelectedRange.0.location,
+                                length: debouncedSelectedRange.0.length,
+                                initialTex: ""
+                            )
+                                .interactiveDismissDisabled()
+                        }
+                        .buttonStyle(.borderedProminent)
                     Button("Edit Math") {
                         inputMode.toggle()
                     }.disabled(true)
