@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MathInput: View, MyScriptSampleObserverDelegate {
+    let fColor = Color(hex: 0xA1A8B5)
     @State var tex: String
     @State var format: MathFormatType
     @State private var handwriting = false
@@ -26,11 +27,22 @@ struct MathInput: View, MyScriptSampleObserverDelegate {
                 }
             }
             InputWebView(tex: tex, format: $format)
-            TextEditor(text: $tex)
-                .scrollContentBackground(.hidden)
-                .background(Color(hex: 0x1D1F21))
-                .foregroundColor(Color(hex: 0xA1A8B5))
-                .font(Font.system(.body, design: .monospaced))
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 300, maxHeight: 500)
+            ZStack {
+                if tex.isEmpty {   ///show placeholder if not text typed
+                  Text("Write LaTex here ...")
+                    .foregroundColor(fColor.opacity(0.75))
+                    .font(.system(size: 42))
+                    .padding(EdgeInsets(top: 7, leading: 4, bottom: 0, trailing: 0))
+                    .padding(5)
+                }
+                TextEditor(text: $tex)
+                    .scrollContentBackground(.hidden)
+                    .background(Color.clear)
+                    .foregroundColor(fColor)
+                    .font(Font.system(.body, design: .monospaced))
+            }.background(Color(hex: 0x1D1F21))
+
             Button("Handwriting") {
                 handwriting.toggle()
             }
@@ -38,7 +50,8 @@ struct MathInput: View, MyScriptSampleObserverDelegate {
                 MyScript(delegate: self, latex: tex, err: $err)
             }.buttonStyle(.borderedProminent)
 
-        }.padding()
+        }
+        .padding()
     }
     func cancel() {
         handwriting.toggle()
