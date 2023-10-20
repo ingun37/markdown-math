@@ -27,7 +27,7 @@ struct MathInput: View, MyScriptSampleObserverDelegate {
                 }
             }
             InputWebView(tex: tex, format: $format)
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 300, maxHeight: 500)
+                .frame(height: 300)
             ZStack {
                 if tex.isEmpty {   ///show placeholder if not text typed
                   Text("Write LaTex here ...")
@@ -41,14 +41,16 @@ struct MathInput: View, MyScriptSampleObserverDelegate {
                     .background(Color.clear)
                     .foregroundColor(fColor)
                     .font(Font.system(.body, design: .monospaced))
-            }.background(Color(hex: 0x1D1F21))
+            }
+                .background(Color(hex: 0x1D1F21))
 
             Button("Handwriting") {
                 handwriting.toggle()
             }
-            .fullScreenCover(isPresented: $handwriting) {
-                MyScript(delegate: self, latex: tex, err: $err)
-            }.buttonStyle(.borderedProminent)
+                .fullScreenCover(isPresented: $handwriting) {
+                    MyScript(delegate: self, latex: tex, err: $err)
+                }
+                .buttonStyle(.borderedProminent)
 
         }
         .padding()
