@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Untitled_Artwork.jpg",
+      "filename" : "1024.jpg",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -27,37 +27,37 @@
       "size" : "32x32"
     },
     {
-      "filename" : "Untitled_Artwork 6.jpg",
+      "filename" : "128.jpg",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "128x128"
     },
     {
-      "filename" : "Untitled_Artwork 5.jpg",
+      "filename" : "256 1.jpg",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
     },
     {
-      "filename" : "Untitled_Artwork 4.jpg",
+      "filename" : "256.jpg",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "256x256"
     },
     {
-      "filename" : "Untitled_Artwork 3.jpg",
+      "filename" : "512 1.jpg",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
     },
     {
-      "filename" : "Untitled_Artwork 2.jpg",
+      "filename" : "512.jpg",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
-      "filename" : "Untitled_Artwork 1.jpg",
+      "filename" : "1024 1.jpg",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"
