@@ -55,19 +55,15 @@ struct WebView: UIViewRepresentable {
         let matches = markdown.matches(of: delimeter.style().inlineMatcher)
         var newMD = ""
 
-        var idx: String.Index?
+        var idx = markdown.startIndex
         for match in matches {
-            if idx == nil {
-                newMD += markdown[..<match.startIndex]
-            } else {
-                newMD += markdown[idx! ..< match.startIndex]
-            }
+            newMD += markdown[idx ..< match.startIndex]
             newMD += inlineMathBegin + markdown[match.startIndex ..< match.endIndex].dropFirst(2).dropLast(2) + inlineMathEnd
             idx = match.endIndex
         }
-        if let idx = idx {
-            newMD += markdown[idx...]
-        }
+
+        newMD += markdown[idx...]
+
         uiView.loadHTMLString(format.header() + parser.html(from: newMD), baseURL: nil)
     }
 
