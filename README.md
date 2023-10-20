@@ -101,7 +101,8 @@ In `SmartGuideViewController.mm`, change Swift module import header to `#import 
 ### Remevo redundant UI components
 
 In `Demo/Clasess/Scenes/Main.storyboard`, remove Navigation Item > Right Bar Button Items > More Bar Button Item.
-In `Demo/Classes/Scenes/Toolbar/Toolbar.storyboard`, remove Highlighter and Style button.
+
+In `Demo/Classes/Scenes/Toolbar/Toolbar.storyboard`, remove Highlighter, Style, and Lasso button.
 
 ### Diagram
 
