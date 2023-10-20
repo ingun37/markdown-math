@@ -29,7 +29,7 @@ struct MathInput: View, MyScriptSampleObserverDelegate {
             InputWebView(tex: tex, format: $format)
                 .frame(height: 300)
             ZStack {
-                if tex.isEmpty {   ///show placeholder if not text typed
+                if tex.isEmpty {   /// show placeholder if not text typed
                   Text("Write LaTex here ...")
                     .foregroundColor(fColor.opacity(0.75))
                     .font(.system(size: 42))
