@@ -167,6 +167,7 @@
 		921B9E7B2A0E67C1009FB45B /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		9228770B2A95EC080099D5AC /* MyScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScript.swift; sourceTree = "<group>"; };
 		925048812ADE015E00180DFF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		925705902AE620EB004E1D0F /* ci_post_clone.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_clone.sh; sourceTree = "<group>"; };
 		92595DD32A2461F40020A3FE /* ingun.markdown-math.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "ingun.markdown-math.c"; sourceTree = "<group>"; };
 		92595DD52A2466490020A3FE /* MathInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathInput.swift; sourceTree = "<group>"; };
 		92595DD72A2466AC0020A3FE /* InputWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputWebView.swift; sourceTree = "<group>"; };
@@ -366,6 +367,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9257058F2AE620C8004E1D0F /* ci_scripts */ = {
+			isa = PBXGroup;
+			children = (
+				925705902AE620EB004E1D0F /* ci_post_clone.sh */,
+			);
+			path = ci_scripts;
+			sourceTree = "<group>";
+		};
 		9268C6972A245E1D001A99B5 /* MyScriptInteractiveInk-Runtime-iOS-2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,6 +485,7 @@
 		9283E6362A0E44F500EB66EC = {
 			isa = PBXGroup;
 			children = (
+				9257058F2AE620C8004E1D0F /* ci_scripts */,
 				92B1C90F2AA429D80068D7A6 /* recognition-assets */,
 				92B1C8D02AA420C50068D7A6 /* Frameworks */,
 				921B9E432A0E4FB7009FB45B /* README.md */,
