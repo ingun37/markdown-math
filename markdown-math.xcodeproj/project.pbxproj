@@ -10,6 +10,7 @@
 		920EE10F2A248F35003EDB4F /* SwiftDown in Frameworks */ = {isa = PBXBuildFile; productRef = 920EE10E2A248F35003EDB4F /* SwiftDown */; };
 		921B9E702A0E61FC009FB45B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921B9E6F2A0E61FC009FB45B /* SystemConfiguration.framework */; };
 		921B9E7C2A0E67C1009FB45B /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921B9E7B2A0E67C1009FB45B /* Functions.swift */; };
+		9220B0152AE640CA00CEC271 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9220B0142AE640C900CEC271 /* Help.swift */; };
 		9228770C2A95EC080099D5AC /* MyScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228770B2A95EC080099D5AC /* MyScript.swift */; };
 		925048822ADE015E00180DFF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925048812ADE015E00180DFF /* AppState.swift */; };
 		92595DD42A2461F40020A3FE /* ingun.markdown-math.c in Sources */ = {isa = PBXBuildFile; fileRef = 92595DD32A2461F40020A3FE /* ingun.markdown-math.c */; };
@@ -72,7 +73,6 @@
 		9283E6552A0E44F800EB66EC /* markdown_mathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283E6542A0E44F800EB66EC /* markdown_mathTests.swift */; };
 		9283E65F2A0E44F800EB66EC /* markdown_mathUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283E65E2A0E44F800EB66EC /* markdown_mathUITests.swift */; };
 		9283E6612A0E44F800EB66EC /* markdown_mathUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9283E6602A0E44F800EB66EC /* markdown_mathUITestsLaunchTests.swift */; };
-		9285971B2A2377C400F672B3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9285971A2A2377C400F672B3 /* Launch Screen.storyboard */; };
 		9285971D2A23785900F672B3 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9285971C2A23785900F672B3 /* Storyboard.storyboard */; };
 		9285971F2A23788800F672B3 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9285971E2A23788800F672B3 /* SwiftUIView.swift */; };
 		92A151492AD98A54000605A2 /* MathSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A151482AD98A54000605A2 /* MathSheet.swift */; };
@@ -165,6 +165,7 @@
 		921B9E462A0E52C1009FB45B /* markdown-math-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "markdown-math-Bridging-Header.h"; sourceTree = "<group>"; };
 		921B9E6F2A0E61FC009FB45B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		921B9E7B2A0E67C1009FB45B /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		9220B0142AE640C900CEC271 /* Help.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
 		9228770B2A95EC080099D5AC /* MyScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScript.swift; sourceTree = "<group>"; };
 		925048812ADE015E00180DFF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		925705902AE620EB004E1D0F /* ci_post_clone.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_clone.sh; sourceTree = "<group>"; };
@@ -232,7 +233,6 @@
 		9283E65A2A0E44F800EB66EC /* markdown-mathUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "markdown-mathUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9283E65E2A0E44F800EB66EC /* markdown_mathUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = markdown_mathUITests.swift; sourceTree = "<group>"; };
 		9283E6602A0E44F800EB66EC /* markdown_mathUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = markdown_mathUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		9285971A2A2377C400F672B3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		9285971C2A23785900F672B3 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		9285971E2A23788800F672B3 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		92A151482AD98A54000605A2 /* MathSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathSheet.swift; sourceTree = "<group>"; };
@@ -522,11 +522,11 @@
 				9268CEA32A21D446005484FF /* Data.swift */,
 				9268CEAA2A21ED05005484FF /* Delimeter.swift */,
 				92595DD72A2466AC0020A3FE /* InputWebView.swift */,
+				9220B0142AE640C900CEC271 /* Help.swift */,
 				92595DD52A2466490020A3FE /* MathInput.swift */,
 				9283E6482A0E44F700EB66EC /* markdown_math.entitlements */,
 				9283E6422A0E44F600EB66EC /* markdown_mathApp.swift */,
 				9285971E2A23788800F672B3 /* SwiftUIView.swift */,
-				9285971A2A2377C400F672B3 /* Launch Screen.storyboard */,
 				9285971C2A23785900F672B3 /* Storyboard.storyboard */,
 				921B9E462A0E52C1009FB45B /* markdown-math-Bridging-Header.h */,
 				9228770B2A95EC080099D5AC /* MyScript.swift */,
@@ -1014,7 +1014,6 @@
 				9283E64B2A0E44F700EB66EC /* Preview Assets.xcassets in Resources */,
 				92B1C8A92AA41FCD0068D7A6 /* Main.storyboard in Resources */,
 				92B1C8CB2AA41FCD0068D7A6 /* myscript-iink-recognition-text-en_US.version.txt in Resources */,
-				9285971B2A2377C400F672B3 /* Launch Screen.storyboard in Resources */,
 				92B1C89D2AA41FCD0068D7A6 /* LaunchScreen.storyboard in Resources */,
 				92B1C8CA2AA41FCD0068D7A6 /* myscript-iink-recognition-raw-content.version.txt in Resources */,
 				9283E6472A0E44F700EB66EC /* Assets.xcassets in Resources */,
@@ -1073,6 +1072,7 @@
 				92B1C8FC2AA420C50068D7A6 /* NSAttributedString+Helper.swift in Sources */,
 				92B1C8FE2AA420C50068D7A6 /* CTRun+Metrics.swift in Sources */,
 				92B1C8B02AA41FCD0068D7A6 /* ExportViewModel.swift in Sources */,
+				9220B0152AE640CA00CEC271 /* Help.swift in Sources */,
 				92B1C8AB2AA41FCD0068D7A6 /* FilesModel.swift in Sources */,
 				92B1C8F82AA420C50068D7A6 /* ImageLoader.swift in Sources */,
 				92B1C8F92AA420C50068D7A6 /* IInkUIRefImplUtils.swift in Sources */,

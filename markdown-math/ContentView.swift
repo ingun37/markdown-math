@@ -34,6 +34,7 @@ struct ContentView: View {
     @State private var inputMode = false
     @State private var manualOrientation: ManualOrientation = .vertical
     @State var isInsert: (String, NSRange, Bool)?
+    @State var help = false
     var body: some View {
         VStack {
             HStack {
@@ -95,7 +96,17 @@ struct ContentView: View {
                 }
 
                 Spacer()
-                ShareLink(item: markdownContent)
+                HStack(spacing: 12) {
+                    ShareLink(item: markdownContent)
+                    Button("Help", systemImage: "info.circle") {
+                        help.toggle()
+                    }
+                        .labelStyle(.iconOnly)
+                        .sheet(isPresented: $help, content: {
+                            Help().padding(16)
+                        })
+                }
+
             }.onReceive(selectedRangePassThrough.debounce(for: .seconds(0.3), scheduler: RunLoop.main)) { mmm in
                 debouncedSelectedRange = mmm
                 if let markdownNode = mmm.1 {
