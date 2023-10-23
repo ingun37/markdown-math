@@ -1516,7 +1516,7 @@
 			repositoryURL = "https://github.com/ingun37/SwiftDown.git";
 			requirement = {
 				kind = revision;
-				revision = 13c7ec261be933c6e5e15db6ed8e99345f6a2164;
+				revision = 89b56247586c406304175d8d79723122575ce275;
 			};
 		};
 		9268CEA72A21D89F005484FF /* XCRemoteSwiftPackageReference "ink" */ = {
