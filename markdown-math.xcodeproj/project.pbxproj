@@ -166,6 +166,7 @@
 		921B9E6F2A0E61FC009FB45B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		921B9E7B2A0E67C1009FB45B /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		9220B0142AE640C900CEC271 /* Help.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
+		9220B0162AE65D2900CEC271 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9228770B2A95EC080099D5AC /* MyScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScript.swift; sourceTree = "<group>"; };
 		925048812ADE015E00180DFF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		925705902AE620EB004E1D0F /* ci_post_clone.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_clone.sh; sourceTree = "<group>"; };
@@ -510,6 +511,7 @@
 		9283E6412A0E44F500EB66EC /* markdown-math */ = {
 			isa = PBXGroup;
 			children = (
+				9220B0162AE65D2900CEC271 /* Info.plist */,
 				92B1C8542AA41FCD0068D7A6 /* Demo */,
 				9283E6462A0E44F700EB66EC /* Assets.xcassets */,
 				9283E6442A0E44F600EB66EC /* ContentView.swift */,
@@ -1276,6 +1278,7 @@
 					"${SRCROOT}/MyScriptInteractiveInk-Runtime-iOS-2/include/**",
 					"${SRCROOT}/Frameworks/**",
 				);
+				INFOPLIST_FILE = "markdown-math/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Markdown Math";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -1343,6 +1346,7 @@
 					"${SRCROOT}/MyScriptInteractiveInk-Runtime-iOS-2/include/**",
 					"${SRCROOT}/Frameworks/**",
 				);
+				INFOPLIST_FILE = "markdown-math/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Markdown Math";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
