@@ -14,16 +14,12 @@ struct MathSheet: View {
     @Binding var markdownContent: String
     @Binding var inlineDelimeter: DelimeterType
     var display: Display
-    var offset: Int
-    var length: Int
+    var range: Range<String.Index>
     var initialTex: String
     var body: some View {
         MathInput(tex: initialTex, format: mathFormat, onCancel: {
             inputMode.toggle()
         }, onInsert: { tex in
-            let x = markdownContent.index(markdownContent.startIndex, offsetBy: offset)
-            let y = markdownContent.index(markdownContent.startIndex, offsetBy: offset + length)
-
             let delimiters = inlineDelimeter.style()
 
             let start: String
@@ -38,7 +34,7 @@ struct MathSheet: View {
             }
 
             DispatchQueue.main.async {
-                markdownContent = markdownContent[..<x] + start + tex + end + markdownContent[y...]
+                markdownContent = markdownContent[..<range.lowerBound] + start + tex + end + markdownContent[range.upperBound...]
             }
 
             inputMode.toggle()

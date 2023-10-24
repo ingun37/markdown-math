@@ -33,7 +33,7 @@ struct ContentView: View {
     @State var display: Display = .Inline
     @State private var inputMode = false
     @State private var manualOrientation: ManualOrientation = .vertical
-    @State var isInsert: (String, NSRange, Bool)?
+    @State var isInsert: (String, Range<String.Index>, Bool)?
     @State var help = false
     var body: some View {
         VStack {
@@ -65,8 +65,7 @@ struct ContentView: View {
                                 markdownContent: $markdownContent,
                                 inlineDelimeter: $inlineDelimeter,
                                 display: isInsert.2 ? .Inline : .Block,
-                                offset: isInsert.1.location,
-                                length: isInsert.1.length,
+                                range: isInsert.1,
                                 initialTex: isInsert.0
                             )
                                 .interactiveDismissDisabled()
@@ -77,14 +76,17 @@ struct ContentView: View {
                         inputMode.toggle()
                     }
                         .sheet(isPresented: $inputMode) {
+                            let i0 = markdownContent.startIndex
+                            let _rng = debouncedSelectedRange.0
+                            let A = markdownContent.index(i0, offsetBy: _rng.location)
+                            let B = markdownContent.index(i0, offsetBy: _rng.location + _rng.length)
                             MathSheet(
                                 mathFormat: $mathFormat,
                                 inputMode: $inputMode,
                                 markdownContent: $markdownContent,
                                 inlineDelimeter: $inlineDelimeter,
                                 display: display,
-                                offset: debouncedSelectedRange.0.location,
-                                length: debouncedSelectedRange.0.length,
+                                range: A..<B,
                                 initialTex: ""
                             )
                                 .interactiveDismissDisabled()
@@ -111,21 +113,38 @@ struct ContentView: View {
                 debouncedSelectedRange = mmm
                 if let markdownNode = mmm.1 {
                     let nodeType = markdownNode.type
-                    let rng = markdownNode.range
                     if nodeType == MarkdownNode.MarkdownType.codeBlock ||
                        nodeType == MarkdownNode.MarkdownType.code {
                         let idx0 = markdownContent.startIndex
 //                                let delStyle = inlineDelimeter.style()
                         let isInline = nodeType == MarkdownNode.MarkdownType.code
 //                                let del = isInline ? delStyle.inline : delStyle.block
-                        let offsetA = isInline ? 0 : 8
-                        let offsetB = isInline ? 0 : -4
-                        let A = markdownContent.index(idx0, offsetBy: rng.location + offsetA)
-                        let B = markdownContent.index(idx0, offsetBy: rng.location + rng.length + offsetB)
-
-                        let sub = markdownContent[A..<B]
-                        self.isInsert = (String(sub), rng, isInline)
-                        return
+                        
+                        if isInline {
+                            let _rng = markdownNode.range
+                            let delimeter = inlineDelimeter.style().inline
+                            if 0 <= _rng.location - 2 && _rng.location + _rng.length + 2 <= markdownContent.count {
+                                let A = markdownContent.index(idx0, offsetBy: _rng.location - 2)
+                                let B = markdownContent.index(idx0, offsetBy: _rng.location + _rng.length + 2)
+                                let AB = A..<B
+                                let sub = markdownContent[AB]
+                                if sub.hasPrefix(delimeter.start) && sub.hasSuffix(delimeter.end) {
+                                    self.isInsert = (String(sub.dropFirst(delimeter.start.count).dropLast(delimeter.end.count)), AB, true)
+                                    return
+                                }
+                            }
+                        } else {
+                            let _rng = markdownNode.range
+                            let delimeter = inlineDelimeter.style().block
+                            let A = markdownContent.index(idx0, offsetBy: _rng.location)
+                            let B = markdownContent.index(idx0, offsetBy: _rng.location + _rng.length)
+                            let AB = A..<B
+                            let sub = markdownContent[AB]
+                            if sub.hasPrefix(delimeter.start) && sub.hasSuffix(delimeter.end) {
+                                self.isInsert = (String(sub.dropFirst(delimeter.start.count).dropLast(delimeter.end.count)), AB, false)
+                                return
+                            }
+                        }
                     }
                 }
                 self.isInsert = nil
