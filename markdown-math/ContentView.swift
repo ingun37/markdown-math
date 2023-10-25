@@ -119,7 +119,7 @@ struct ContentView: View {
 //                                let delStyle = inlineDelimeter.style()
                         let isInline = nodeType == MarkdownNode.MarkdownType.code
 //                                let del = isInline ? delStyle.inline : delStyle.block
-                        
+
                         if isInline {
                             let _rng = markdownNode.range
                             let delimeter = inlineDelimeter.style().inline

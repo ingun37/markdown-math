@@ -425,10 +425,13 @@ extension MainViewModel: MainViewModelEditorLogic {
         // Set title
         self.title = title
         if let editor = self.editor, let tex = MyScriptSampleObserver.shared().latex {
-            do {
-                try editor.import(mimeType: IINKMimeType.laTeX, data: tex, selection: editor.rootBlock)
-            } catch {
-                MyScriptSampleObserver.shared().delegate?.alert(err: error)
+            let trimmed = tex.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !trimmed.isEmpty{
+                do {
+                    try editor.import(mimeType: IINKMimeType.laTeX, data: tex, selection: editor.rootBlock)
+                } catch {
+                    MyScriptSampleObserver.shared().delegate?.alert(err: error)
+                }
             }
         }
     }

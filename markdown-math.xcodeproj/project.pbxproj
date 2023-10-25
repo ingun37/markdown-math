@@ -1299,7 +1299,7 @@
 					"$(PROJECT_DIR)/MyScriptInteractiveInk-Runtime-iOS-1",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				OTHER_LDFLAGS = (
 					"-Wl,-u,_MyScript2D",
 					"-Wl,-u,_MyScriptAnalyzer",
@@ -1367,7 +1367,7 @@
 					"$(PROJECT_DIR)/MyScriptInteractiveInk-Runtime-iOS-1",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				OTHER_LDFLAGS = (
 					"-Wl,-u,_MyScript2D",
 					"-Wl,-u,_MyScriptAnalyzer",
