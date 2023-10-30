@@ -137,7 +137,7 @@ struct ContentView: View {
                             let _rng = markdownNode.range
                             let delimeter = inlineDelimeter.style().block
                             let A = markdownContent.index(idx0, offsetBy: _rng.location)
-                            let B = markdownContent.index(idx0, offsetBy: _rng.location + _rng.length)
+                            let B = markdownContent.index(idx0, offsetBy: _rng.location + _rng.length, limitedBy: markdownContent.endIndex) ?? markdownContent.endIndex
                             let AB = A..<B
                             let sub = markdownContent[AB]
                             if sub.hasPrefix(delimeter.start) && sub.hasSuffix(delimeter.end) {
