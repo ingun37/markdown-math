@@ -1,5 +1,9 @@
 #  Markdown Math
 
+Markdown editor specialized in writing mathematics.
+
+Avaialable on [AppStore](https://apps.apple.com/kr/app/markdown-math/id6470172797?l=en-GB).
+
 ## Build
 
 I'll assume the myscript version is 2.0.1.
