@@ -1,6 +1,6 @@
 #  Markdown Math
 
-Markdown editor specialized in writing mathematics.
+Markdown editor specialized in writing mathematics. I use it to write mathematical documents something like this 👉 [Answers to math problems](https://ingun37.github.io/answers/).
 
 Avaialable on [AppStore](https://apps.apple.com/kr/app/markdown-math/id6470172797?l=en-GB).
 
